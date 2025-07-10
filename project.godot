@@ -14,6 +14,23 @@ config/name="mini_battler"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://autoloads/Global.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://character/": "orange",
+"res://enemies/": "red",
+"res://managers/": "yellow",
+"res://proyectiles/": "green"
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
