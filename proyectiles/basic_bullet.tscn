@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://drkv304xf07bc"]
+
+[ext_resource type="Script" uid="uid://byjw12ddh4a3f" path="res://proyectiles/basic_bullet.gd" id="1_76keq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1ux5"]
+
+[node name="BasicBullet" type="Node2D"]
+script = ExtResource("1_76keq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_i1ux5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -9.0
+offset_right = 6.0
+offset_bottom = 8.0
+color = Color(0.748461, 0.74826, 1.54018e-06, 1)

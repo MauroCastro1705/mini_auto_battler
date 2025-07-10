@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfoeue187p1kd"]
+[gd_scene load_steps=5 format=3 uid="uid://cfoeue187p1kd"]
 
 [ext_resource type="Script" uid="uid://ceoyvg1jautwm" path="res://character/player.gd" id="1_2orxn"]
+[ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/BulletPool.tscn" id="2_monf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8e4qx"]
 radius = 16.0312
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_monf5"]
+radius = 108.227
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_2orxn")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -19,3 +23,15 @@ color = Color(0.960733, 0.236641, 0.222023, 1)
 shape = SubResource("CircleShape2D_8e4qx")
 
 [node name="atk_timer" type="Timer" parent="."]
+
+[node name="BulletPool" parent="." instance=ExtResource("2_monf5")]
+
+[node name="enemy_detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_detector"]
+shape = SubResource("CircleShape2D_monf5")
+debug_color = Color(0.686657, 0.38346, 0.82136, 0.42)
+
+[connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="body_exited" from="enemy_detector" to="." method="_on_enemy_detector_body_exited"]

@@ -2,20 +2,44 @@ extends CharacterBody2D
 @onready var atk_timer: Timer = $atk_timer
 @export var move_speed = 100
 @export var attack_speed = 1.0
-@export var bullet_scene: PackedScene
 @export var damage = 10
+@onready var bullet_pool: Node = $BulletPool
+var enemies_in_range: Array[Node] = []
 
-var attack_timer := 0.0
+var shoot_cooldown := 0.2	
+var time_since_shot := 0.0
 
 func _process(delta):
-	attack_timer += delta
-	if attack_timer >= attack_speed:
-		attack()
-		attack_timer = 0.0
+	time_since_shot += delta
+	if time_since_shot >= shoot_cooldown:
+		shoot()
+		time_since_shot = 0.0
 
-func attack():
-	var bullet = bullet_scene.instantiate()
-	bullet.global_position = global_position
-	bullet.direction = Vector2.RIGHT.rotated(randf_range(-PI/6, PI/6)) # Spread
-	bullet.damage = damage
-	get_tree().current_scene.add_child(bullet)
+func shoot():
+	var target = get_nearest_enemy()
+	if target:
+		var direction = (target.global_position - global_position).normalized()
+		var bullet = bullet_pool.get_bullet()
+		bullet.fire(global_position, direction)
+
+	
+func get_nearest_enemy() -> Node:
+	var nearest = null
+	var min_dist = INF
+	for enemy in enemies_in_range:
+		if not is_instance_valid(enemy):
+			continue
+		var dist = global_position.distance_squared_to(enemy.global_position)
+		if dist < min_dist:
+			min_dist = dist
+			nearest = enemy
+	return nearest
+
+
+func _on_enemy_detector_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemigos"):
+		enemies_in_range.append(body)
+
+
+func _on_enemy_detector_body_exited(body: Node2D) -> void:
+	enemies_in_range.erase(body)

@@ -31,6 +31,17 @@ folder_colors={
 "res://proyectiles/": "green"
 }
 
+[global_group]
+
+player=""
+enemigo=""
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemigos"
+2d_physics/layer_3="escenario"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
