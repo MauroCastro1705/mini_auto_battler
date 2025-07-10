@@ -7,7 +7,7 @@
 radius = 16.0312
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_monf5"]
-radius = 108.227
+radius = 243.526
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_2orxn")

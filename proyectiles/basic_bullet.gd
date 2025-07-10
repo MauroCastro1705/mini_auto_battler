@@ -1,8 +1,7 @@
 extends Node2D
 class_name Bullet
-
-@export var speed: float = 400
-@export var damage: int = 10
+@onready var damage = Global.bullet_dmg
+@onready var speed = Global.bullet_speed
 var direction: Vector2
 var active := false
 var lifetime := 2.0
@@ -10,11 +9,11 @@ var time_alive := 0.0
 
 func _ready():
 	hide()
+	
 
-func fire(fire_position: Vector2, dir: Vector2, dmg: int = 10):
+func fire(fire_position: Vector2, dir: Vector2):
 	global_position = fire_position
 	direction = dir.normalized()
-	damage = dmg
 	time_alive = 0.0
 	active = true
 	show()
@@ -30,3 +29,9 @@ func _process(delta):
 func deactivate():
 	active = false
 	hide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemigos"):
+		body.take_damage(damage)
+		deactivate()
