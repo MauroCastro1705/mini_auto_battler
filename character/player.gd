@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var bullet_pool: Node = $BulletPool
 var enemies_in_range: Array[Node] = []
 
-var shoot_cooldown := 0.2	
+var shoot_cooldown := 0.8	
 var time_since_shot := 0.0
 
 func _process(delta):
@@ -15,31 +15,35 @@ func _process(delta):
 		shoot()
 		time_since_shot = 0.0
 
+func get_nearest_enemy() -> Node:
+	var nearest = null
+	var min_dist = INF
+	for enemigos in enemies_in_range:
+		if not is_instance_valid(enemigos):
+			continue
+		var dist = global_position.distance_squared_to(enemigos.global_position)
+		if dist < min_dist:
+			min_dist = dist
+			nearest = enemigos
+	return nearest
+
+
+
 func shoot():
 	var target = get_nearest_enemy()
 	if target:
 		var direction = (target.global_position - global_position).normalized()
 		var bullet = bullet_pool.get_bullet()
 		bullet.fire(global_position, direction)
-
-	
-func get_nearest_enemy() -> Node:
-	var nearest = null
-	var min_dist = INF
-	for enemy in enemies_in_range:
-		if not is_instance_valid(enemy):
-			continue
-		var dist = global_position.distance_squared_to(enemy.global_position)
-		if dist < min_dist:
-			min_dist = dist
-			nearest = enemy
-	return nearest
+		print("shooted")
 
 
-func _on_enemy_detector_body_entered(body: Node2D) -> void:
+
+func _on_enemy_detector_body_entered(body) -> void:
 	if body.is_in_group("enemigos"):
 		enemies_in_range.append(body)
+		print("agregado",body)
 
 
-func _on_enemy_detector_body_exited(body: Node2D) -> void:
+func _on_enemy_detector_body_exited(body) -> void:
 	enemies_in_range.erase(body)
