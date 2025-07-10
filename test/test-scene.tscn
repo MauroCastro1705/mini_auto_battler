@@ -10,3 +10,6 @@ position = Vector2(594, 290)
 
 [node name="Enemigo1" parent="." instance=ExtResource("2_ad8ri")]
 position = Vector2(942, 282)
+
+[node name="focal_point" type="Marker2D" parent="."]
+position = Vector2(600, 300)
