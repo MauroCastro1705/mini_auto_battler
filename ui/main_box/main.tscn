@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://don1dyvu4dkv8"]
+[gd_scene load_steps=2 format=3 uid="uid://don1dyvu4dkv8"]
+
+[ext_resource type="Script" uid="uid://b1tsougdq3xbs" path="res://ui/main_box/main.gd" id="1_7te1o"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7te1o")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
@@ -21,23 +24,108 @@ grow_vertical = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+[node name="level" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/level"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/level/VBoxContainer"]
+layout_mode = 2
+text = "NIVEL"
+
+[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/level/VBoxContainer"]
+layout_mode = 2
+text = "asdas"
+
+[node name="exp" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/exp"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/exp/VBoxContainer"]
 layout_mode = 2
-text = "NIVEL"
+text = "Exp"
 
-[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/exp/VBoxContainer"]
+layout_mode = 2
+text = "asdas"
+
+[node name="atk_speed" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/atk_speed"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/atk_speed/VBoxContainer"]
+layout_mode = 2
+text = "Atk speed"
+
+[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_speed/VBoxContainer"]
+layout_mode = 2
+text = "asdas"
+
+[node name="atk_dmg" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/atk_dmg"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/atk_dmg/VBoxContainer"]
+layout_mode = 2
+text = "Atk dmg"
+
+[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_dmg/VBoxContainer"]
+layout_mode = 2
+text = "asdas"
+
+[node name="atk_range" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/atk_range"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/atk_range/VBoxContainer"]
+layout_mode = 2
+text = "Atk range"
+
+[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_range/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
