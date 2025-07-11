@@ -33,7 +33,8 @@ folder_colors={
 "res://character/": "orange",
 "res://enemies/": "red",
 "res://managers/": "yellow",
-"res://proyectiles/": "green"
+"res://proyectiles/": "green",
+"res://ui/": "green"
 }
 
 [global_group]

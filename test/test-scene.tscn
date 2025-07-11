@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene load_steps=7 format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="PackedScene" uid="uid://bgwxgv22osxkb" path="res://managers/game_manager/GameManager.tscn" id="3_ad8ri"]
 [ext_resource type="PackedScene" uid="uid://veon0exi0utd" path="res://managers/enemy_spawner/enemy_spawner.tscn" id="4_kvgnx"]
 [ext_resource type="PackedScene" uid="uid://bvjn1n354h5vr" path="res://managers/enemy_pool/enemy_pool.tscn" id="4_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://don1dyvu4dkv8" path="res://ui/main_box/main_ui.tscn" id="5_l0d6b"]
+[ext_resource type="PackedScene" uid="uid://h4ossd5u1cw5" path="res://ui/buttons/botones.tscn" id="6_fjdny"]
 
 [node name="Test-scene" type="Node2D"]
 
@@ -21,13 +22,18 @@ position = Vector2(257, 261)
 [node name="EnemyPool" parent="." instance=ExtResource("4_l0d6b")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_top = 570.0
-offset_right = 509.0
-offset_bottom = 707.0
-color = Color(0.195545, 0.195545, 0.195545, 1)
+offset_left = -12.0
+offset_top = 591.0
+offset_right = 528.0
+offset_bottom = 703.0
+color = Color(0.10748, 0.10748, 0.10748, 1)
+metadata/_edit_lock_ = true
 
 [node name="Main_ui" parent="." instance=ExtResource("5_l0d6b")]
-offset_left = 259.0
-offset_top = 738.0
-offset_right = 259.0
-offset_bottom = 738.0
+offset_left = 249.0
+offset_top = 684.0
+offset_right = 249.0
+offset_bottom = 684.0
+metadata/_edit_lock_ = true
+
+[node name="Botones" parent="." instance=ExtResource("6_fjdny")]

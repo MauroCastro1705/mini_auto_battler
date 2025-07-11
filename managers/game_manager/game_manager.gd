@@ -15,4 +15,10 @@ func level_up():
 	Global.xp = 0
 	xp_to_next += 5
 	print("level up, nivel = ", Global.level)
-	#$UpgradeMenu.show_random_upgrades()
+	var base_sps := 1.0 # base shots per second
+	var sps_growth := 0.25 # how much more per level
+	var new_shots_per_sec := base_sps + Global.level * sps_growth
+	Global.attack_speed = 1.0 / new_shots_per_sec
+	
+	
+	Global.emit_signal("stats_updated")

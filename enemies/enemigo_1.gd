@@ -1,16 +1,17 @@
 extends CharacterBody2D
 # Parámetros de movimiento
-@export var speed: float = 50.0
-@export var max_hp:float = 3.0
+var speed
+var max_hp
 var hp:float = 3.0
 var active = false
 var is_dead = false
 
 func _ready():
 	add_to_group("enemigos")
-
+	speed = Global.enemigo_speed
+	max_hp = Global.enemigo_max_hp
 	
-func _process(delta):
+func _process(_delta):
 	if not active:
 		return
 
@@ -30,8 +31,13 @@ func activate(pos: Vector2):
 
 func deactivate():
 	active = false
+	is_dead = true
 	hide()
 	set_process(false)
+
+	# Inform player we're out of range (if needed)
+	if Global.player:
+		Global.player.remove_enemy(self)
 
 func take_damage(amount):
 	if not active or is_dead:
