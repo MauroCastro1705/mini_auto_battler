@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://veon0exi0utd"]
+[gd_scene load_steps=2 format=3 uid="uid://veon0exi0utd"]
 
 [ext_resource type="Script" uid="uid://d0c26hbdtb7cs" path="res://managers/enemy_spawner/enemy_spawner.gd" id="1_qxjv0"]
-[ext_resource type="PackedScene" uid="uid://bvjn1n354h5vr" path="res://managers/enemy_pool/enemy_pool.tscn" id="2_alqf2"]
 
 [node name="EnemySpawner" type="Node"]
 script = ExtResource("1_qxjv0")
-
-[node name="EnemyPool" parent="." instance=ExtResource("2_alqf2")]

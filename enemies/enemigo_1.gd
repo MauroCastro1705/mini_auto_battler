@@ -38,4 +38,6 @@ func take_damage(damage:int):
 
 func die():
 	Global.enemy_killed.emit()
-	queue_free()
+	deactivate()
+	   
+		
