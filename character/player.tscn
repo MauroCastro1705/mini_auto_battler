@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfoeue187p1kd"]
 
 [ext_resource type="Script" uid="uid://ceoyvg1jautwm" path="res://character/player.gd" id="1_2orxn"]
-[ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/BulletPool.tscn" id="2_monf5"]
+[ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/bulletPool/BulletPool.tscn" id="2_monf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8e4qx"]
 radius = 16.0312

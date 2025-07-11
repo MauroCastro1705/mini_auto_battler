@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvjn1n354h5vr"]
+
+[ext_resource type="Script" uid="uid://cqlni0b52ggsg" path="res://managers/enemy_pool/enemy_pool.gd" id="1_eyr4k"]
+[ext_resource type="PackedScene" uid="uid://oeppwgem6t1w" path="res://enemies/enemigo_1.tscn" id="2_nxtno"]
+
+[node name="EnemyPool" type="Node"]
+script = ExtResource("1_eyr4k")
+enemy_scene = ExtResource("2_nxtno")

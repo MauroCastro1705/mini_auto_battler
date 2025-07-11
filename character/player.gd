@@ -9,6 +9,10 @@ var enemies_in_range: Array[Node] = []
 var shoot_cooldown := 0.8	
 var time_since_shot := 0.0
 
+func _ready():
+	Global.player = self
+
+
 func _process(delta):
 	time_since_shot += delta
 	if time_since_shot >= shoot_cooldown:

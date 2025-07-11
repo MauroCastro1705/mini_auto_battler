@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8x4ucao8pxl0"]
 
-[ext_resource type="Script" uid="uid://dhuj8emws6qg3" path="res://managers/bullet_pool.gd" id="1_f3iti"]
+[ext_resource type="Script" uid="uid://dhuj8emws6qg3" path="res://managers/bulletPool/bullet_pool.gd" id="1_f3iti"]
 [ext_resource type="PackedScene" uid="uid://drkv304xf07bc" path="res://proyectiles/basic_bullet.tscn" id="2_frpx6"]
 
 [node name="BulletPool" type="Node"]
