@@ -5,6 +5,16 @@ var max_hp
 var hp:float = 3.0
 var active = false
 var is_dead = false
+@onready var damage_numbers_origin: Node2D = $damage_numbers_origin
+@onready var sprite: ColorRect = $ColorRect
+
+#----------------------------
+#COMO MOSTRAR NUMEROS DE DAÑO
+#usar funcion = DamageNumbers.display_numbers(value, damage_numbers_origin.global_position)
+#el VALUE es el daño que recibio
+#damage_numbers_origin.global_position = es solo el nodo donde va a mostrar el numero
+#----------------------------
+
 
 func _ready():
 	add_to_group("enemigos")
@@ -43,6 +53,8 @@ func take_damage(amount):
 	if not active or is_dead:
 		return
 	hp -= amount
+	DamageNumbers.display_numbers(amount, damage_numbers_origin.global_position)
+	DamageNumbers.flash_sprite(sprite)
 	if hp <= 0:
 		is_dead = true
 		Global.emit_signal("enemy_killed")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene load_steps=8 format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="PackedScene" uid="uid://bgwxgv22osxkb" path="res://managers/game_manager/GameManager.tscn" id="3_ad8ri"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bvjn1n354h5vr" path="res://managers/enemy_pool/enemy_pool.tscn" id="4_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://don1dyvu4dkv8" path="res://ui/main_box/main_ui.tscn" id="5_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://h4ossd5u1cw5" path="res://ui/buttons/botones.tscn" id="6_fjdny"]
+[ext_resource type="PackedScene" uid="uid://j74g4us3ueir" path="res://ui/mobs_killed/mobsKilled.tscn" id="7_v52jn"]
 
 [node name="Test-scene" type="Node2D"]
 
@@ -21,7 +22,9 @@ position = Vector2(257, 261)
 
 [node name="EnemyPool" parent="." instance=ExtResource("4_l0d6b")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_left = -12.0
 offset_top = 591.0
 offset_right = 528.0
@@ -29,11 +32,16 @@ offset_bottom = 703.0
 color = Color(0.10748, 0.10748, 0.10748, 1)
 metadata/_edit_lock_ = true
 
-[node name="Main_ui" parent="." instance=ExtResource("5_l0d6b")]
-offset_left = 249.0
-offset_top = 684.0
-offset_right = 249.0
-offset_bottom = 684.0
-metadata/_edit_lock_ = true
+[node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
+offset_left = 18.0
+offset_top = 33.0
+offset_right = 18.0
+offset_bottom = 33.0
 
-[node name="Botones" parent="." instance=ExtResource("6_fjdny")]
+[node name="Botones" parent="CanvasLayer" instance=ExtResource("6_fjdny")]
+
+[node name="MobsKilled" parent="CanvasLayer" instance=ExtResource("7_v52jn")]
+offset_left = 19.0
+offset_top = 541.0
+offset_right = 19.0
+offset_bottom = 541.0

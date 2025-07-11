@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://autoloads/Global.gd"
+DamageNumbers="*res://autoloads/damageNumbers.gd"
 
 [display]
 
@@ -34,6 +35,7 @@ folder_colors={
 "res://enemies/": "red",
 "res://managers/": "yellow",
 "res://proyectiles/": "green",
+"res://resources/": "purple",
 "res://ui/": "green"
 }
 

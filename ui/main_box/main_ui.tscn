@@ -45,6 +45,8 @@ text = "NIVEL"
 [node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/level/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="exp" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -63,9 +65,11 @@ theme_override_constants/separation = 10
 layout_mode = 2
 text = "Exp"
 
-[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/exp/VBoxContainer"]
+[node name="xp_label" type="Label" parent="BoxContainer/HBoxContainer/exp/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="atk_speed" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -87,6 +91,8 @@ text = "Atk speed"
 [node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_speed/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="atk_dmg" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -108,6 +114,8 @@ text = "Atk dmg"
 [node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_dmg/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="atk_range" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -129,3 +137,5 @@ text = "Atk range"
 [node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_range/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
