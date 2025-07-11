@@ -1,9 +1,10 @@
 extends Node
 
-@onready var enemy_pool: EnemyPool = $EnemyPool
+
+@onready var enemy_pool: EnemyPool = $"../EnemyPool"
 
 @export var spawn_rate := 5.0
-@export var spawn_radius := 50.0
+@export var spawn_radius := 500.0
 
 
 func _ready():

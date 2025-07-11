@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var max_hp:float = 3.0
 var hp:float = 3.0
 var active = false
+var is_dead = false
 
 func _ready():
 	add_to_group("enemigos")
@@ -19,10 +20,11 @@ func _process(delta):
 		move_and_slide()
 
 
-func activate(spawn_position: Vector2):
-	global_position = spawn_position
+func activate(pos: Vector2):
+	global_position = pos
 	hp = max_hp
 	active = true
+	is_dead = false
 	show()
 	set_process(true)
 
@@ -31,13 +33,15 @@ func deactivate():
 	hide()
 	set_process(false)
 
-func take_damage(damage:int):
-	hp -= damage
-	if hp <= 0:
-		die()
+func take_damage(amount):
+	if is_dead:
+		return
 
-func die():
-	Global.enemy_killed.emit()
-	deactivate()
-	   
-		
+	hp -= amount
+	print("enemy took damage: ", amount, " | hp: ", hp)
+
+	if hp <= 0:
+		is_dead = true
+		print("enemy dead, emitting signal")
+		Global.emit_signal("enemy_killed")
+		deactivate()
