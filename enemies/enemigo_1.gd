@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var speed: float = 50.0
 @onready var focal_point: Marker2D = $"../focal_point"
 var life:int = 3
-signal enemy_died
 
 func _ready():
 	add_to_group("enemigos")
