@@ -9,9 +9,10 @@ var pool: Array[Node] = []
 func _ready():
 	for i in pool_size:
 		var enemy = enemy_scene.instantiate()
+		enemy.active = false
+		enemy.is_dead = true # Mark as dead so it doesn't process
 		enemy.hide()
 		enemy.set_process(false)
-		enemy.active = false # custom flag in Enemy.gd
 		add_child(enemy)
 		pool.append(enemy)
 

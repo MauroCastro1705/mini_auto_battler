@@ -23,8 +23,8 @@ func _process(delta):
 func activate(pos: Vector2):
 	global_position = pos
 	hp = max_hp
-	active = true
 	is_dead = false
+	active = true
 	show()
 	set_process(true)
 
@@ -34,14 +34,10 @@ func deactivate():
 	set_process(false)
 
 func take_damage(amount):
-	if is_dead:
+	if not active or is_dead:
 		return
-
 	hp -= amount
-	print("enemy took damage: ", amount, " | hp: ", hp)
-
 	if hp <= 0:
 		is_dead = true
-		print("enemy dead, emitting signal")
 		Global.emit_signal("enemy_killed")
 		deactivate()
