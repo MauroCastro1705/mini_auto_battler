@@ -6,6 +6,7 @@ extends Control
 @onready var atk_range_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_range/VBoxContainer/Label2
 var shots_per_second = 1.0 / Global.attack_speed
 @onready var enemy_label: Label = $BoxContainer/MarginContainer/HBoxContainer/enemy_level/VBoxContainer/Label2
+@onready var money_label: Label = $BoxContainer/MarginContainer/HBoxContainer/player_money/VBoxContainer/Label2
 
 func _ready():
 	Global.stats_updated.connect(update_labels)
@@ -20,3 +21,4 @@ func update_labels() -> void:
 	atk_dmg_label.text = str(Global.bullet_dmg)
 	atk_range_label.text = str(int(round(Global.atk_range)))
 	enemy_label.text = str(Global.enemigo_level)
+	money_label.text = str(Global.player_money," $")

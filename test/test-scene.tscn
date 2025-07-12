@@ -10,6 +10,11 @@
 
 [node name="Test-scene" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 656.0
+offset_bottom = 984.0
+color = Color(0.52, 0.474933, 0.182, 1)
+
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
 position = Vector2(319, 381)
 

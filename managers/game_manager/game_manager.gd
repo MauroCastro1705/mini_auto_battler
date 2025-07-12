@@ -9,6 +9,7 @@ func on_enemy_killed():
 	Global.xp += 1
 	Global.emit_signal("stats_updated")
 	Global.mobs_killed += 1
+	Global.update_scores()
 	if Global.xp >= xp_to_next:
 		level_up()
 
@@ -19,7 +20,7 @@ func level_up():
 	xp_to_next += 5
 	print("level up, nivel = ", Global.level)
 	var base_sps := 1.0 # base shots per second
-	var sps_growth := 0.25 # how much more per level
+	var sps_growth := 0.10 # how much more per level
 
 	var new_shots_per_sec := base_sps + Global.level * sps_growth
 	Global.attack_speed = 1.0 / new_shots_per_sec
