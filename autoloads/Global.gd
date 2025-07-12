@@ -20,3 +20,10 @@ var bullet_speed: float = 400
 #enemigos
 var enemigo_speed:float = 40.0
 var enemigo_max_hp:float = 3.0
+var enemigo_level:int = 1
+
+func upgrade_mob():
+	enemigo_level += 1
+	enemigo_speed += 5.0
+	enemigo_max_hp = 6.0
+	

@@ -2,11 +2,12 @@ extends CharacterBody2D
 # Parámetros de movimiento
 var speed
 var max_hp
-var hp:float = 3.0
+var hp
 var active = false
 var is_dead = false
 @onready var damage_numbers_origin: Node2D = $damage_numbers_origin
 @onready var sprite: ColorRect = $ColorRect
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 #----------------------------
 #COMO MOSTRAR NUMEROS DE DAÑO
@@ -20,11 +21,13 @@ func _ready():
 	add_to_group("enemigos")
 	speed = Global.enemigo_speed
 	max_hp = Global.enemigo_max_hp
+	Global.enemy_killed.connect(check_upgrade_mob)
+	hp = max_hp
+	update_lifebar()
 	
 func _process(_delta):
 	if not active:
 		return
-
 	if Global.player and is_instance_valid(Global.player):
 		var dir = (Global.player.global_position - global_position).normalized()
 		velocity = dir * speed
@@ -32,8 +35,9 @@ func _process(_delta):
 
 
 func activate(pos: Vector2):
+	update_lifebar()
 	global_position = pos
-	hp = max_hp
+	hp = Global.enemigo_max_hp
 	is_dead = false
 	active = true
 	show()
@@ -53,9 +57,20 @@ func take_damage(amount):
 	if not active or is_dead:
 		return
 	hp -= amount
+	update_lifebar()
 	DamageNumbers.display_numbers(amount, damage_numbers_origin.global_position)
 	DamageNumbers.flash_sprite(sprite)
 	if hp <= 0:
 		is_dead = true
 		Global.emit_signal("enemy_killed")
 		deactivate()
+
+func update_lifebar():
+	progress_bar.value = hp
+	progress_bar.max_value = max_hp
+	
+func check_upgrade_mob():
+	if Global.level == 2:
+		sprite.color = Color(0.2,0.2,0.2,1)
+		sprite.scale = Vector2(1.5, 1.5)
+		Global.upgrade_mob()
