@@ -18,5 +18,5 @@ var bullet_speed: float = 400
 
 
 #enemigos
-var enemigo_speed:float = 55.0
+var enemigo_speed:float = 40.0
 var enemigo_max_hp:float = 3.0

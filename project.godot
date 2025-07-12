@@ -21,8 +21,8 @@ DamageNumbers="*res://autoloads/damageNumbers.gd"
 
 [display]
 
-window/size/viewport_width=500
-window/size/viewport_height=700
+window/size/viewport_width=640
+window/size/viewport_height=960
 
 [editor_plugins]
 

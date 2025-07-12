@@ -12,7 +12,7 @@ func _ready():
 
 
 func update_labels() -> void:
-	var shots_per_second = 1.0 / Global.attack_speed
+	var shots_per_seconds = 1.0 / Global.attack_speed
 	level_label.text = str(Global.level)
 	exp_label.text = str(Global.xp)
 	atk_speed_label.text = str("%.1f" % shots_per_second)

@@ -13,18 +13,18 @@ script = ExtResource("1_tuw11")
 
 [node name="atkrange" type="Button" parent="."]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 7.0
-offset_right = 483.0
-offset_bottom = 38.0
+offset_left = 464.0
+offset_top = 15.0
+offset_right = 627.0
+offset_bottom = 46.0
 text = "aumentar atk range"
 
 [node name="atkspeed" type="Button" parent="."]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 53.0
-offset_right = 484.0
-offset_bottom = 84.0
+offset_left = 464.0
+offset_top = 61.0
+offset_right = 628.0
+offset_bottom = 92.0
 text = "aumentar atk speed"
 
 [connection signal="pressed" from="atkrange" to="." method="_on_atkrange_pressed"]

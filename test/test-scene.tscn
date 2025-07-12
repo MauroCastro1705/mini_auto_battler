@@ -11,10 +11,10 @@
 [node name="Test-scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
-position = Vector2(242, 257)
+position = Vector2(319, 381)
 
 [node name="focal_point" type="Marker2D" parent="."]
-position = Vector2(257, 261)
+position = Vector2(334, 385)
 
 [node name="GameManager" parent="." instance=ExtResource("3_ad8ri")]
 
@@ -25,23 +25,22 @@ position = Vector2(257, 261)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -12.0
-offset_top = 591.0
-offset_right = 528.0
-offset_bottom = 703.0
+offset_left = -6.0
+offset_top = 803.0
+offset_right = 645.0
+offset_bottom = 973.0
 color = Color(0.10748, 0.10748, 0.10748, 1)
-metadata/_edit_lock_ = true
 
 [node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
-offset_left = 18.0
-offset_top = 33.0
-offset_right = 18.0
-offset_bottom = 33.0
+offset_left = 104.0
+offset_top = 52.0
+offset_right = 104.0
+offset_bottom = 52.0
 
 [node name="Botones" parent="CanvasLayer" instance=ExtResource("6_fjdny")]
 
 [node name="MobsKilled" parent="CanvasLayer" instance=ExtResource("7_v52jn")]
-offset_left = 19.0
-offset_top = 541.0
-offset_right = 19.0
-offset_bottom = 541.0
+offset_left = 60.0
+offset_top = 753.0
+offset_right = 60.0
+offset_bottom = 753.0

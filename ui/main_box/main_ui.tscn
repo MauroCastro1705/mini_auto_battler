@@ -86,7 +86,8 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="BoxContainer/HBoxContainer/atk_speed/VBoxContainer"]
 layout_mode = 2
-text = "Atk speed"
+text = "Atk per 
+second"
 
 [node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_speed/VBoxContainer"]
 layout_mode = 2
