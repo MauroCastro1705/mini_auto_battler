@@ -14,17 +14,27 @@ script = ExtResource("1_mmnkx")
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.727
+anchor_top = 0.8
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 0.0999451
+offset_left = -2.0
+offset_top = 2.08002
+offset_right = -2.0
+offset_bottom = 1.98004
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="level" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+[node name="level" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/margin_left = 10
@@ -32,110 +42,133 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/level"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/level"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/level/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer"]
 layout_mode = 2
 text = "NIVEL"
 
-[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/level/VBoxContainer"]
+[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="exp" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+[node name="exp" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/exp"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/exp"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/exp/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/exp/VBoxContainer"]
 layout_mode = 2
 text = "Exp"
 
-[node name="xp_label" type="Label" parent="BoxContainer/HBoxContainer/exp/VBoxContainer"]
+[node name="xp_label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/exp/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="atk_speed" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+[node name="atk_speed" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/atk_speed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/atk_speed"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/atk_speed/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_speed/VBoxContainer"]
 layout_mode = 2
 text = "Atk per 
 second"
 
-[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_speed/VBoxContainer"]
+[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_speed/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="atk_dmg" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+[node name="atk_dmg" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/atk_dmg"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/atk_dmg"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/atk_dmg/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_dmg/VBoxContainer"]
 layout_mode = 2
 text = "Atk dmg"
 
-[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_dmg/VBoxContainer"]
+[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_dmg/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="atk_range" type="MarginContainer" parent="BoxContainer/HBoxContainer"]
+[node name="atk_range" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/HBoxContainer/atk_range"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/atk_range"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/HBoxContainer/atk_range/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_range/VBoxContainer"]
 layout_mode = 2
 text = "Atk range"
 
-[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer/atk_range/VBoxContainer"]
+[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_range/VBoxContainer"]
+layout_mode = 2
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="enemy_level" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/enemy_level"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/enemy_level/VBoxContainer"]
+layout_mode = 2
+text = "Enemy Level"
+
+[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/enemy_level/VBoxContainer"]
 layout_mode = 2
 text = "asdas"
 horizontal_alignment = 1

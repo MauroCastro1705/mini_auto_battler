@@ -9,7 +9,7 @@ var player:Node = null
 var xp:int = 0
 var level:int = 1
 var attack_speed := 1.5 # Cooldown in seconds (lower = faster)
-var atk_range:float = 150
+var atk_range:float = 350
 var mobs_killed:int = 0
 
 #BULLET

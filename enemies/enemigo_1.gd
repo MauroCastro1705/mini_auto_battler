@@ -35,19 +35,22 @@ func _process(_delta):
 
 
 func activate(pos: Vector2):
-	update_lifebar()
 	global_position = pos
 	hp = Global.enemigo_max_hp
 	is_dead = false
 	active = true
 	show()
 	set_process(true)
+	update_lifebar()
 
 func deactivate():
+	hp = Global.enemigo_max_hp
+	update_lifebar()
 	active = false
 	is_dead = true
 	hide()
 	set_process(false)
+	
 
 	# Inform player we're out of range (if needed)
 	if Global.player:
@@ -67,7 +70,7 @@ func take_damage(amount):
 
 func update_lifebar():
 	progress_bar.value = hp
-	progress_bar.max_value = max_hp
+	progress_bar.max_value = Global.enemigo_max_hp
 	
 func check_upgrade_mob():
 	if Global.level == 2:
