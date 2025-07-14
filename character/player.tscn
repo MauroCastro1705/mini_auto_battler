@@ -18,8 +18,17 @@ offset_top = -17.0
 offset_right = 17.0
 offset_bottom = 17.0
 color = Color(0.960733, 0.236641, 0.222023, 1)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 7.0
+offset_right = 65.0
+offset_bottom = 26.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_8e4qx")
 
 [node name="atk_timer" type="Timer" parent="."]
@@ -27,6 +36,7 @@ shape = SubResource("CircleShape2D_8e4qx")
 [node name="BulletPool" parent="." instance=ExtResource("2_monf5")]
 
 [node name="enemy_detector" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_detector"]

@@ -28,8 +28,9 @@ var enemigo_score:int = 10
 var enemigo_money:int = 5
 
 func update_scores():
-	player_money = player_money + enemigo_money
-	player_score = player_score + enemigo_score
+	player_money += enemigo_money
+	player_score += enemigo_score
+	print("SCORE:", player_score, "MONEY:", player_money)
 
 func upgrade_mob():
 	enemigo_level = enemigo_level + 1

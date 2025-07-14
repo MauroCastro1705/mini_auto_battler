@@ -18,6 +18,9 @@ func update_global():
 	
 func _process(delta):
 	time_since_shot += delta
+	var target = get_nearest_enemy()
+	if target:
+		look_at(target.global_position) 
 	if time_since_shot >= shoot_cooldown:
 		shoot()
 		time_since_shot = 0.0
