@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://nmrvlp0jipfk"]
+[gd_scene load_steps=5 format=3 uid="uid://nmrvlp0jipfk"]
 
 [ext_resource type="Script" uid="uid://cr5n1wbok54m1" path="res://logros/logro_pop_up.gd" id="1_4qdmu"]
-[ext_resource type="LabelSettings" uid="uid://b6hlj2skjt0gj" path="res://resources/damage_numbers.tres" id="2_pm2s7"]
+[ext_resource type="Texture2D" uid="uid://da58yydbyuoid" path="res://assets/PNG/Grey/Double/button_square_header_small_square_screws.png" id="2_wrxem"]
+[ext_resource type="LabelSettings" uid="uid://5hwwplkbnogs" path="res://titulo_logro.tres" id="3_wrxem"]
+[ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="4_83cml"]
 
 [node name="LogroPopUp" type="Control"]
 process_mode = 3
@@ -28,12 +30,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -7.0
-offset_right = 40.0
-offset_bottom = 43.0
+offset_left = -198.0
+offset_top = -97.0
+offset_right = 185.0
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_wrxem")
+patch_margin_left = 24
+patch_margin_top = 66
+patch_margin_right = 24
+patch_margin_bottom = 24
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
 z_index = 50
@@ -43,24 +50,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -27.0
-offset_right = 20.0
-offset_bottom = 27.0
+offset_left = -97.5
+offset_top = -101.0
+offset_right = 90.5
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
 z_index = 50
 layout_mode = 2
 focus_mode = 1
-theme_override_constants/separation = 15
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="tittle" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
 z_index = 50
 layout_mode = 2
-label_settings = ExtResource("2_pm2s7")
+text = "titutlo nashe"
+label_settings = ExtResource("3_wrxem")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="description" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+text = "descricion sarasa sarasa"
+label_settings = ExtResource("4_83cml")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -68,21 +86,19 @@ vertical_alignment = 1
 z_index = 50
 layout_mode = 2
 
-[node name="description" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
-z_index = 50
-layout_mode = 2
-label_settings = ExtResource("2_pm2s7")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="NinePatchRect"]
 z_index = 55
 layout_mode = 2
+offset_left = 98.0
+offset_top = 122.0
+offset_right = 278.0
+offset_bottom = 153.0
+size_flags_vertical = 4
 text = "Continuar"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
-[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

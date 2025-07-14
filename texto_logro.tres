@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cahn7yy0ri0b8"]
+
+[ext_resource type="FontFile" uid="uid://dn8ejftokh1qc" path="res://assets/fonts/SYNNova-Bold.otf" id="1_buaro"]
+
+[resource]
+font = ExtResource("1_buaro")
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)

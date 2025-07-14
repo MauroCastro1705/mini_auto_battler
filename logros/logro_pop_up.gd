@@ -2,9 +2,7 @@ extends Control
 
 @onready var tittle: Label = $NinePatchRect/MarginContainer/VBoxContainer/tittle
 @onready var icon: TextureRect = $NinePatchRect/MarginContainer/VBoxContainer/icon
-
 @onready var description: Label = $NinePatchRect/MarginContainer/VBoxContainer/description
-@onready var button: Button = $NinePatchRect/MarginContainer/VBoxContainer/Button
 
 const PAUSE_MODE_INHERIT := 0
 const PAUSE_MODE_STOP := 1
@@ -12,7 +10,8 @@ const PAUSE_MODE_PROCESS := 2
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS 
-
+	visible = false
+	
 func show_achievement(title: String, description: String, icon_texture: Texture = null):
 	tittle.text = title
 	self.description.text = description
@@ -27,7 +26,7 @@ func close_popup():
 	
 func _on_button_pressed() -> void:
 	close_popup()
-	print("hice click")
+
 
 
 
