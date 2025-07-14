@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://oeppwgem6t1w"]
 
 [ext_resource type="Script" uid="uid://g1060cslpaq" path="res://enemies/enemigo_1.gd" id="1_dg88b"]
-[ext_resource type="Theme" uid="uid://iw4d18rd20du" path="res://resources/life_bars.tres" id="2_6uey3"]
+[ext_resource type="PackedScene" uid="uid://dds2tk2k5qqxa" path="res://ui/life_bar.tscn" id="3_u8bk3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dg88b"]
 radius = 14.0
@@ -22,12 +22,10 @@ offset_bottom = 11.0
 pivot_offset = Vector2(11, 0)
 
 [node name="damage_numbers_origin" type="Node2D" parent="."]
+position = Vector2(0, -40)
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -22.0
-offset_top = -19.0
-offset_right = 22.0
-offset_bottom = -15.0
-theme = ExtResource("2_6uey3")
-value = 50.0
-show_percentage = false
+[node name="HealthBar" parent="." instance=ExtResource("3_u8bk3")]
+offset_left = -21.0
+offset_top = -30.0
+offset_right = -21.0
+offset_bottom = -30.0

@@ -7,7 +7,7 @@ var active = false
 var is_dead = false
 @onready var damage_numbers_origin: Node2D = $damage_numbers_origin
 @onready var sprite: ColorRect = $ColorRect
-@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var health_bar: Control = $HealthBar
 
 #----------------------------
 #COMO MOSTRAR NUMEROS DE DAÑO
@@ -23,7 +23,7 @@ func _ready():
 	max_hp = Global.enemigo_max_hp
 	Global.enemy_killed.connect(check_upgrade_mob)
 	hp = max_hp
-	update_lifebar()
+	health_bar.set_max_health(hp)
 	
 func _process(_delta):
 	if not active:
@@ -41,11 +41,12 @@ func activate(pos: Vector2):
 	active = true
 	show()
 	set_process(true)
-	update_lifebar()
+	health_bar.set_max_health(hp)
+
 
 func deactivate():
 	hp = Global.enemigo_max_hp
-	update_lifebar()
+	health_bar.set_max_health(hp)
 	active = false
 	is_dead = true
 	hide()
@@ -60,7 +61,8 @@ func take_damage(amount):
 	if not active or is_dead:
 		return
 	hp -= amount
-	update_lifebar()
+	health_bar.update_health(hp)
+
 	DamageNumbers.display_numbers(amount, damage_numbers_origin.global_position)
 	DamageNumbers.flash_sprite(sprite)
 	if hp <= 0:
@@ -68,9 +70,7 @@ func take_damage(amount):
 		Global.emit_signal("enemy_killed")
 		deactivate()
 
-func update_lifebar():
-	progress_bar.value = hp
-	progress_bar.max_value = Global.enemigo_max_hp
+
 	
 func check_upgrade_mob():
 	if Global.level == 2:
