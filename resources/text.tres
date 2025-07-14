@@ -3,5 +3,7 @@
 [ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_1rcxi"]
 
 [resource]
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
 Label/font_sizes/font_size = 15
 Label/fonts/font = ExtResource("1_1rcxi")

@@ -15,14 +15,14 @@ var atk_range:float = 350
 var mobs_killed:int = 0
 
 #BULLET
-var bullet_dmg:int = 1
+var bullet_dmg:int = 8
 var bullet_speed: float = 400
 
 
 
 #enemigos
 var enemigo_speed:float = 40.0
-var enemigo_max_hp:float = 3.0
+var enemigo_max_hp:float = 22.0
 var enemigo_level:int = 1
 var enemigo_score:int = 10
 var enemigo_money:int = 5
@@ -34,6 +34,6 @@ func update_scores():
 func upgrade_mob():
 	enemigo_level = enemigo_level + 1
 	enemigo_speed += 5.0
-	enemigo_max_hp = 6.0
+	enemigo_max_hp = 29.0
 	enemigo_money += 3
 	enemigo_score += 4

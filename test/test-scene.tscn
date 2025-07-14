@@ -13,7 +13,8 @@
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 656.0
 offset_bottom = 984.0
-color = Color(0.351691, 0.231231, 4.81308e-08, 1)
+mouse_filter = 2
+color = Color(0.611765, 0.701961, 0.627451, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
 position = Vector2(319, 381)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://j74g4us3ueir"]
+[gd_scene load_steps=5 format=3 uid="uid://j74g4us3ueir"]
 
 [ext_resource type="Script" uid="uid://co1un7r8owo0p" path="res://ui/mobs_killed/mobs_killed.gd" id="1_pdrxs"]
+[ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="2_mvf4e"]
 [ext_resource type="LabelSettings" uid="uid://b6hlj2skjt0gj" path="res://resources/damage_numbers.tres" id="2_n1edi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_n1edi"]
@@ -24,14 +25,17 @@ offset_left = 159.0
 offset_top = 10.0
 offset_right = 281.0
 offset_bottom = 50.0
+theme = ExtResource("2_mvf4e")
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_mvf4e")
 text = "Enemies Killed:"
 label_settings = ExtResource("2_n1edi")
 
 [node name="mobsKilled" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_mvf4e")
 text = "12"
 label_settings = ExtResource("2_n1edi")
 
@@ -41,13 +45,16 @@ offset_left = 330.0
 offset_top = 10.0
 offset_right = 452.0
 offset_bottom = 50.0
+theme = ExtResource("2_mvf4e")
 
 [node name="Label2" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("2_mvf4e")
 text = "Score:"
 label_settings = SubResource("LabelSettings_n1edi")
 
 [node name="scoreLabel" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("2_mvf4e")
 text = "asdasd"
 label_settings = SubResource("LabelSettings_n1edi")
