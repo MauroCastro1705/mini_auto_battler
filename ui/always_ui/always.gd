@@ -6,6 +6,5 @@ func _ready():
 	update_labels() # Initial display
 	
 func update_labels() -> void:
-	var shots_per_second = 1.0 / Global.attack_speed
 	level_label.text = str(Global.level)
 	money_label.text = str(Global.player_money," $")
