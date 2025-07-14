@@ -7,6 +7,7 @@ signal stats_updated
 var player:Node = null
 var player_score:int = 0
 var player_money:int = 0
+var player_logros:int = 0
 
 var xp:int = 0
 var level:int = 1
@@ -33,8 +34,8 @@ func update_scores():
 	print("SCORE:", player_score, "MONEY:", player_money)
 
 func upgrade_mob():
-	enemigo_level = enemigo_level + 1
+	enemigo_level += 1
 	enemigo_speed += 5.0
-	enemigo_max_hp = 29.0
+	enemigo_max_hp += 12.0
 	enemigo_money += 3
-	enemigo_score += 4
+	enemigo_score += 2

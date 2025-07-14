@@ -26,3 +26,17 @@ func level_up():
 	Global.attack_speed = 1.0 / new_shots_per_sec
 	Global.emit_signal("stats_updated")
 	
+func popup():
+	var popup = preload("res://logros/Logro_popUp.tscn").instantiate()
+	get_tree().root.add_child(popup)
+	popup.show_achievement("Logro desbloqueado", "Mataste 100 enemigos")
+	
+	
+	
+	
+	
+	
+
+
+func _on_timer_timeout() -> void:
+	popup()

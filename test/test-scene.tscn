@@ -30,11 +30,6 @@ position = Vector2(334, 385)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
-offset_left = 1.0
-offset_right = 1.0
-metadata/_edit_lock_ = true
-
 [node name="MobsKilled" parent="CanvasLayer" instance=ExtResource("7_v52jn")]
 offset_left = 7.0
 offset_top = 3.0
@@ -42,3 +37,14 @@ offset_right = 7.0
 offset_bottom = 3.0
 
 [node name="Always" parent="CanvasLayer" instance=ExtResource("8_q134b")]
+
+[node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
+offset_left = 1.0
+offset_right = 1.0
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

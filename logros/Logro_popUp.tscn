@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://nmrvlp0jipfk"]
+
+[ext_resource type="Script" uid="uid://cr5n1wbok54m1" path="res://logros/logro_pop_up.gd" id="1_4qdmu"]
+[ext_resource type="LabelSettings" uid="uid://b6hlj2skjt0gj" path="res://resources/damage_numbers.tres" id="2_pm2s7"]
+
+[node name="LogroPopUp" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 12.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 19)
+script = ExtResource("1_4qdmu")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 50
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 40.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -27.0
+offset_right = 20.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+z_index = 50
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="tittle" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+label_settings = ExtResource("2_pm2s7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icon" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+
+[node name="description" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+label_settings = ExtResource("2_pm2s7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+z_index = 55
+layout_mode = 2
+text = "Continuar"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

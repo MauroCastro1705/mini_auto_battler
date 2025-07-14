@@ -5,11 +5,9 @@ extends Control
 @onready var atk_speed_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_speed/VBoxContainer/Label2
 @onready var atk_dmg_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_dmg/VBoxContainer/Label2
 @onready var atk_range_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_range/VBoxContainer/Label2
-var shots_per_second = 1.0 / Global.attack_speed
 @onready var enemy_label: Label = $BoxContainer/MarginContainer/HBoxContainer/enemy_level/VBoxContainer/Label2
 var start_position = Vector2(0, 940)
-var final_position = Vector2(0, 270)#original 0, 770
-
+var final_position = Vector2(0, 770)#original 0, 770
 
 func _ready():
 	Global.stats_updated.connect(update_labels)
@@ -26,10 +24,11 @@ func update_labels() -> void:
 	enemy_label.text = str(Global.enemigo_level)
 
 func _on_control_mouse_entered() -> void:
-	box_container.global_position = final_position
-	print("moved up")
+	var tween = create_tween()
+	tween.tween_property(box_container, "global_position", final_position, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
 
 
 func _on_control_mouse_exited() -> void:
-	box_container.global_position = start_position
-	print("moved down")
+	var tween = create_tween()
+	tween.tween_property(box_container, "global_position", start_position, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)

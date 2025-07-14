@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://don1dyvu4dkv8"]
 
-[ext_resource type="Script" uid="uid://b1tsougdq3xbs" path="res://ui/main_box/main.gd" id="1_mmnkx"]
+[ext_resource type="Script" uid="uid://b1tsougdq3xbs" path="res://ui/main_box/main__ui.gd" id="1_mmnkx"]
 [ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="2_t765n"]
 
 [node name="Main_ui" type="Control"]
@@ -173,11 +173,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control" type="Control" parent="."]
+z_index = 50
 anchors_preset = 0
 offset_left = 40.0
-offset_top = 392.0
+offset_top = 743.0
 offset_right = 599.0
-offset_bottom = 549.0
+offset_bottom = 974.0
 
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]

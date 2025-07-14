@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 folder_colors={
 "res://character/": "orange",
 "res://enemies/": "red",
+"res://logros/": "pink",
 "res://managers/": "yellow",
 "res://proyectiles/": "green",
 "res://resources/": "purple",
