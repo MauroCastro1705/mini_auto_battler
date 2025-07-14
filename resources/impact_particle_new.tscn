@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs31xaw2a4pni"]
+[gd_scene load_steps=5 format=3 uid="uid://cs31xaw2a4pni"]
 
 [ext_resource type="Texture2D" uid="uid://dhyl6ii7jaik8" path="res://resources/particle_test.png" id="1_07122"]
+
+[sub_resource type="Gradient" id="Gradient_07122"]
+offsets = PackedFloat32Array(0.283951, 0.641975, 0.91358)
+colors = PackedColorArray(1, 1, 1, 1, 0.994092, 0.935051, 0.915558, 1, 0.957657, 0.534529, 0.394831, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_engwa"]
+gradient = SubResource("Gradient_07122")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q5sg7"]
 particle_flag_disable_z = true
@@ -10,6 +17,7 @@ initial_velocity_max = 75.0
 gravity = Vector3(0, 100, 0)
 scale_min = 0.2
 scale_max = 0.5
+color_initial_ramp = SubResource("GradientTexture1D_engwa")
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
 emitting = false
