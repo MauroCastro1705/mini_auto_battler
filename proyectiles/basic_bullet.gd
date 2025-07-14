@@ -33,5 +33,9 @@ func deactivate():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
+		var impact_fx = preload("res://resources/impact_particle_new.tscn").instantiate()
+		get_tree().current_scene.add_child(impact_fx)
+		impact_fx.global_position = global_position
+		impact_fx.emitting = true
 		body.take_damage(damage)
 		deactivate()
