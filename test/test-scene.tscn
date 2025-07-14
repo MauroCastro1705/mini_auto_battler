@@ -5,15 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://veon0exi0utd" path="res://managers/enemy_spawner/enemy_spawner.tscn" id="4_kvgnx"]
 [ext_resource type="PackedScene" uid="uid://bvjn1n354h5vr" path="res://managers/enemy_pool/enemy_pool.tscn" id="4_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://don1dyvu4dkv8" path="res://ui/main_box/main_ui.tscn" id="5_l0d6b"]
-[ext_resource type="PackedScene" uid="uid://h4ossd5u1cw5" path="res://ui/buttons/botones.tscn" id="6_fjdny"]
 [ext_resource type="PackedScene" uid="uid://j74g4us3ueir" path="res://ui/mobs_killed/mobsKilled.tscn" id="7_v52jn"]
+[ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/always_ui/always.tscn" id="8_q134b"]
 
 [node name="Test-scene" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 656.0
 offset_bottom = 984.0
-color = Color(0.52, 0.474933, 0.182, 1)
+color = Color(0.351691, 0.231231, 4.81308e-08, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
 position = Vector2(319, 381)
@@ -29,22 +29,15 @@ position = Vector2(334, 385)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -6.0
-offset_top = 803.0
-offset_right = 645.0
-offset_bottom = 973.0
-color = Color(0.10748, 0.10748, 0.10748, 1)
-
 [node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
 offset_left = 1.0
 offset_right = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Botones" parent="CanvasLayer" instance=ExtResource("6_fjdny")]
-
 [node name="MobsKilled" parent="CanvasLayer" instance=ExtResource("7_v52jn")]
-offset_left = 60.0
-offset_top = 753.0
-offset_right = 60.0
-offset_bottom = 753.0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 7.0
+offset_bottom = 3.0
+
+[node name="Always" parent="CanvasLayer" instance=ExtResource("8_q134b")]
