@@ -52,7 +52,6 @@ func deactivate():
 	hide()
 	set_process(false)
 	
-
 	# Inform player we're out of range (if needed)
 	if Global.player:
 		Global.player.remove_enemy(self)

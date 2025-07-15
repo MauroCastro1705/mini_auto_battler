@@ -1,8 +1,9 @@
 extends Control
 
-@onready var tittle: Label = $NinePatchRect/MarginContainer/VBoxContainer/tittle
-@onready var icon: TextureRect = $NinePatchRect/MarginContainer/VBoxContainer/icon
-@onready var description: Label = $NinePatchRect/MarginContainer/VBoxContainer/description
+
+@onready var tittle: Label = %tittle
+@onready var description: Label = %description
+@onready var icon: TextureRect = %icon
 
 const PAUSE_MODE_INHERIT := 0
 const PAUSE_MODE_STOP := 1
@@ -12,19 +13,20 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS 
 	visible = false
 	
-func show_achievement(title: String, description: String, icon_texture: Texture = null):
+func show_achievement(title: String, descripcion: String, icon_texture: Texture = null):
 	tittle.text = title
-	self.description.text = description
+	self.description.text = descripcion
 	if icon_texture:
 		icon.texture = icon_texture
 	visible = true
 	get_tree().paused = true
 
 func close_popup():
-	visible = false
 	get_tree().paused = false
-	
+	queue_free()
+
 func _on_button_pressed() -> void:
+	print("aprete boton")
 	close_popup()
 
 
@@ -36,5 +38,5 @@ func _on_button_pressed() -> void:
 #popup.show_achievement("Logro desbloqueado", "Mataste 100 enemigos", some_icon)
 
 
-func _on_timer_timeout() -> void:
-	show_achievement("Logro desbloqueado", "Mataste 100 enemigos")
+#func _on_timer_timeout() -> void:
+#	show_achievement("Logro desbloqueado", "Mataste 100 enemigos")

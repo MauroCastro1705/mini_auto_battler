@@ -45,6 +45,11 @@ folder_colors={
 player=""
 enemigos=""
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+theme/default_font_generate_mipmaps=true
+
 [layer_names]
 
 2d_physics/layer_1="player"
