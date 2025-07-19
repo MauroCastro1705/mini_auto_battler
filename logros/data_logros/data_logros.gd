@@ -1,4 +1,4 @@
-extends Resource
+extends Node
 
 var LOGROS = {
 	"kill_5": {
@@ -12,5 +12,5 @@ var LOGROS = {
 	"first_boss": {
 		"title": "¡Jefe vencido!",
 		"description": "Has derrotado al primer jefe del juego."
-	}
+	},
 }

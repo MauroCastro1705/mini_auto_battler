@@ -37,8 +37,7 @@ func check_conditions():
 		show_logro("collect_100_gold")
 
 func show_logro(logro_id: String):
-	var data = load("res://logros/data_logros/data_logros.gd")
-	var logro = data.LOGROS.get(logro_id)
+	var logro = LogrosData.LOGROS.get(logro_id)
 	if logro:
 		var popup_scene = preload("res://logros/Logro_popUp.tscn").instantiate()
 		get_tree().root.add_child(popup_scene)
