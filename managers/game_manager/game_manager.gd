@@ -1,10 +1,11 @@
 extends Node
 
 var xp_to_next = 10
+@onready var logro_pop_up: Control = $"../CanvasLayer/LogroPopUp"
 
 func _ready():
 	Global.enemy_killed.connect(on_enemy_killed)
-
+	logro_pop_up.stop_pause.connect(stop_pause_manager)
 	
 
 func on_enemy_killed():
@@ -39,10 +40,13 @@ func check_conditions():
 func show_logro(logro_id: String):
 	var logro = LogrosData.LOGROS.get(logro_id)
 	if logro:
-		var popup_scene = preload("res://logros/Logro_popUp.tscn").instantiate()
-		get_tree().root.add_child(popup_scene)
-		popup_scene.show_achievement(logro.title, logro.description)
+		logro_pop_up.show_achievement(logro.title, logro.description)
+		logro_pop_up.visible = true
+		get_tree().paused = true
 	else:
 		print("Logro no encontrado:", logro_id)
 
 	
+func stop_pause_manager():
+	get_tree().paused = false
+	logro_pop_up.visible = false

@@ -6,7 +6,7 @@
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="4_83cml"]
 
 [node name="LogroPopUp" type="Control"]
-process_mode = 3
+process_mode = 2
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -22,18 +22,22 @@ grow_vertical = 2
 pivot_offset = Vector2(16, 19)
 script = ExtResource("1_4qdmu")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -524.0
+offset_right = 325.0
+offset_bottom = 518.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.00392157, 0.00392157, 0.00392157, 0.32549)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 z_index = 50
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -51,7 +55,7 @@ patch_margin_top = 66
 patch_margin_right = 24
 patch_margin_bottom = 24
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
 z_index = 50
 layout_mode = 1
 anchors_preset = 8
@@ -68,14 +72,14 @@ grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
 z_index = 50
 layout_mode = 2
 focus_mode = 1
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="tittle" type="Label" parent="CanvasLayer/NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="tittle" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 z_index = 50
 layout_mode = 2
@@ -84,7 +88,7 @@ label_settings = ExtResource("3_wrxem")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="description" type="Label" parent="CanvasLayer/NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="description" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 z_index = 50
 layout_mode = 2
@@ -93,12 +97,12 @@ label_settings = ExtResource("4_83cml")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="icon" type="TextureRect" parent="CanvasLayer/NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="icon" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 z_index = 50
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/NinePatchRect"]
+[node name="Button" type="Button" parent="NinePatchRect"]
 process_mode = 3
 z_index = 55
 layout_mode = 2
@@ -109,4 +113,4 @@ offset_bottom = 153.0
 size_flags_vertical = 4
 text = "Continuar"
 
-[connection signal="pressed" from="CanvasLayer/NinePatchRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]

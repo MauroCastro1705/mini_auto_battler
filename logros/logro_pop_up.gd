@@ -1,17 +1,11 @@
 extends Control
 
-
+signal stop_pause
 @onready var tittle: Label = %tittle
 @onready var description: Label = %description
 @onready var icon: TextureRect = %icon
-@onready var button: Button = $CanvasLayer/NinePatchRect/Button
-
-const PAUSE_MODE_INHERIT := 0
-const PAUSE_MODE_STOP := 1
-const PAUSE_MODE_PROCESS := 2
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS 
 	visible = false
 	
 func show_achievement(title: String, descripcion: String, icon_texture: Texture = null):
@@ -19,13 +13,10 @@ func show_achievement(title: String, descripcion: String, icon_texture: Texture 
 	self.description.text = descripcion
 	if icon_texture:
 		icon.texture = icon_texture
-	visible = true
-	get_tree().paused = true
+
 
 func close_popup():
-	get_tree().paused = false
-	print("queriendo cerrar")
-	call_deferred("queue_free")
+	emit_signal("stop_pause")
 
 func _on_button_pressed() -> void:
 	print("aprete boton")
