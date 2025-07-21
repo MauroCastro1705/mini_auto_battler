@@ -1,9 +1,12 @@
 extends Node
 
+var GameManager
+var logros_obtenidos := {}
+
 var LOGROS = {
-	"kill_5": {
+	"kill_2": {
 		"title": "¡Cazador inicial!",
-		"description": "Has derrotado a 5 enemigos."
+		"description": "Has derrotado a 2 enemigos."
 	},
 	"collect_100_gold": {
 		"title": "Forrado de oro",
@@ -14,3 +17,15 @@ var LOGROS = {
 		"description": "Has derrotado al primer jefe del juego."
 	},
 }
+
+
+
+
+
+func check_conditions():
+	if Global.mobs_killed >= 2 and "kill_2" not in logros_obtenidos:
+		GameManager.show_logro("kill_2")
+		logros_obtenidos["kill_2"] = true
+	elif Global.player_money >= 25 and "collect_100_gold" not in logros_obtenidos:
+		GameManager.show_logro("collect_100_gold")
+		logros_obtenidos["collect_100_gold"] = true

@@ -7,6 +7,7 @@ var logros_obtenidos := {}
 func _ready():
 	Global.enemy_killed.connect(on_enemy_killed)
 	logro_pop_up.stop_pause.connect(stop_pause_manager)
+	LogrosData.GameManager = self
 	
 
 func on_enemy_killed():
@@ -30,15 +31,9 @@ func level_up():
 	Global.emit_signal("stats_updated")
 
 func _process(delta: float) -> void:
-	check_conditions()
+	LogrosData.check_conditions()
 	
-func check_conditions():
-	if Global.mobs_killed >= 2 and "kill_5" not in logros_obtenidos:
-		show_logro("kill_5")
-		logros_obtenidos["kill_5"] = true
-	elif Global.player_money >= 25 and "collect_100_gold" not in logros_obtenidos:
-		show_logro("collect_100_gold")
-		logros_obtenidos["collect_100_gold"] = true
+
 
 
 
