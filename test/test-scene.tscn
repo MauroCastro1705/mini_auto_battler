@@ -45,6 +45,7 @@ offset_right = 1.0
 metadata/_edit_lock_ = true
 
 [node name="LogroPopUp" parent="CanvasLayer" instance=ExtResource("8_jipin")]
+process_mode = 3
 visible = false
 
 [node name="Timer" type="Timer" parent="."]

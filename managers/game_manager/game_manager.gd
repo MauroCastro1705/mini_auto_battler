@@ -2,6 +2,7 @@ extends Node
 
 var xp_to_next = 10
 @onready var logro_pop_up: Control = $"../CanvasLayer/LogroPopUp"
+var logros_obtenidos := {}
 
 func _ready():
 	Global.enemy_killed.connect(on_enemy_killed)
@@ -32,16 +33,20 @@ func _process(delta: float) -> void:
 	check_conditions()
 	
 func check_conditions():
-	if Global.mobs_killed == 2:
+	if Global.mobs_killed >= 2 and "kill_5" not in logros_obtenidos:
 		show_logro("kill_5")
-	elif Global.player_money >= 25:
+		logros_obtenidos["kill_5"] = true
+	elif Global.player_money >= 25 and "collect_100_gold" not in logros_obtenidos:
 		show_logro("collect_100_gold")
+		logros_obtenidos["collect_100_gold"] = true
+
+
 
 func show_logro(logro_id: String):
 	var logro = LogrosData.LOGROS.get(logro_id)
 	if logro:
 		logro_pop_up.show_achievement(logro.title, logro.description)
-		logro_pop_up.visible = true
+		logro_pop_up.show()
 		get_tree().paused = true
 	else:
 		print("Logro no encontrado:", logro_id)
@@ -49,4 +54,4 @@ func show_logro(logro_id: String):
 	
 func stop_pause_manager():
 	get_tree().paused = false
-	logro_pop_up.visible = false
+	logro_pop_up.hide()
