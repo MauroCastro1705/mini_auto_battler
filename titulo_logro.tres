@@ -1,9 +1,9 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://5hwwplkbnogs"]
 
-[ext_resource type="FontFile" uid="uid://dn8ejftokh1qc" path="res://assets/fonts/SYNNova-Bold.otf" id="1_eyjpb"]
+[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_eyjpb"]
 
 [resource]
 font = ExtResource("1_eyjpb")
-font_size = 25
+font_size = 23
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)

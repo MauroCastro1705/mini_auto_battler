@@ -34,7 +34,7 @@ theme_override_constants/margin_bottom = 0
 [node name="ColorRect" type="ColorRect" parent="BoxContainer/MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
-color = Color(0.0936694, 0.0936694, 0.0936694, 1)
+color = Color(0.0470588, 0.0862745, 0.0941176, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer"]
 layout_mode = 2
