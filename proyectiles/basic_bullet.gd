@@ -14,6 +14,7 @@ func _ready():
 func fire(fire_position: Vector2, dir: Vector2):
 	global_position = fire_position
 	direction = dir.normalized()
+	rotation = direction.angle()
 	time_alive = 0.0
 	active = true
 	show()

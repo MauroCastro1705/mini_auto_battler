@@ -7,18 +7,19 @@
 radius = 14.0
 
 [node name="Enemigo1" type="CharacterBody2D" groups=["enemigos"]]
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_dg88b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemigos"]]
+position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_dg88b")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -11.0
-offset_top = -11.0
+offset_top = -22.0
 offset_right = 11.0
-offset_bottom = 11.0
 pivot_offset = Vector2(11, 0)
 
 [node name="damage_numbers_origin" type="Node2D" parent="."]

@@ -6,17 +6,20 @@ var enemies_in_range: Array[Node] = []
 var shoot_cooldown := 0.8
 var time_since_shot := 0.0
 
+var show_range := true
 
 func _ready():
 	Global.player = self
 	Global.stats_updated.connect(update_global)
 	update_global() # Initial call
+	queue_redraw()
 
 func update_global():
 	shoot_cooldown = Global.attack_speed
 	atk_range.shape.radius = Global.atk_range
 	
 func _process(delta):
+	queue_redraw()
 	time_since_shot += delta
 	var target = get_nearest_enemy()
 	if target:
@@ -60,3 +63,8 @@ func _on_enemy_detector_body_entered(body) -> void:
 
 func _on_enemy_detector_body_exited(body) -> void:
 	enemies_in_range.erase(body)
+
+
+func _draw():
+	var radius = atk_range.shape.radius
+	draw_circle(Vector2.ZERO, radius, Color(1, 0, 0, 0.3))  # semi-transparent red

@@ -17,7 +17,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
-position = Vector2(319, 381)
+position = Vector2(334, 385)
 
 [node name="focal_point" type="Marker2D" parent="."]
 position = Vector2(334, 385)

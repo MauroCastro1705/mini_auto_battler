@@ -4,6 +4,7 @@ extends Control
 @onready var tittle: Label = %tittle
 @onready var description: Label = %description
 @onready var icon: TextureRect = %icon
+@onready var button: Button = $CanvasLayer/NinePatchRect/Button
 
 const PAUSE_MODE_INHERIT := 0
 const PAUSE_MODE_STOP := 1
@@ -23,7 +24,8 @@ func show_achievement(title: String, descripcion: String, icon_texture: Texture 
 
 func close_popup():
 	get_tree().paused = false
-	queue_free()
+	print("queriendo cerrar")
+	call_deferred("queue_free")
 
 func _on_button_pressed() -> void:
 	print("aprete boton")

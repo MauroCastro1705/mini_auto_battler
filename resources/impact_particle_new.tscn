@@ -21,7 +21,7 @@ color_initial_ramp = SubResource("GradientTexture1D_engwa")
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
 emitting = false
-amount = 20
+amount = 10
 texture = ExtResource("1_07122")
 lifetime = 0.4
 one_shot = true
