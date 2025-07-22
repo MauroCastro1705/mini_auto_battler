@@ -54,7 +54,6 @@ func shoot():
 		var direction = (target.global_position - global_position).normalized()
 		var bullet = bullet_pool.get_bullet()
 		bullet.fire(global_position, direction)
-		print("shooted")
 
 func _on_enemy_detector_body_entered(body) -> void:
 	if body.is_in_group("enemigos"):

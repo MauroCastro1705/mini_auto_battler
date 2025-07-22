@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/bulletPool/BulletPool.tscn" id="2_monf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aypkh"]
-radius = 19.0
+radius = 48.0104
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_monf5"]
 radius = 145.003

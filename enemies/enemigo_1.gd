@@ -18,9 +18,9 @@ var is_dead = false
 
 
 func _ready():
+	Global.stats_updated.connect(enemy_update_stats)
 	add_to_group("enemigos")
-	speed = Global.enemigo_speed
-	max_hp = Global.enemigo_max_hp
+	enemy_update_stats()
 	hp = max_hp
 	health_bar.set_max_health(hp)
 	
@@ -67,3 +67,9 @@ func take_damage(amount):
 		is_dead = true
 		Global.emit_signal("enemy_killed")
 		deactivate()
+		
+		
+func enemy_update_stats():
+	speed = Global.enemigo_speed
+	max_hp = Global.enemigo_max_hp
+	

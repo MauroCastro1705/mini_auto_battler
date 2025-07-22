@@ -26,7 +26,7 @@ func level_up():
 	print("level up, nivel = ", Global.level)
 	Global.emit_signal("stats_updated")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	LogrosData.check_conditions()
 	
 

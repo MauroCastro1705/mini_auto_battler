@@ -9,6 +9,7 @@ var time_alive := 0.0
 
 func _ready():
 	hide()
+	Global.stats_updated.connect(update_values)
 	
 
 func fire(fire_position: Vector2, dir: Vector2):
@@ -18,7 +19,11 @@ func fire(fire_position: Vector2, dir: Vector2):
 	time_alive = 0.0
 	active = true
 	show()
-
+	
+func update_values():
+	damage = Global.bullet_dmg
+	speed = Global.bullet_speed
+	
 func _process(delta):
 	if not active:
 		return

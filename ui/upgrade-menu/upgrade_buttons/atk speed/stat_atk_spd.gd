@@ -4,10 +4,10 @@ extends BoxContainer
 @onready var precio: Label = %precio
 @onready var stat_level_label: Label = %stat_level
 var stat_comprado:float = 1.0
-var stat_cost:float = 50
+var stat_cost:int = 50
 var base_sps := 1.0 # base shots per second
 var sps_growth := 0.05 # how much more per level
-var stat_level:float = 1
+var stat_level:int = 1
 
 
 func _ready() -> void:
@@ -35,6 +35,6 @@ func upgrade_stat():
 	print("nuevo valor de attack_speed: ", Global.attack_speed)
 	
 func update_price():
-	stat_cost = stat_cost * stat_comprado
+	stat_cost = round(stat_cost * stat_comprado)
 	precio.text = str(stat_cost) + "$"
 	stat_level_label.text = "Level: " + str(stat_level)
