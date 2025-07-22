@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyv48kmk41hyo"]
 
-[ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="1_7chnr"]
-[ext_resource type="Script" uid="uid://cw8w7evrkamml" path="res://ui/upgrade_menu_button/upgrade_menu.gd" id="1_emfjy"]
+[ext_resource type="Script" uid="uid://bb3urt67d5r6b" path="res://ui/upgrade_menu_button/upgrade_store_button.gd" id="1_7dt30"]
+[ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="1_f48jm"]
 
 [node name="Store_button" type="Control"]
 layout_mode = 3
@@ -10,15 +10,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_emfjy")
+script = ExtResource("1_7dt30")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = -58.0
-offset_top = -24.0
-offset_right = 59.0
-offset_bottom = 25.0
-theme = ExtResource("1_7chnr")
+offset_left = 501.0
+offset_top = 26.0
+offset_right = 618.0
+offset_bottom = 75.0
+theme = ExtResource("1_f48jm")
 theme_override_font_sizes/font_size = 33
 text = "Store"
 
