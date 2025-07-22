@@ -7,7 +7,7 @@ var stat_comprado:float = 1.0
 var stat_cost:float = 50
 var base_sps := 1.0 # base shots per second
 var sps_growth := 0.05 # how much more per level
-var stat_level:int = 1
+var stat_level:float = 1
 
 
 func _ready() -> void:

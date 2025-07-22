@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://j74g4us3ueir" path="res://ui/mobs_killed/mobsKilled.tscn" id="7_v52jn"]
 [ext_resource type="PackedScene" uid="uid://nmrvlp0jipfk" path="res://logros/Logro_popUp.tscn" id="8_jipin"]
 [ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/always_ui/always.tscn" id="8_q134b"]
-[ext_resource type="PackedScene" uid="uid://dyv48kmk41hyo" path="res://ui/upgrade_menu_button/upgrade_store_button.tscn" id="9_jipin"]
+[ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://ui/upgrade-menu/upgrade-menu.tscn" id="9_jipin"]
 
 [node name="Test-scene" type="Node2D"]
 
@@ -49,7 +49,8 @@ metadata/_edit_lock_ = true
 process_mode = 3
 visible = false
 
-[node name="Store_button" parent="CanvasLayer" instance=ExtResource("9_jipin")]
+[node name="Upgrade-menu" parent="CanvasLayer" instance=ExtResource("9_jipin")]
+visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

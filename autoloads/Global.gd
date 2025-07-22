@@ -8,7 +8,7 @@ signal stats_updated
 #player vars
 var player:Node = null
 var player_score:int = 0
-var player_money:int = 10000
+var player_money:float = 50
 var player_logros:int = 0
 
 var xp:int = 0
@@ -18,7 +18,7 @@ var atk_range:float = 350
 var mobs_killed:int = 0
 
 #BULLET
-var bullet_dmg:int = 8
+var bullet_dmg:float = 8
 var bullet_speed: float = 400
 
 #enemigos
