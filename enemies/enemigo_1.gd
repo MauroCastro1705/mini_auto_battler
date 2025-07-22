@@ -6,8 +6,8 @@ var hp
 var active = false
 var is_dead = false
 @onready var damage_numbers_origin: Node2D = $damage_numbers_origin
-@onready var sprite: ColorRect = $ColorRect
-@onready var health_bar: Control = $HealthBar
+@onready var sprite = %ship
+@onready var health_bar: Control = %HealthBar
 
 #----------------------------
 #COMO MOSTRAR NUMEROS DE DAÑO
@@ -29,8 +29,10 @@ func _process(_delta):
 		return
 	if Global.player and is_instance_valid(Global.player):
 		var dir = (Global.player.global_position - global_position).normalized()
+		look_at(Global.player.global_position )
 		velocity = dir * speed
 		move_and_slide()
+		health_bar.rotation = 0
 
 
 func activate(pos: Vector2):

@@ -12,49 +12,57 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="MobsKilled" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.2
+anchor_top = 0.01
+anchor_right = 0.58
+anchor_bottom = 0.061
+offset_top = 0.4
+offset_right = -0.200012
+offset_bottom = 0.439995
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pdrxs")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 10.0
-offset_right = 281.0
-offset_bottom = 50.0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 25
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer3"]
+layout_mode = 2
 theme = ExtResource("2_mvf4e")
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 text = "Enemies Killed:"
 label_settings = ExtResource("2_n1edi")
+horizontal_alignment = 1
 
-[node name="mobsKilled" type="Label" parent="HBoxContainer"]
+[node name="mobsKilled" type="Label" parent="HBoxContainer3/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 text = "12"
 label_settings = ExtResource("2_n1edi")
+horizontal_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 330.0
-offset_top = 10.0
-offset_right = 452.0
-offset_bottom = 50.0
+[node name="HBoxContainer2" type="VBoxContainer" parent="HBoxContainer3"]
+layout_mode = 2
 theme = ExtResource("2_mvf4e")
 
-[node name="Label2" type="Label" parent="HBoxContainer2"]
+[node name="Label2" type="Label" parent="HBoxContainer3/HBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 text = "Score:"
 label_settings = SubResource("LabelSettings_n1edi")
+horizontal_alignment = 1
 
-[node name="scoreLabel" type="Label" parent="HBoxContainer2"]
+[node name="scoreLabel" type="Label" parent="HBoxContainer3/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 text = "asdasd"
 label_settings = SubResource("LabelSettings_n1edi")
+horizontal_alignment = 1

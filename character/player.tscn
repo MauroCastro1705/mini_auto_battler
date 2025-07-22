@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfoeue187p1kd"]
+[gd_scene load_steps=6 format=3 uid="uid://cfoeue187p1kd"]
 
 [ext_resource type="Script" uid="uid://ceoyvg1jautwm" path="res://character/player.gd" id="1_2orxn"]
 [ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/bulletPool/BulletPool.tscn" id="2_monf5"]
+[ext_resource type="Texture2D" uid="uid://blbxwv550oj6n" path="res://assets/ships/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Designs - Base/PNGs/Nairan - Battlecruiser - Base.png" id="3_aypkh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aypkh"]
 radius = 48.0104
@@ -12,25 +13,6 @@ radius = 145.003
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_2orxn")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 18.0
-offset_bottom = 17.0
-color = Color(0.960733, 0.236641, 0.222023, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.147059
-anchor_top = -0.043956
-anchor_right = -0.147059
-anchor_bottom = -0.043956
-offset_left = 25.0
-offset_top = 7.0
-offset_right = 65.0
-offset_bottom = 26.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_aypkh")
@@ -46,6 +28,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_detector"]
 shape = SubResource("CircleShape2D_monf5")
 debug_color = Color(0.686657, 0.38346, 0.82136, 0.42)
+
+[node name="Nairan-Battlecruiser-Base" type="Sprite2D" parent="."]
+position = Vector2(-3, 1)
+rotation = 1.5708
+texture = ExtResource("3_aypkh")
 
 [connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
 [connection signal="body_exited" from="enemy_detector" to="." method="_on_enemy_detector_body_exited"]

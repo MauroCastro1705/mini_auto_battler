@@ -1,7 +1,7 @@
 extends Control
 
-@onready var mobs_killed: Label = $HBoxContainer/mobsKilled
-@onready var score_label: Label = $HBoxContainer2/scoreLabel
+@onready var mobs_killed: Label = %mobsKilled
+@onready var score_label: Label = %scoreLabel
 
 
 func _ready():

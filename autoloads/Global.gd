@@ -35,7 +35,6 @@ func _ready() -> void:
 	enemy_killed.connect(update_enemy_kills)
 	
 func update_enemy_kills():
-	print("señal en global recibida")
 	var base_sps := 0.2
 	var sps_growth := 0.5
 	var upgrade_stat = base_sps + log(1 + mobs_killed) * sps_growth
