@@ -1,6 +1,6 @@
 extends Node
 
-var xp_to_next = 10
+
 @onready var logro_pop_up: Control = $"../CanvasLayer/LogroPopUp"
 var logros_obtenidos := {}
 
@@ -15,22 +15,19 @@ func on_enemy_killed():
 	Global.mobs_killed += 1
 	Global.update_scores()
 	Global.emit_signal("stats_updated")
-	if Global.xp >= xp_to_next:
+	if Global.xp >= Global.xp_to_next:
 		level_up()
 
 func level_up():
 	Global.level += 1
 	Global.xp = 0
-	xp_to_next += 5
+	Global.xp_to_next += 5
 	print("level up, nivel = ", Global.level)
 	Global.emit_signal("stats_updated")
 
 func _process(delta: float) -> void:
 	LogrosData.check_conditions()
 	
-
-
-
 
 func show_logro(logro_id: String):
 	var logro = LogrosData.LOGROS.get(logro_id)

@@ -8,11 +8,12 @@ signal stats_updated
 #player vars
 var player:Node = null
 var player_score:int = 0
-var player_money:float = 50
+var player_money:float = 0
 var player_logros:int = 0
 
 var xp:int = 0
 var level:int = 1
+var xp_to_next:int = 10
 var attack_speed := 1.5 # Cooldown in seconds (lower = faster)
 var atk_range:float = 350
 var mobs_killed:int = 0

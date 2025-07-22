@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene load_steps=11 format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="PackedScene" uid="uid://bgwxgv22osxkb" path="res://managers/game_manager/GameManager.tscn" id="3_ad8ri"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://nmrvlp0jipfk" path="res://logros/Logro_popUp.tscn" id="8_jipin"]
 [ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/always_ui/always.tscn" id="8_q134b"]
 [ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://ui/upgrade-menu/upgrade-menu.tscn" id="9_jipin"]
+[ext_resource type="PackedScene" uid="uid://cvuxl5jl1lkpp" path="res://ui/exp_bar/exp_bar.tscn" id="10_3wmdq"]
 
 [node name="Test-scene" type="Node2D"]
 
@@ -33,10 +34,10 @@ position = Vector2(334, 385)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MobsKilled" parent="CanvasLayer" instance=ExtResource("7_v52jn")]
-offset_left = 7.0
-offset_top = 3.0
-offset_right = 7.0
-offset_bottom = 3.0
+offset_left = 35.0
+offset_top = 1.0
+offset_right = 35.0
+offset_bottom = 1.0
 
 [node name="Always" parent="CanvasLayer" instance=ExtResource("8_q134b")]
 
@@ -45,11 +46,16 @@ offset_left = 1.0
 offset_right = 1.0
 metadata/_edit_lock_ = true
 
-[node name="LogroPopUp" parent="CanvasLayer" instance=ExtResource("8_jipin")]
-process_mode = 3
-visible = false
+[node name="ExpBar" parent="CanvasLayer" instance=ExtResource("10_3wmdq")]
+offset_left = 17.0
+offset_top = 98.0
+offset_right = 17.0
+offset_bottom = 98.0
 
 [node name="Upgrade-menu" parent="CanvasLayer" instance=ExtResource("9_jipin")]
+
+[node name="LogroPopUp" parent="CanvasLayer" instance=ExtResource("8_jipin")]
+process_mode = 3
 visible = false
 
 [node name="Timer" type="Timer" parent="."]

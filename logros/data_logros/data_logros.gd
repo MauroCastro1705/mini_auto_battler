@@ -3,6 +3,9 @@ extends Node
 var GameManager
 var logros_obtenidos := {}
 
+func _ready() -> void:
+	logros_obtenidos = {}
+	
 var LOGROS = {
 	"kill_2": {
 		"title": "¡Cazador inicial!",
