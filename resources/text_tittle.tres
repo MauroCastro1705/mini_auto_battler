@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://5ecbv5n03n7k"]
+
+[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_w6kec"]
+
+[resource]
+font = ExtResource("1_w6kec")
+font_size = 29
+outline_size = 15
+outline_color = Color(0.223529, 0.34902, 0.223529, 1)
+shadow_size = 19
+shadow_color = Color(1.97336e-06, 0.440538, 0.381639, 0.913725)

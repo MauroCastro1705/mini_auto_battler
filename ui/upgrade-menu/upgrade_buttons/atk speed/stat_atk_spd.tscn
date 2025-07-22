@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmcrepwr5o15v"]
 
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="1_5b6le"]
-[ext_resource type="Script" uid="uid://d08kieg6no1p0" path="res://ui/upgrade-menu/upgrade_buttons/stat_atk_spd.gd" id="1_t5ktq"]
+[ext_resource type="Script" uid="uid://d08kieg6no1p0" path="res://ui/upgrade-menu/upgrade_buttons/atk speed/stat_atk_spd.gd" id="1_t5ktq"]
 [ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="2_t5ktq"]
 
 [node name="stat_atk_spd" type="BoxContainer"]
