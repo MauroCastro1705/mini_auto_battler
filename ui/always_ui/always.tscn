@@ -6,9 +6,10 @@
 
 [node name="Always" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.273
+anchor_bottom = 0.083
+offset_right = 0.279999
+offset_bottom = 0.319992
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1se4p")
@@ -32,10 +33,10 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 texture = ExtResource("2_gvmxs")
 region_rect = Rect2(-0.0647926, 84.8139, 48.1741, 22.548)
-patch_margin_left = 5
-patch_margin_top = 6
-patch_margin_right = 5
-patch_margin_bottom = 6
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer"]
 layout_mode = 2

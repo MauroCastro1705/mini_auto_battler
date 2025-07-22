@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://da58yydbyuoid" path="res://assets/PNG/Grey/Double/button_square_header_small_square_screws.png" id="2_wrxem"]
 [ext_resource type="LabelSettings" uid="uid://5hwwplkbnogs" path="res://titulo_logro.tres" id="3_wrxem"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="4_83cml"]
-[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="5_6xljk"]
+[ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="5_tkdba"]
 [ext_resource type="FontFile" uid="uid://cuy7qpdnrvxsi" path="res://assets/fonts/SUPER-VCR_MONO.ttf" id="6_tkdba"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tkdba"]
@@ -120,11 +120,7 @@ offset_top = 122.0
 offset_right = 278.0
 offset_bottom = 153.0
 size_flags_vertical = 4
-theme_override_constants/outline_size = 3
-theme_override_constants/h_separation = 0
-theme_override_constants/icon_max_width = 0
-theme_override_fonts/font = ExtResource("5_6xljk")
-theme_override_font_sizes/font_size = 22
+theme = ExtResource("5_tkdba")
 text = "Continuar"
 
 [node name="Label" type="Label" parent="."]

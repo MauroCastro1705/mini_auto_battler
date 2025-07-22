@@ -1,5 +1,6 @@
 extends Node
 
+@onready var upgrade_menu: Node2D = $"../CanvasLayer/Upgrade-menu"
 
 @onready var logro_pop_up: Control = $"../CanvasLayer/LogroPopUp"
 var logros_obtenidos := {}
@@ -8,7 +9,7 @@ func _ready():
 	Global.enemy_killed.connect(on_enemy_killed)
 	logro_pop_up.stop_pause.connect(stop_pause_manager)
 	LogrosData.GameManager = self
-	
+	upgrade_menu.visible = true
 
 func on_enemy_killed():
 	Global.xp += 1

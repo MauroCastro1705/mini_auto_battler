@@ -21,7 +21,6 @@ func _ready():
 	add_to_group("enemigos")
 	speed = Global.enemigo_speed
 	max_hp = Global.enemigo_max_hp
-	Global.enemy_killed.connect(check_upgrade_mob)
 	hp = max_hp
 	health_bar.set_max_health(hp)
 	
@@ -68,11 +67,3 @@ func take_damage(amount):
 		is_dead = true
 		Global.emit_signal("enemy_killed")
 		deactivate()
-
-
-	
-func check_upgrade_mob():
-	if Global.level == 2:
-		sprite.color = Color(0.2,0.2,0.2,1)
-		sprite.scale = Vector2(1.5, 1.5)
-		Global.upgrade_mob()

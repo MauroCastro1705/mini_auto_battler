@@ -41,11 +41,3 @@ func update_scores():
 	player_money += enemigo_money
 	player_score += enemigo_score
 	print("SCORE: ", player_score, "  MONEY: ", player_money)
-
-
-func upgrade_mob():
-	enemigo_level += 1
-	enemigo_speed += 5.0
-	enemigo_max_hp += 12.0
-	enemigo_money += 3
-	enemigo_score += 2

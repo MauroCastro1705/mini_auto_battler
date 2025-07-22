@@ -67,4 +67,10 @@ func _on_enemy_detector_body_exited(body) -> void:
 
 func _draw():
 	var radius = atk_range.shape.radius
-	draw_circle(Vector2.ZERO, radius, Color(1, 0, 0, 0.3))  # semi-transparent red
+	var color = Color(0, 0, 1, 0.3)
+	var thickness = 2.0  # Thickness of the outline
+	var angle_from = 0
+	var angle_to = TAU  # Full circle (2 * PI)
+	var point_count = 64  # More points = smoother circle
+
+	draw_arc(Vector2.ZERO, radius, angle_from, angle_to, point_count, color, thickness)
