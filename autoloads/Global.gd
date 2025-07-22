@@ -45,7 +45,6 @@ func update_enemy_kills():
 	enemigo_money = round(enemigo_money + upgrade_stat ) 
 	print("enemigo_max_hp ", enemigo_max_hp )
 	print("enemigo_score  ", enemigo_score )
-	print("enemigo speed ", enemigo_speed )
 	print("enemigo_money ", enemigo_money )
 	
 

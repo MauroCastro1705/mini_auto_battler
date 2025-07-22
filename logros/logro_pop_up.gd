@@ -19,7 +19,6 @@ func close_popup():
 	emit_signal("stop_pause")
 
 func _on_button_pressed() -> void:
-	print("aprete boton")
 	close_popup()
 
 
