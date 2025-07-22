@@ -40,6 +40,13 @@ text = "stat title"
 label_settings = ExtResource("1_5b6le")
 horizontal_alignment = 1
 
+[node name="stat_level" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "stat level"
+label_settings = ExtResource("1_5b6le")
+horizontal_alignment = 1
+
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 

@@ -21,13 +21,8 @@ func on_enemy_killed():
 func level_up():
 	Global.level += 1
 	Global.xp = 0
-	
 	xp_to_next += 5
 	print("level up, nivel = ", Global.level)
-	var base_sps := 1.0 # base shots per second
-	var sps_growth := 0.05 # how much more per level
-	var new_shots_per_sec := base_sps * sps_growth
-	Global.attack_speed = 1.0 / new_shots_per_sec
 	Global.emit_signal("stats_updated")
 
 func _process(delta: float) -> void:

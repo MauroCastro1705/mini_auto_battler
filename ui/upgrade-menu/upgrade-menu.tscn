@@ -1,51 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cg4kuqvhon4ns"]
+[gd_scene load_steps=3 format=3 uid="uid://cg4kuqvhon4ns"]
 
 [ext_resource type="Script" uid="uid://bsxhggvts1ck7" path="res://ui/upgrade-menu/upgrade_menu.gd" id="1_bk28g"]
-[ext_resource type="Texture2D" uid="uid://diiti2huiftxs" path="res://assets/bullets/All_Fire_Bullet_Pixel_16x16_00.png" id="1_m7pm0"]
-[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_r63c2"]
-[ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="3_6ilka"]
 [ext_resource type="PackedScene" uid="uid://dmcrepwr5o15v" path="res://ui/upgrade-menu/upgrade_buttons/stat_atk_spd.tscn" id="5_1iani"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h625u"]
-atlas = ExtResource("1_m7pm0")
-region = Rect2(257, 113, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r63c2"]
-atlas = ExtResource("1_m7pm0")
-region = Rect2(273, 113, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ilka"]
-atlas = ExtResource("1_m7pm0")
-region = Rect2(289, 113, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1iani"]
-atlas = ExtResource("1_m7pm0")
-region = Rect2(305, 113, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bk28g"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h625u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r63c2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ilka")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1iani")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
-
-[sub_resource type="LabelSettings" id="LabelSettings_1iani"]
-font = ExtResource("2_r63c2")
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Upgrade-menu" type="Node2D"]
 script = ExtResource("1_bk28g")
@@ -96,53 +52,6 @@ alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
 text = "Attack Upgrades"
-
-[node name="upgrade" type="Panel" parent="."]
-offset_left = 122.0
-offset_top = 611.0
-offset_right = 122.0
-offset_bottom = 611.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="upgrade"]
-position = Vector2(49, -15)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_bk28g")
-autoplay = "default"
-frame_progress = 0.803566
-
-[node name="MarginContainer" type="MarginContainer" parent="upgrade"]
-layout_mode = 2
-anchor_right = 0.99
-anchor_bottom = 0.986
-offset_left = 2.0
-offset_right = 95.0
-offset_bottom = 71.0
-size_flags_vertical = 3
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="upgrade/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/separation = 5
-
-[node name="Label" type="Label" parent="upgrade/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 2
-text = "disparo mistico"
-label_settings = SubResource("LabelSettings_1iani")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Button" type="Button" parent="upgrade/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("3_6ilka")
-theme_override_fonts/font = ExtResource("2_r63c2")
-text = "Buy!"
 
 [node name="upgrade-ui-holder" type="HBoxContainer" parent="."]
 anchors_preset = 14
