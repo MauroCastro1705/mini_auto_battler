@@ -1,0 +1,156 @@
+[gd_scene load_steps=12 format=3 uid="uid://coj7sp71b7lbc"]
+
+[ext_resource type="Script" uid="uid://lewrf6djsxmn" path="res://ui/upgrade-menu/generic_shop_button/generic_button.gd" id="1_m1at4"]
+[ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="2_amugd"]
+[ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="3_eosjl"]
+[ext_resource type="Texture2D" uid="uid://diiti2huiftxs" path="res://assets/bullets/All_Fire_Bullet_Pixel_16x16_00.png" id="3_ory34"]
+[ext_resource type="LabelSettings" uid="uid://5ecbv5n03n7k" path="res://resources/text_tittle.tres" id="5_7hmjs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hmjs"]
+atlas = ExtResource("3_ory34")
+region = Rect2(0, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4a5i"]
+atlas = ExtResource("3_ory34")
+region = Rect2(16, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa1fd"]
+atlas = ExtResource("3_ory34")
+region = Rect2(32, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svxwd"]
+atlas = ExtResource("3_ory34")
+region = Rect2(48, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udov7"]
+atlas = ExtResource("3_ory34")
+region = Rect2(64, 272, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vc8jk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hmjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4a5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa1fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svxwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udov7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="generic_button" type="BoxContainer"]
+anchors_preset = -1
+anchor_right = 0.027
+anchor_bottom = 0.015
+offset_right = -17.28
+offset_bottom = -14.4
+script = ExtResource("1_m1at4")
+tittle = "cacaconcaca"
+value = 32
+skill_level = "5"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+color = Color(0.533333, 0.435294, 0.407843, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="stat_title" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "stat title"
+label_settings = ExtResource("2_amugd")
+horizontal_alignment = 1
+
+[node name="stat_level" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "stat level"
+label_settings = ExtResource("2_amugd")
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 10
+
+[node name="sprite" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+position = Vector2(57, 28)
+scale = Vector2(3.75, 3.75)
+sprite_frames = SubResource("SpriteFrames_vc8jk")
+autoplay = "default"
+frame_progress = 0.761237
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="precio" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100$"
+label_settings = ExtResource("2_amugd")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_eosjl")
+text = "Buy!"
+
+[node name="vendido" type="ColorRect" parent="MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+color = Color(0.101961, 0.101961, 0.101961, 0.807843)
+
+[node name="Label" type="Label" parent="MarginContainer/vendido"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 136.0
+offset_right = 154.0
+offset_bottom = 162.0
+rotation = -0.736324
+text = "Sold out!"
+label_settings = ExtResource("5_7hmjs")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

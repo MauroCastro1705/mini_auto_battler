@@ -36,13 +36,11 @@ func get_nearest_enemy() -> Node:
 	enemies_in_range = enemies_in_range.filter(func(enemy):
 		return is_instance_valid(enemy) and enemy.active
 	)
-
 	for enemy in enemies_in_range:
 		var dist = global_position.distance_squared_to(enemy.global_position)
 		if dist < min_dist:
 			min_dist = dist
 			nearest = enemy
-
 	return nearest
 
 func remove_enemy(enemy: Node):

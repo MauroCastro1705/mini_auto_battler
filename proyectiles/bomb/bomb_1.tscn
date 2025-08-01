@@ -1,0 +1,154 @@
+[gd_scene load_steps=18 format=3 uid="uid://b631jjvhgsbol"]
+
+[ext_resource type="Script" uid="uid://bqjbqf1nm4y8u" path="res://proyectiles/bomb/bomb_1.gd" id="1_2ydn0"]
+[ext_resource type="Texture2D" uid="uid://dy470e2tip1od" path="res://assets/bullets/efectos-magicos/03.png" id="2_438kd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_438kd"]
+radius = 12.2066
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ydn0"]
+radius = 56.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivrvo"]
+atlas = ExtResource("2_438kd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1noos"]
+atlas = ExtResource("2_438kd")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14mo0"]
+atlas = ExtResource("2_438kd")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy3rs"]
+atlas = ExtResource("2_438kd")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3hlm"]
+atlas = ExtResource("2_438kd")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtl6y"]
+atlas = ExtResource("2_438kd")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4yi7"]
+atlas = ExtResource("2_438kd")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcpwm"]
+atlas = ExtResource("2_438kd")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6yyf"]
+atlas = ExtResource("2_438kd")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxsor"]
+atlas = ExtResource("2_438kd")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3txnq"]
+atlas = ExtResource("2_438kd")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpbrm"]
+atlas = ExtResource("2_438kd")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_02u5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivrvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1noos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14mo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy3rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3hlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtl6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4yi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcpwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6yyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxsor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3txnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpbrm")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 12.0
+}]
+
+[node name="Bomb1" type="CharacterBody2D"]
+script = ExtResource("1_2ydn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_438kd")
+
+[node name="explosion_area" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explosion_area"]
+shape = SubResource("CircleShape2D_2ydn0")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Node"]
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 45.0
+color = Color(0.216889, 0.660703, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Node"]
+offset_left = -45.0
+offset_right = -5.0
+offset_bottom = 1.0
+color = Color(0.216889, 0.660703, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Node"]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 39.0
+offset_bottom = -4.0
+rotation = -1.5708
+color = Color(0.216889, 0.660703, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Node"]
+offset_top = 44.0
+offset_right = 40.0
+offset_bottom = 45.0
+rotation = -1.5708
+color = Color(0.216889, 0.660703, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.21875, 1.21875)
+sprite_frames = SubResource("SpriteFrames_02u5d")
+animation = &"explosion"
+frame = 11
+frame_progress = 0.383243
+
+[connection signal="body_entered" from="explosion_area" to="." method="_on_explosion_area_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

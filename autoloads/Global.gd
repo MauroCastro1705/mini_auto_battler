@@ -10,6 +10,7 @@ var player:Node = null
 var player_score:int = 0
 var player_money:int = 100
 var player_logros:int = 0
+var player_bombs:int = 3
 
 var xp:int = 0
 var level:int = 1
