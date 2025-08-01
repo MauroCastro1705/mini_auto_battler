@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene load_steps=16 format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="Texture2D" uid="uid://bh2hl5owsoik4" path="res://assets/Planets/planet03.png" id="1_b3u66"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/always_ui/always.tscn" id="8_q134b"]
 [ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://ui/upgrade-menu/upgrade-menu.tscn" id="9_jipin"]
 [ext_resource type="PackedScene" uid="uid://cvuxl5jl1lkpp" path="res://ui/exp_bar/exp_bar.tscn" id="10_3wmdq"]
+[ext_resource type="PackedScene" uid="uid://3dje4lvy4x3p" path="res://ui/bomb_ui/bombs.tscn" id="13_6p2hi"]
 [ext_resource type="PackedScene" uid="uid://b631jjvhgsbol" path="res://proyectiles/bomb/bomb_1.tscn" id="13_ehe6g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehe6g"]
@@ -42,6 +43,7 @@ offset_right = 656.0
 offset_bottom = 984.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ehe6g")
@@ -49,6 +51,7 @@ offset_right = 656.0
 offset_bottom = 984.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(337, 465)
@@ -89,6 +92,7 @@ offset_bottom = -88.92
 visible = false
 
 [node name="Always" parent="CanvasLayer" instance=ExtResource("8_q134b")]
+metadata/_edit_lock_ = true
 
 [node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
 offset_left = 1.0
@@ -98,6 +102,13 @@ metadata/_edit_lock_ = true
 [node name="LogroPopUp" parent="CanvasLayer" instance=ExtResource("8_jipin")]
 process_mode = 3
 visible = false
+
+[node name="Bombs" parent="CanvasLayer" instance=ExtResource("13_6p2hi")]
+offset_left = 19.0
+offset_top = 79.0
+offset_right = 18.88
+offset_bottom = 79.0
+metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

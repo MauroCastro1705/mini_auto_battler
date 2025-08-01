@@ -31,6 +31,7 @@ func explode():
 	sprite.show()
 	sprite.play("explosion")
 	Global.player_bombs -= 1
+	Global.emit_signal("bomb_droped")
 
 	# Apply damage to enemies in area
 	var bodies = $explosion_area.get_overlapping_bodies()

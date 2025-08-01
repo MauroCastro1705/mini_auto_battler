@@ -2,7 +2,7 @@ extends Node
 
 signal enemy_killed
 signal stats_updated
-
+signal bomb_droped
 
 
 #player vars

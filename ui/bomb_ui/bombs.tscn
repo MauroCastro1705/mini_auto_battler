@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://3dje4lvy4x3p"]
+
+[ext_resource type="Script" uid="uid://l3tees00tjuj" path="res://ui/bomb_ui/bombs_UI.gd" id="1_ww53d"]
+[ext_resource type="Texture2D" uid="uid://revjaw4idqp1" path="res://assets/bullets/ui pixel/All.png" id="2_kxjir"]
+[ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="3_gnx5q"]
+[ext_resource type="Texture2D" uid="uid://sx7mg5pi7uvq" path="res://assets/ui/bomb_icon.png" id="4_gnx5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnx5q"]
+
+[node name="Bombs" type="Control"]
+layout_mode = 3
+anchor_right = 0.158
+anchor_bottom = 0.098
+offset_right = -0.120003
+offset_bottom = -0.0800018
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ww53d")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.089
+anchor_right = 0.822
+anchor_bottom = 0.628
+offset_left = -0.0109997
+offset_right = -0.0220032
+offset_bottom = -0.0320015
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="ColorRect" type="NinePatchRect" parent="BoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_kxjir")
+region_rect = Rect2(63.7637, 85.0508, 48.4719, 21.7629)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="level" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/level"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_gnx5q")
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_gnx5q")
+text = "Bombs"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="bomb_amount" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_gnx5q")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gnx5q")
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer/Panel"]
+position = Vector2(13, 11)
+scale = Vector2(0.056, 0.056)
+texture = ExtResource("4_gnx5q")
