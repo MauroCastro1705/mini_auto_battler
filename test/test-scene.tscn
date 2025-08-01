@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene load_steps=15 format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="Texture2D" uid="uid://bh2hl5owsoik4" path="res://assets/Planets/planet03.png" id="1_b3u66"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/always_ui/always.tscn" id="8_q134b"]
 [ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://ui/upgrade-menu/upgrade-menu.tscn" id="9_jipin"]
 [ext_resource type="PackedScene" uid="uid://cvuxl5jl1lkpp" path="res://ui/exp_bar/exp_bar.tscn" id="10_3wmdq"]
+[ext_resource type="PackedScene" uid="uid://b631jjvhgsbol" path="res://proyectiles/bomb/bomb_1.tscn" id="13_ehe6g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehe6g"]
 shader = ExtResource("1_s3pen")
@@ -101,5 +102,8 @@ visible = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Bomb1" parent="." instance=ExtResource("13_ehe6g")]
+position = Vector2(270, 296)
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

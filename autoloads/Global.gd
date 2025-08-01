@@ -10,7 +10,9 @@ var player:Node = null
 var player_score:int = 0
 var player_money:int = 100
 var player_logros:int = 0
-var player_bombs:int = 3
+var player_bombs:int = 300
+var player_bomb_dmg:int = 20
+var player_bomb_size:= Vector2(1.25, 1.25)
 
 var xp:int = 0
 var level:int = 1

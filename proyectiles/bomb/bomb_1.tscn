@@ -7,7 +7,7 @@
 radius = 12.2066
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ydn0"]
-radius = 56.0
+radius = 34.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivrvo"]
 atlas = ExtResource("2_438kd")
@@ -102,53 +102,58 @@ animations = [{
 }]
 
 [node name="Bomb1" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_2ydn0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+light_mask = 0
+visibility_layer = 0
 shape = SubResource("CircleShape2D_438kd")
 
 [node name="explosion_area" type="Area2D" parent="."]
-visible = false
+light_mask = 0
+visibility_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explosion_area"]
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_2ydn0")
-
-[node name="Node" type="Node" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Node"]
-offset_left = 5.0
-offset_top = -1.0
-offset_right = 45.0
-color = Color(0.216889, 0.660703, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Node"]
-offset_left = -45.0
-offset_right = -5.0
-offset_bottom = 1.0
-color = Color(0.216889, 0.660703, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Node"]
-offset_left = -1.0
-offset_top = -5.0
-offset_right = 39.0
-offset_bottom = -4.0
-rotation = -1.5708
-color = Color(0.216889, 0.660703, 0, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Node"]
-offset_top = 44.0
-offset_right = 40.0
-offset_bottom = 45.0
-rotation = -1.5708
-color = Color(0.216889, 0.660703, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.21875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_02u5d")
 animation = &"explosion"
 frame = 11
-frame_progress = 0.383243
+frame_progress = 1.0
 
-[connection signal="body_entered" from="explosion_area" to="." method="_on_explosion_area_body_entered"]
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 671.0
+offset_bottom = 2.0
+color = Color(0.216889, 0.660703, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -494.0
+offset_top = -1.0
+offset_right = -5.0
+offset_bottom = 2.0
+color = Color(0.216889, 0.660703, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 1085.0
+offset_bottom = -2.0
+rotation = -1.5708
+color = Color(0.216889, 0.660703, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = 1006.0
+offset_right = 1001.0
+offset_bottom = 1009.0
+rotation = -1.5708
+color = Color(0.216889, 0.660703, 0, 1)
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
