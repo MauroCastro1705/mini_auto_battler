@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cg4kuqvhon4ns"]
+[gd_scene load_steps=9 format=3 uid="uid://cg4kuqvhon4ns"]
 
 [ext_resource type="Script" uid="uid://bsxhggvts1ck7" path="res://ui/upgrade-menu/upgrade_menu.gd" id="1_bk28g"]
 [ext_resource type="LabelSettings" uid="uid://5ecbv5n03n7k" path="res://resources/text_tittle.tres" id="2_bk28g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dmcrepwr5o15v" path="res://ui/upgrade-menu/upgrade_buttons/atk speed/stat_atk_spd.tscn" id="5_1iani"]
 [ext_resource type="PackedScene" uid="uid://cpkwi4ha6r1b6" path="res://ui/upgrade-menu/upgrade_buttons/bullet speed/stat_bullet_spd.tscn" id="5_bk28g"]
 [ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="7_p1gsx"]
+[ext_resource type="PackedScene" uid="uid://coj7sp71b7lbc" path="res://ui/upgrade-menu/generic_shop_button/generic_button.tscn" id="8_1t0f5"]
 
 [node name="Upgrade-menu" type="Node2D"]
 script = ExtResource("1_bk28g")
@@ -39,9 +40,9 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 209.5
-offset_top = 167.0
+offset_top = 132.0
 offset_right = 430.5
-offset_bottom = 193.0
+offset_bottom = 158.0
 grow_horizontal = 2
 theme_override_constants/separation = 12
 alignment = 1
@@ -53,10 +54,12 @@ label_settings = ExtResource("2_bk28g")
 
 [node name="upgrade-ui-holder" type="HBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 213.0
-offset_right = 610.0
-offset_bottom = 388.0
+offset_left = 5.0
+offset_top = 188.0
+offset_right = 635.0
+offset_bottom = 363.0
+theme_override_constants/separation = 10
+alignment = 1
 
 [node name="stat_atk_spd" parent="Control/upgrade-ui-holder" instance=ExtResource("5_1iani")]
 layout_mode = 2
@@ -78,9 +81,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 176.0
-offset_top = 408.0
+offset_top = 398.0
 offset_right = 414.0
-offset_bottom = 442.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -99,6 +102,42 @@ offset_right = 614.0
 offset_bottom = 72.0
 theme = ExtResource("7_p1gsx")
 text = "Return"
+
+[node name="upgrade skills-ui-holder" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 446.0
+offset_right = 610.0
+offset_bottom = 663.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="generic_button" parent="Control/upgrade skills-ui-holder" instance=ExtResource("8_1t0f5")]
+layout_mode = 2
+
+[node name="generic_button2" parent="Control/upgrade skills-ui-holder" instance=ExtResource("8_1t0f5")]
+layout_mode = 2
+
+[node name="generic_button3" parent="Control/upgrade skills-ui-holder" instance=ExtResource("8_1t0f5")]
+layout_mode = 2
+
+[node name="upgrade skills-ui-holder2" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 682.0
+offset_right = 610.0
+offset_bottom = 899.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="generic_button" parent="Control/upgrade skills-ui-holder2" instance=ExtResource("8_1t0f5")]
+layout_mode = 2
+
+[node name="generic_button2" parent="Control/upgrade skills-ui-holder2" instance=ExtResource("8_1t0f5")]
+layout_mode = 2
+
+[node name="generic_button3" parent="Control/upgrade skills-ui-holder2" instance=ExtResource("8_1t0f5")]
+layout_mode = 2
 
 [node name="store" type="Button" parent="."]
 visible = false

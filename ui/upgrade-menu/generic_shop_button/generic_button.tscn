@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://coj7sp71b7lbc"]
+[gd_scene load_steps=13 format=3 uid="uid://coj7sp71b7lbc"]
 
 [ext_resource type="Script" uid="uid://lewrf6djsxmn" path="res://ui/upgrade-menu/generic_shop_button/generic_button.gd" id="1_m1at4"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="2_amugd"]
 [ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="3_eosjl"]
 [ext_resource type="Texture2D" uid="uid://diiti2huiftxs" path="res://assets/bullets/All_Fire_Bullet_Pixel_16x16_00.png" id="3_ory34"]
-[ext_resource type="LabelSettings" uid="uid://5ecbv5n03n7k" path="res://resources/text_tittle.tres" id="5_7hmjs"]
+[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="5_7hmjs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hmjs"]
 atlas = ExtResource("3_ory34")
@@ -49,6 +49,15 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_f4a5i"]
+font = ExtResource("5_7hmjs")
+font_size = 29
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 25
+shadow_color = Color(0.62, 0, 0.0103332, 1)
+shadow_offset = Vector2(0, 0)
+
 [node name="generic_button" type="BoxContainer"]
 anchors_preset = -1
 anchor_right = 0.027
@@ -70,7 +79,7 @@ theme_override_constants/margin_bottom = 2
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-color = Color(0.533333, 0.435294, 0.407843, 1)
+color = Color(0.298039, 0.298039, 0.298039, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -89,14 +98,14 @@ theme_override_constants/separation = 8
 [node name="stat_title" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "stat title"
+text = "cacaconcaca"
 label_settings = ExtResource("2_amugd")
 horizontal_alignment = 1
 
 [node name="stat_level" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "stat level"
+text = "Level: 5"
 label_settings = ExtResource("2_amugd")
 horizontal_alignment = 1
 
@@ -128,7 +137,7 @@ theme_override_constants/margin_bottom = 5
 [node name="precio" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "100$"
+text = "32$"
 label_settings = ExtResource("2_amugd")
 horizontal_alignment = 1
 
@@ -145,12 +154,12 @@ color = Color(0.101961, 0.101961, 0.101961, 0.807843)
 
 [node name="Label" type="Label" parent="MarginContainer/vendido"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 136.0
-offset_right = 154.0
-offset_bottom = 162.0
+offset_left = 12.0
+offset_top = 141.0
+offset_right = 165.0
+offset_bottom = 167.0
 rotation = -0.736324
 text = "Sold out!"
-label_settings = ExtResource("5_7hmjs")
+label_settings = SubResource("LabelSettings_f4a5i")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
