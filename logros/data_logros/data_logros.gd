@@ -11,9 +11,9 @@ var LOGROS = {
 		"title": "¡Cazador inicial!",
 		"description": "Has derrotado a 2 enemigos."
 	},
-	"collect_100_gold": {
-		"title": "Forrado de oro",
-		"description": "Has recolectado 100 monedas."
+	"collect_150_gold": {
+		"title": "Forrado en oro",
+		"description": "Has recolectado 150 monedas."
 	},
 	"first_boss": {
 		"title": "¡Jefe vencido!",
@@ -29,6 +29,6 @@ func check_conditions():
 	if Global.mobs_killed >= 2 and "kill_2" not in logros_obtenidos:
 		GameManager.show_logro("kill_2")
 		logros_obtenidos["kill_2"] = true
-	elif Global.player_money >= 25 and "collect_100_gold" not in logros_obtenidos:
-		GameManager.show_logro("collect_100_gold")
-		logros_obtenidos["collect_100_gold"] = true
+	elif Global.player_money >= 150 and "collect_150_gold" not in logros_obtenidos:
+		GameManager.show_logro("collect_150_gold")
+		logros_obtenidos["collect_150_gold"] = true
