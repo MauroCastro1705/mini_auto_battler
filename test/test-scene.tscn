@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene load_steps=17 format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="Texture2D" uid="uid://bh2hl5owsoik4" path="res://assets/Planets/planet03.png" id="1_b3u66"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cvuxl5jl1lkpp" path="res://ui/exp_bar/exp_bar.tscn" id="10_3wmdq"]
 [ext_resource type="PackedScene" uid="uid://3dje4lvy4x3p" path="res://ui/bomb_ui/bombs.tscn" id="13_6p2hi"]
 [ext_resource type="PackedScene" uid="uid://b631jjvhgsbol" path="res://proyectiles/bomb/bomb_1.tscn" id="13_ehe6g"]
+[ext_resource type="PackedScene" uid="uid://bqpnlni4edevw" path="res://test/paredes/pared.tscn" id="15_3wcnv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehe6g"]
 shader = ExtResource("1_s3pen")
@@ -115,6 +116,28 @@ wait_time = 5.0
 autostart = true
 
 [node name="Bomb1" parent="." instance=ExtResource("13_ehe6g")]
-position = Vector2(270, 296)
+position = Vector2(412, 339)
+collision_mask = 8
+safe_margin = 1.0
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="Pared" parent="walls" instance=ExtResource("15_3wcnv")]
+visible = false
+position = Vector2(6, 0)
+
+[node name="Pared2" parent="walls" instance=ExtResource("15_3wcnv")]
+visible = false
+position = Vector2(649, 0)
+
+[node name="Pared3" parent="walls" instance=ExtResource("15_3wcnv")]
+visible = false
+position = Vector2(784, 970)
+rotation = 1.57079
+
+[node name="Pared4" parent="walls" instance=ExtResource("15_3wcnv")]
+visible = false
+position = Vector2(784, 14)
+rotation = 1.57079
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

@@ -88,6 +88,7 @@ izq={
 2d_physics/layer_1="player"
 2d_physics/layer_2="enemigos"
 2d_physics/layer_3="escenario"
+2d_physics/layer_4="mira_bomba"
 
 [rendering]
 

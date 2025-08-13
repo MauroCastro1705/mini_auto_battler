@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://b631jjvhgsbol"]
 
-[ext_resource type="Script" uid="uid://bqjbqf1nm4y8u" path="res://proyectiles/bomb/bomb_1.gd" id="1_2ydn0"]
+[ext_resource type="Script" uid="uid://bqjbqf1nm4y8u" path="res://resources/bomb_1.gd" id="1_2ydn0"]
 [ext_resource type="Texture2D" uid="uid://dy470e2tip1od" path="res://assets/bullets/efectos-magicos/03.png" id="2_438kd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_438kd"]
-radius = 12.2066
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ydn0"]
 radius = 34.0
@@ -102,20 +102,20 @@ animations = [{
 }]
 
 [node name="Bomb1" type="CharacterBody2D"]
-collision_layer = 0
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_2ydn0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 0
-visibility_layer = 0
 shape = SubResource("CircleShape2D_438kd")
+debug_color = Color(0.792928, 0.403547, 0.379331, 0.42)
 
 [node name="explosion_area" type="Area2D" parent="."]
 light_mask = 0
 visibility_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explosion_area"]
+visible = false
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_2ydn0")
 
