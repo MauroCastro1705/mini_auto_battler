@@ -180,13 +180,14 @@ collision_mask = 3
 script = ExtResource("1_dg88b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemigos"]]
-position = Vector2(0, -11)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_dg88b")
 
 [node name="damage_numbers_origin" type="Node2D" parent="."]
-position = Vector2(0, -40)
+position = Vector2(0, -27)
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 13)
 
 [node name="ship" type="AnimatedSprite2D" parent="Node2D"]
 unique_name_in_owner = true
@@ -204,8 +205,8 @@ autoplay = "alive"
 [node name="HealthBar" parent="." instance=ExtResource("3_u8bk3")]
 unique_name_in_owner = true
 offset_left = -22.0
-offset_top = -34.0
+offset_top = -31.0
 offset_right = -22.0
-offset_bottom = -34.0
+offset_bottom = -31.0
 
 [connection signal="animation_finished" from="Node2D/ship" to="." method="_on_ship_animation_finished"]
