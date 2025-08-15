@@ -20,7 +20,7 @@ func update_display():
 		slots[i].texture = active_texture if i == (wave - 1) % wave_count else inactive_texture
 		
 func wave_text_update():
-	label.text = "Wave: " + str(Global.current_wave)
+	label.text = "Wave:" + str(Global.current_wave)
 	label.show()
 	timer.start()
 
