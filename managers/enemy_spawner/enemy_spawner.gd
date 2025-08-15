@@ -12,21 +12,19 @@ var enemies_to_spawn:int = 0
 func _ready():
 	Global.wave_advanced.connect(reset_wave_spawn)
 	enemies_to_spawn = Global.get_enemies_per_wave()
+	spawn_enemy_timer()
+
+func spawn_enemy_timer():
 	var timer = Timer.new()
 	timer.wait_time = spawn_rate
 	timer.autostart = true
 	timer.timeout.connect(spawn_enemy)
 	add_child(timer)
 
-
 func spawn_enemy():
 	if enemies_spawned >= enemies_to_spawn:
 		return
-
 	var spawn_pos = get_random_position_in_area()
-	if spawn_pos == null:
-		push_warning("SpawnerArea missing CollisionShape2D or shape!")
-		return
 
 	var enemy = enemy_pool.get_enemy()
 	enemy.activate(spawn_pos)

@@ -65,7 +65,7 @@ anchor_bottom = 0.015
 offset_right = -17.28
 offset_bottom = -14.4
 script = ExtResource("1_m1at4")
-tittle = "cacaconcaca"
+tittle = "Object Skill"
 value = 32
 skill_level = "5"
 

@@ -114,6 +114,7 @@ alignment = 1
 
 [node name="generic_button" parent="Control/upgrade skills-ui-holder" instance=ExtResource("8_1t0f5")]
 layout_mode = 2
+tittle = "objectSkill"
 
 [node name="generic_button2" parent="Control/upgrade skills-ui-holder" instance=ExtResource("8_1t0f5")]
 layout_mode = 2
