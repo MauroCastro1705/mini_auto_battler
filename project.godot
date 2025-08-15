@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="mini_battler"
+run/main_scene="uid://cauvt5eegmfco"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,8 +23,11 @@ LogrosData="*res://logros/data_logros/data_logros.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=960
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+window/handheld/orientation=1
 
 [editor_plugins]
 
