@@ -13,7 +13,6 @@ func _ready():
 
 func on_enemy_killed():
 	Global.xp += 1
-	Global.mobs_killed += 1
 	Global.update_scores()
 	Global.emit_signal("stats_updated")
 	if Global.xp >= Global.xp_to_next:

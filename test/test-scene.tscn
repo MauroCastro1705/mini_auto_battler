@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene load_steps=18 format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="Texture2D" uid="uid://bh2hl5owsoik4" path="res://assets/Planets/planet03.png" id="1_b3u66"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://3dje4lvy4x3p" path="res://ui/bomb_ui/bombs.tscn" id="13_6p2hi"]
 [ext_resource type="PackedScene" uid="uid://b631jjvhgsbol" path="res://proyectiles/bomb/bomb_1.tscn" id="13_ehe6g"]
 [ext_resource type="PackedScene" uid="uid://bqpnlni4edevw" path="res://test/paredes/pared.tscn" id="15_3wcnv"]
+[ext_resource type="PackedScene" uid="uid://bnp2dnfpc6rmn" path="res://ui/wave ui/wave_control.tscn" id="16_pd52j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehe6g"]
 shader = ExtResource("1_s3pen")
@@ -139,5 +140,11 @@ rotation = 1.57079
 visible = false
 position = Vector2(784, 14)
 rotation = 1.57079
+
+[node name="WaveControl" parent="." instance=ExtResource("16_pd52j")]
+offset_left = 174.0
+offset_top = 108.0
+offset_right = 174.0
+offset_bottom = 108.0
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

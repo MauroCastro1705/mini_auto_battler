@@ -50,11 +50,11 @@ var current_wave:int = 1
 var max_wave_before_boss:int = 5
 var is_boss_wave:bool = false
 var wave_enemy_count := {
-	1: 5,
-	2: 6,
-	3: 7,
-	4: 8,
-	5: 9,
+	1: 10,
+	2: 16,
+	3: 22,
+	4: 30,
+	5: 37,
 	6: 1, # Boss wave
 	7: 6,
 	8: 7,
@@ -81,11 +81,10 @@ func get_enemies_per_wave() -> int:
 	else:
 		return 1 if is_boss_wave else 5 + current_wave * 2
 		
-func update_enemy_kills():#update de valors del player dinero y score y xp
+func update_enemy_kills():#update de valors del player dinero y score
 	mobs_killed += 1
 	player_money += enemigo_money
 	player_score += enemigo_score
-	xp += enemigo_score
 
 	if mobs_killed >= get_enemies_per_wave():
 		#se avanza de wave
