@@ -50,9 +50,9 @@ var current_wave:int = 1
 var max_wave_before_boss:int = 5
 var is_boss_wave:bool = false
 var wave_enemy_count := {
-	1: 10,
-	2: 16,
-	3: 22,
+	1: 2,
+	2: 2,
+	3: 2,
 	4: 30,
 	5: 37,
 	6: 1, # Boss wave

@@ -142,9 +142,9 @@ position = Vector2(784, 14)
 rotation = 1.57079
 
 [node name="WaveControl" parent="." instance=ExtResource("16_pd52j")]
-offset_left = 174.0
-offset_top = 108.0
-offset_right = 174.0
-offset_bottom = 108.0
+offset_left = 232.0
+offset_top = 111.0
+offset_right = 232.0
+offset_bottom = 111.0
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

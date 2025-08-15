@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnp2dnfpc6rmn"]
+[gd_scene load_steps=6 format=3 uid="uid://bnp2dnfpc6rmn"]
 
 [ext_resource type="Script" uid="uid://b4j7unrex7oy" path="res://ui/wave ui/wave_control.gd" id="1_ofigo"]
 [ext_resource type="Texture2D" uid="uid://bmhd1le7ivmya" path="res://assets/PNG/bola_verde.png" id="2_raohq"]
 [ext_resource type="Texture2D" uid="uid://fx2sudcmipfb" path="res://assets/PNG/bola_gris.png" id="3_n4tl8"]
+[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="4_n4tl8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w4vgn"]
+font = ExtResource("4_n4tl8")
+font_size = 23
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="WaveControl" type="Control"]
 layout_mode = 3
@@ -15,11 +22,18 @@ script = ExtResource("1_ofigo")
 active_texture = ExtResource("2_raohq")
 inactive_texture = ExtResource("3_n4tl8")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 42.0
+offset_top = 28.0
+offset_right = 183.0
+offset_bottom = 56.0
+text = "Wave:"
+label_settings = SubResource("LabelSettings_w4vgn")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 5.0
-offset_right = 26.0
+layout_mode = 2
+offset_right = 141.0
 offset_bottom = 25.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
@@ -46,3 +60,8 @@ expand_mode = 2
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 expand_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -27,18 +27,20 @@ script = ExtResource("1_pdrxs")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/separation = 25
+theme_override_constants/separation = 50
 
 [node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 
 [node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 text = "Enemies Killed:"
 label_settings = ExtResource("2_n1edi")
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="mobsKilled" type="Label" parent="HBoxContainer3/HBoxContainer"]
 unique_name_in_owner = true
