@@ -56,12 +56,13 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(337, 465)
+position = Vector2(337, 937)
 scale = Vector2(0.410937, 0.410937)
 texture = ExtResource("1_b3u66")
 
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
-position = Vector2(334, 465)
+position = Vector2(334, 707)
+rotation = -1.57079
 
 [node name="focal_point" type="Marker2D" parent="."]
 position = Vector2(334, 465)
@@ -85,6 +86,7 @@ offset_left = 232.0
 offset_top = 111.0
 offset_right = 232.0
 offset_bottom = 111.0
+metadata/_edit_lock_ = true
 
 [node name="ExpBar" parent="CanvasLayer" instance=ExtResource("10_3wmdq")]
 anchor_left = 0.027

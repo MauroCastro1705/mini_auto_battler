@@ -68,7 +68,6 @@ func _ready() -> void:
 	emit_signal("stats_updated")
 	emit_signal("bomb_droped")
 	
-	
 
 func update_scores():
 	player_money += enemigo_money
@@ -99,6 +98,7 @@ func next_wave():
 	emit_signal("wave_advanced")
 	scale_enemy_stats()
 	
+	#emigos se hacen mas poderos al avanzar las oleadas
 func scale_enemy_stats():
 	var scale_factor = current_wave
 

@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://veon0exi0utd"]
+[gd_scene load_steps=3 format=3 uid="uid://veon0exi0utd"]
 
 [ext_resource type="Script" uid="uid://d0c26hbdtb7cs" path="res://managers/enemy_spawner/enemy_spawner.gd" id="1_qxjv0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxjv0"]
+size = Vector2(496, 92)
+
 [node name="EnemySpawner" type="Node"]
 script = ExtResource("1_qxjv0")
+
+[node name="spawner_area" type="Area2D" parent="."]
+position = Vector2(0, -80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawner_area"]
+position = Vector2(322, 125)
+shape = SubResource("RectangleShape2D_qxjv0")
+debug_color = Color(0.917647, 0.235294, 0.407843, 0.666667)
