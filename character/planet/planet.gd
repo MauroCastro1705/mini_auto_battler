@@ -1,0 +1,15 @@
+extends Node2D
+
+#sistema de dificultad
+#var easy_enemigo_infiltrate_count:int = 5
+#var normal_enemigo_infitrate_count:int = 3
+#var hard_enemigo_infiltrate_count:int = 0
+#var enemigos_infiltrados:int = 0
+
+func _ready() -> void:
+	Global.planet = self
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemigos"):
+		print("--------enemigo llego------")

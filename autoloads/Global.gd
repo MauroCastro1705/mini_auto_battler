@@ -7,6 +7,7 @@ signal wave_advanced
 
 #player vars
 var player:Node = null
+var planet
 var player_score:int = 0
 var player_money:int = 100
 var player_logros:int = 0

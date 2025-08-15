@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvuxl5jl1lkpp"]
+[gd_scene load_steps=7 format=3 uid="uid://cvuxl5jl1lkpp"]
 
 [ext_resource type="Script" uid="uid://dv4lfojcspiht" path="res://ui/exp_bar/exp_bar.gd" id="1_01o4c"]
 [ext_resource type="Texture2D" uid="uid://s4rtpv1gn3gg" path="res://assets/bullets/ui pixel/04.png" id="2_01o4c"]
+[ext_resource type="Texture2D" uid="uid://revjaw4idqp1" path="res://assets/bullets/ui pixel/All.png" id="2_gwsp1"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="3_4x1gj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4x1gj"]
@@ -22,12 +23,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_01o4c")
 
+[node name="ColorRect" type="NinePatchRect" parent="."]
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 34.0
+offset_bottom = 85.0
+texture = ExtResource("2_gwsp1")
+region_rect = Rect2(0, 85, 48, 22)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 3.0
-offset_right = 20.0
-offset_bottom = 56.0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 22.0
+offset_bottom = 59.0
 value = 50.0
 fill_mode = 3
 nine_patch_stretch = true
@@ -41,8 +54,8 @@ texture_progress = SubResource("AtlasTexture_gwsp1")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 56.0
+offset_top = 58.0
 offset_right = 28.0
-offset_bottom = 78.0
+offset_bottom = 80.0
 text = "Xp"
 label_settings = ExtResource("3_4x1gj")

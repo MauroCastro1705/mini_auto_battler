@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene load_steps=19 format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="Texture2D" uid="uid://bh2hl5owsoik4" path="res://assets/Planets/planet03.png" id="1_b3u66"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b631jjvhgsbol" path="res://proyectiles/bomb/bomb_1.tscn" id="13_ehe6g"]
 [ext_resource type="PackedScene" uid="uid://bqpnlni4edevw" path="res://test/paredes/pared.tscn" id="15_3wcnv"]
 [ext_resource type="PackedScene" uid="uid://bnp2dnfpc6rmn" path="res://ui/wave ui/wave_control.tscn" id="16_pd52j"]
+[ext_resource type="PackedScene" uid="uid://pue181nk6b4y" path="res://character/planet/planet.tscn" id="17_5oahq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehe6g"]
 shader = ExtResource("1_s3pen")
@@ -41,28 +42,30 @@ shader_parameter/fg_speed = 1.0
 [node name="Test-scene" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 738.0
-offset_bottom = 1298.0
+offset_right = 720.0
+offset_bottom = 1280.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ehe6g")
-offset_right = 731.0
-offset_bottom = 1298.0
+offset_right = 720.0
+offset_bottom = 1280.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(398, 1215)
+position = Vector2(360, 1273)
 scale = Vector2(0.410937, 0.410937)
 texture = ExtResource("1_b3u66")
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
-position = Vector2(400, 959)
+position = Vector2(360, 974)
 rotation = -1.57079
+metadata/_edit_lock_ = true
 
 [node name="focal_point" type="Marker2D" parent="."]
 position = Vector2(334, 465)
@@ -76,10 +79,10 @@ position = Vector2(334, 465)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MobsKilled" parent="CanvasLayer" instance=ExtResource("7_v52jn")]
-offset_left = 136.0
-offset_top = 779.4
-offset_right = 136.0
-offset_bottom = 779.44
+offset_left = -88.0
+offset_top = 76.2
+offset_right = -88.0
+offset_bottom = 76.24
 metadata/_edit_lock_ = true
 
 [node name="WaveControl" parent="CanvasLayer" instance=ExtResource("16_pd52j")]
@@ -91,37 +94,41 @@ anchor_left = 0.027
 anchor_top = 0.102
 anchor_right = 0.08
 anchor_bottom = 0.183
-offset_left = 81.72
-offset_top = 672.08
-offset_right = 81.72
-offset_bottom = 672.08
+offset_left = 654.56
+offset_top = 666.44
+offset_right = 654.56
+offset_bottom = 666.44
 
 [node name="Upgrade-menu" parent="CanvasLayer" instance=ExtResource("9_jipin")]
 visible = false
 
 [node name="Always" parent="CanvasLayer" instance=ExtResource("8_q134b")]
+offset_left = 11.0
+offset_right = 11.28
+metadata/_edit_lock_ = true
 
 [node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
 offset_left = 1.0
+offset_top = 130.72
 offset_right = 1.0
+offset_bottom = 134.68
 
 [node name="LogroPopUp" parent="CanvasLayer" instance=ExtResource("8_jipin")]
 process_mode = 3
 visible = false
 
 [node name="Bombs" parent="CanvasLayer" instance=ExtResource("13_6p2hi")]
-offset_left = 15.0
-offset_top = 788.0
-offset_right = 14.88
-offset_bottom = 788.0
-metadata/_edit_lock_ = true
+offset_left = 33.0
+offset_top = 800.0
+offset_right = 2.24
+offset_bottom = 793.56
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
 [node name="Bomb1" parent="." instance=ExtResource("13_ehe6g")]
-position = Vector2(412, 339)
+position = Vector2(316, 514)
 collision_mask = 8
 safe_margin = 1.0
 
@@ -129,20 +136,23 @@ safe_margin = 1.0
 
 [node name="Pared" parent="walls" instance=ExtResource("15_3wcnv")]
 visible = false
-position = Vector2(6, 0)
+position = Vector2(20, 1)
 
 [node name="Pared2" parent="walls" instance=ExtResource("15_3wcnv")]
 visible = false
-position = Vector2(649, 0)
+position = Vector2(698, 0)
 
 [node name="Pared3" parent="walls" instance=ExtResource("15_3wcnv")]
 visible = false
-position = Vector2(784, 970)
+position = Vector2(848, 1076)
 rotation = 1.57079
 
 [node name="Pared4" parent="walls" instance=ExtResource("15_3wcnv")]
 visible = false
-position = Vector2(784, 14)
+position = Vector2(947, 11)
 rotation = 1.57079
+
+[node name="Planet" parent="." instance=ExtResource("17_5oahq")]
+position = Vector2(582, 783)
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

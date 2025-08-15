@@ -23,9 +23,9 @@ anchors_preset = -1
 anchor_left = -0.089
 anchor_right = 0.822
 anchor_bottom = 0.628
-offset_left = -0.0109997
-offset_right = -0.0220032
-offset_bottom = -0.0320015
+offset_left = 0.11396
+offset_right = 13.5879
+offset_bottom = 12.2739
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="BoxContainer"]
@@ -36,6 +36,7 @@ theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
 
 [node name="ColorRect" type="NinePatchRect" parent="BoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("2_kxjir")
 region_rect = Rect2(63.7637, 85.0508, 48.4719, 21.7629)

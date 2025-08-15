@@ -26,10 +26,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -18.0
-offset_top = -8.0
-offset_right = 656.0
-offset_bottom = 982.0
+offset_right = 720.0
+offset_bottom = 1280.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0627451, 0.0784314, 0.0980392, 1)
@@ -39,9 +37,9 @@ metadata/_edit_lock_ = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 209.5
+offset_left = 2.0
 offset_top = 132.0
-offset_right = 430.5
+offset_right = 721.0
 offset_bottom = 158.0
 grow_horizontal = 2
 theme_override_constants/separation = 12
@@ -51,12 +49,13 @@ alignment = 1
 layout_mode = 2
 text = "Ship Upgrades"
 label_settings = ExtResource("2_bk28g")
+horizontal_alignment = 1
 
 [node name="upgrade-ui-holder" type="HBoxContainer" parent="Control"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 188.0
-offset_right = 635.0
+offset_right = 716.0
 offset_bottom = 363.0
 theme_override_constants/separation = 10
 alignment = 1
@@ -80,10 +79,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 176.0
-offset_top = 398.0
-offset_right = 414.0
-offset_bottom = 432.0
+offset_left = 4.0
+offset_top = 439.0
+offset_right = 720.0
+offset_bottom = 473.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -93,22 +92,22 @@ alignment = 1
 layout_mode = 2
 text = "Skill Upgrades"
 label_settings = ExtResource("2_bk28g")
+horizontal_alignment = 1
 
 [node name="return_button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 527.0
-offset_top = 35.0
-offset_right = 614.0
-offset_bottom = 72.0
+offset_left = 613.0
+offset_top = 28.0
+offset_right = 700.0
+offset_bottom = 65.0
 theme = ExtResource("7_p1gsx")
 text = "Return"
 
 [node name="upgrade skills-ui-holder" type="HBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 446.0
-offset_right = 610.0
-offset_bottom = 663.0
+offset_top = 515.0
+offset_right = 719.0
+offset_bottom = 732.0
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -124,10 +123,10 @@ layout_mode = 2
 
 [node name="upgrade skills-ui-holder2" type="HBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 682.0
-offset_right = 610.0
-offset_bottom = 899.0
+offset_left = 1.0
+offset_top = 751.0
+offset_right = 721.0
+offset_bottom = 968.0
 theme_override_constants/separation = 20
 alignment = 1
 

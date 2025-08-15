@@ -7,7 +7,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_w4vgn"]
 font = ExtResource("4_n4tl8")
-font_size = 25
+font_size = 30
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 6
@@ -27,20 +27,20 @@ inactive_texture = ExtResource("3_n4tl8")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-offset_left = 297.0
+offset_left = 340.0
 offset_top = 154.0
-offset_right = 389.0
-offset_bottom = 182.0
+offset_right = 475.0
+offset_bottom = 196.0
 text = "Wave:"
 label_settings = SubResource("LabelSettings_w4vgn")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(10, 25)
 layout_mode = 2
-offset_left = 588.0
-offset_top = 501.0
-offset_right = 613.0
-offset_bottom = 642.0
+offset_left = 678.0
+offset_top = 611.0
+offset_right = 703.0
+offset_bottom = 752.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(25, 25)

@@ -6,8 +6,8 @@ extends Control
 @onready var atk_dmg_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_dmg/VBoxContainer/Label2
 @onready var atk_range_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_range/VBoxContainer/Label2
 @onready var enemy_label: Label = $BoxContainer/MarginContainer/HBoxContainer/enemy_level/VBoxContainer/Label2
-var start_position = Vector2(0, 940)
-var final_position = Vector2(0, 770)#original 0, 770
+var start_position = Vector2(0, 1200)
+var final_position = Vector2(0, 1100)#original 0, 770
 
 func _ready():
 	Global.stats_updated.connect(update_labels)

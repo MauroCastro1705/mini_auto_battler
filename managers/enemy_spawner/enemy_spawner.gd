@@ -4,7 +4,7 @@ extends Node
 @onready var enemy_pool: EnemyPool = $"../EnemyPool"
 @onready var spawner_area: Area2D = $spawner_area
 
-@export var spawn_rate := 5.0
+@export var spawn_rate := 5.0 #lower es mas rapido
 
 var enemies_spawned:int = 0
 var enemies_to_spawn:int = 0

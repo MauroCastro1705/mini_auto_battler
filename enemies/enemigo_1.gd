@@ -29,8 +29,8 @@ func _ready():
 func _process(_delta):
 	if not active:
 		return
-	if Global.player and is_instance_valid(Global.player):
-		var dir = (Global.player.global_position - global_position).normalized()
+	if Global.planet and is_instance_valid(Global.planet):
+		var dir = (Global.planet.global_position - global_position).normalized()
 		velocity = dir * speed
 		ship.rotation = dir.angle() + deg_to_rad(90)
 		move_and_slide()

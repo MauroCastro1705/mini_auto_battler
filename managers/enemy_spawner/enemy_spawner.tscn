@@ -9,7 +9,7 @@ size = Vector2(496, 92)
 script = ExtResource("1_qxjv0")
 
 [node name="spawner_area" type="Area2D" parent="."]
-position = Vector2(0, -80)
+position = Vector2(43, -78)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spawner_area"]
 position = Vector2(322, 125)
