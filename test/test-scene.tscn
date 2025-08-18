@@ -100,9 +100,9 @@ offset_bottom = 658.76
 
 [node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
 offset_left = 1.0
-offset_top = 130.72
+offset_top = 2.71997
 offset_right = 1.0
-offset_bottom = 134.68
+offset_bottom = 6.67993
 
 [node name="LogroPopUp" parent="CanvasLayer" instance=ExtResource("8_jipin")]
 process_mode = 3

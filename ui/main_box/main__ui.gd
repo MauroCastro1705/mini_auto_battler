@@ -1,5 +1,7 @@
 extends Control
-@onready var box_container: BoxContainer = $BoxContainer
+@onready var stat_box: BoxContainer = $BoxContainer
+@onready var button: Button = $Button
+@onready var is_button_pressed:bool = false
 
 @onready var exp_label: Label = $BoxContainer/MarginContainer/HBoxContainer/exp/VBoxContainer/xp_label
 @onready var atk_speed_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_speed/VBoxContainer/Label2
@@ -12,8 +14,8 @@ var final_position = Vector2(0, 1100)#original 0, 770
 func _ready():
 	Global.stats_updated.connect(update_labels)
 	update_labels() # Initial display
-	print("posicion ui: ", start_position)
-	box_container.global_position = start_position
+	stat_box.hide()
+	button.text = "Show stats"
 	
 func update_labels() -> void:
 	var shots_per_second = 1.0 / Global.attack_speed
@@ -23,12 +25,16 @@ func update_labels() -> void:
 	atk_range_label.text = str(int(round(Global.atk_range)))
 	enemy_label.text = str(Global.enemigo_level)
 
-func _on_control_mouse_entered() -> void:
-	var tween = create_tween()
-	tween.tween_property(box_container, "global_position", final_position, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
+func _on_button_pressed() -> void:
+	if is_button_pressed == false:
+		is_button_pressed = true
+		button.text = "Hide stats"
+		stat_box.show()
+		print("escondo stats")
 
-
-func _on_control_mouse_exited() -> void:
-	var tween = create_tween()
-	tween.tween_property(box_container, "global_position", start_position, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	else:
+		is_button_pressed = false
+		button.text = "Show stats"
+		stat_box.hide()
+		print("NO escondo stats")

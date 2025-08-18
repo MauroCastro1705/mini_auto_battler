@@ -1,0 +1,195 @@
+[gd_scene load_steps=5 format=3 uid="uid://djxqnnd1gchxe"]
+
+[ext_resource type="Script" uid="uid://bmr5lyhahhmbi" path="res://ui/main_box/main_ui_2.gd" id="1_0eu0a"]
+[ext_resource type="Texture2D" uid="uid://i7fyesnlgvgr" path="res://assets/bullets/ui pixel/00.png" id="2_mnejh"]
+[ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="3_my5lk"]
+[ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="4_hh6ro"]
+
+[node name="Main_ui" type="Control"]
+layout_mode = 3
+anchor_top = 0.901
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.96002
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0eu0a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -54.3201
+offset_right = 896.0
+offset_bottom = 113.68
+
+[node name="StatsWrapper" type="BoxContainer" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+alignment = 1
+
+[node name="StatsBox" type="MarginContainer" parent="VBoxContainer/StatsWrapper"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="NinePatchRect" parent="VBoxContainer/StatsWrapper/StatsBox"]
+layout_mode = 2
+texture = ExtResource("2_mnejh")
+region_rect = Rect2(128, 85, 48, 22)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/StatsWrapper/StatsBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="exp" type="MarginContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/exp"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_my5lk")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/exp/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "Exp"
+
+[node name="xp_label" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/exp/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="atk_speed" type="MarginContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_speed"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_my5lk")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_speed/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "Atk per 
+second"
+
+[node name="Label2" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_speed/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="atk_dmg" type="MarginContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_dmg"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_my5lk")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_dmg/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "Atk dmg"
+
+[node name="Label2" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_dmg/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="atk_range" type="MarginContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_range"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_my5lk")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_range/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "Atk range"
+
+[node name="Label2" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/atk_range/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="enemy_level" type="MarginContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/enemy_level"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_my5lk")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/enemy_level/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "Enemy 
+Level"
+
+[node name="Label2" type="Label" parent="VBoxContainer/StatsWrapper/StatsBox/HBoxContainer/enemy_level/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_my5lk")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 700
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 0
+
+[node name="ShowStatsButton" type="Button" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_hh6ro")
+text = "Show stats"
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/ShowStatsButton" to="." method="_on_button_pressed"]
