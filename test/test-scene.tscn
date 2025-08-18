@@ -95,16 +95,8 @@ anchor_right = 0.08
 anchor_bottom = 0.183
 offset_left = 654.56
 offset_top = 666.44
-offset_right = 654.56
-offset_bottom = 666.44
-
-[node name="Upgrade-menu" parent="CanvasLayer" instance=ExtResource("9_jipin")]
-visible = false
-
-[node name="Always" parent="CanvasLayer" instance=ExtResource("8_q134b")]
-offset_left = 11.0
-offset_right = 11.28
-metadata/_edit_lock_ = true
+offset_right = 654.4
+offset_bottom = 658.76
 
 [node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
 offset_left = 1.0
@@ -117,10 +109,19 @@ process_mode = 3
 visible = false
 
 [node name="Bombs" parent="CanvasLayer" instance=ExtResource("13_6p2hi")]
-offset_left = 33.0
-offset_top = 800.0
-offset_right = 2.24
-offset_bottom = 793.56
+offset_left = 21.0
+offset_top = 984.0
+offset_right = -9.76
+offset_bottom = 977.56
+metadata/_edit_lock_ = true
+
+[node name="Upgrade-menu" parent="CanvasLayer" instance=ExtResource("9_jipin")]
+visible = false
+
+[node name="Always" parent="CanvasLayer" instance=ExtResource("8_q134b")]
+offset_left = 11.0
+offset_right = 11.28
+metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
