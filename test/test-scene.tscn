@@ -63,9 +63,8 @@ texture = ExtResource("1_b3u66")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
-position = Vector2(360, 974)
+position = Vector2(371, 807)
 rotation = -1.57079
-metadata/_edit_lock_ = true
 
 [node name="focal_point" type="Marker2D" parent="."]
 position = Vector2(334, 465)
@@ -137,22 +136,26 @@ safe_margin = 1.0
 [node name="Pared" parent="walls" instance=ExtResource("15_3wcnv")]
 visible = false
 position = Vector2(20, 1)
+metadata/_edit_lock_ = true
 
 [node name="Pared2" parent="walls" instance=ExtResource("15_3wcnv")]
 visible = false
 position = Vector2(698, 0)
+metadata/_edit_lock_ = true
 
 [node name="Pared3" parent="walls" instance=ExtResource("15_3wcnv")]
 visible = false
 position = Vector2(848, 1076)
 rotation = 1.57079
+metadata/_edit_lock_ = true
 
 [node name="Pared4" parent="walls" instance=ExtResource("15_3wcnv")]
 visible = false
-position = Vector2(947, 11)
+position = Vector2(947, -33)
 rotation = 1.57079
+metadata/_edit_lock_ = true
 
 [node name="Planet" parent="." instance=ExtResource("17_5oahq")]
-position = Vector2(582, 783)
+position = Vector2(365, 1103)
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

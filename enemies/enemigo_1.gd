@@ -37,14 +37,18 @@ func _ready():
 	hp = max_hp
 	health_bar.set_max_health(hp)
 
-	# Cachea capas originales
+	# Cachea capas/máscaras "buenas" (tu enemigo está en capa 2)
 	_orig_layer = collision_layer
-	_orig_mask = collision_mask
-
-	# Arranca seguro por si el pool te instancia ya "muerto/inactivo"
-	_set_colliders_disabled(true)
-	set_physics_process(false)
+	_orig_mask  = collision_mask
+	if _orig_layer == 0 and _orig_mask == 0:
+		_orig_layer = 1 << 1   # capa 2
+		_orig_mask  = 1 << 1   # máscara 2
+	# Arranca seguro: sin colisión ni proceso
+	_set_shapes_disabled_deferred(true)
+	set_deferred("collision_layer", 0)
+	set_deferred("collision_mask", 0)
 	set_process(false)
+	set_physics_process(false)
 	hide()
 
 func _process(_delta):
@@ -59,27 +63,37 @@ func _process(_delta):
 		health_bar.rotation = 0
 
 func activate(pos: Vector2):
-	global_position = pos
-	# Reactiva estado
+	# Estado lógico y vida
 	is_dead = false
-	active = true
-	hp = Global.enemigo_max_hp
-	max_hp = Global.enemigo_max_hp
+	active  = true
+	max_hp  = Global.enemigo_max_hp
+	hp      = max(1, Global.enemigo_max_hp)   # clamp defensivo
 	health_bar.set_max_health(hp)
 	health_bar.update_health(hp)
 
-	# Reactiva colisiones/physics/visibilidad
-	collision_layer = _orig_layer
-	collision_mask = _orig_mask
-	_set_colliders_disabled(false)
+	# 1) POSICIONAR PRIMERO
+	global_position = pos
+
+	# 2) MOSTRAR y procesar, pero SIN colisión este frame
 	show()
 	set_process(true)
 	set_physics_process(true)
+	_set_shapes_disabled_deferred(true)
+	set_deferred("collision_layer", 0)
+	set_deferred("collision_mask", 0)
+
+	# 3) HABILITAR COLISIONES EN EL SIGUIENTE FRAME
+	call_deferred("_enable_collisions_next_frame")
 
 	# Anims
 	ship_sprite.play("alive")
-	propulsor.play("alive")
 	propulsor.visible = true
+	propulsor.play("alive")
+
+func _enable_collisions_next_frame() -> void:
+	_set_shapes_disabled_deferred(false)
+	set_deferred("collision_layer", _orig_layer)
+	set_deferred("collision_mask",  _orig_mask)
 
 func take_damage(amount: int) -> void:
 	if not active or is_dead:
@@ -87,19 +101,17 @@ func take_damage(amount: int) -> void:
 
 	hp -= amount
 	health_bar.update_health(hp)
-
 	DamageNumbers.display_numbers(amount, damage_numbers_origin.global_position)
 	DamageNumbers.flash_sprite(ship_sprite)
 
 	if hp <= 0:
 		is_dead = true
 		Global.emit_signal("enemy_killed")
-		# Desactiva colisiones inmediatamente para que no bloquee
-		_disable_collisions_now()
-		# Reproduce anim de muerte (el sprite debe seguir visible para verla)
 		ship_sprite.play("die")
 		propulsor.visible = false
-
+		# DESACTIVAR EN DIFERIDO (evita flushing queries)
+		call_deferred("_disable_collisions_now")
+		
 func deactivate():
 	# Estado lógico
 	active = false
@@ -111,7 +123,9 @@ func deactivate():
 	set_physics_process(false)
 
 	# Desactiva colisiones y oculta
-	_disable_collisions_now()
+	set_deferred("collision_layer", 0)
+	set_deferred("collision_mask", 0)
+	_disable_shapes_deferred(self, true)
 	hide()
 
 	# Limpieza opcional con jugador
@@ -130,11 +144,26 @@ func _on_ship_animation_finished() -> void:
 # -----------------------
 # Helpers de colisiones
 # -----------------------
-func _disable_collisions_now():
-	collision_layer = 0
-	collision_mask = 0
-	_set_colliders_disabled(true)
+func _disable_collisions_now() -> void:
+	set_deferred("collision_layer", 0)
+	set_deferred("collision_mask", 0)
+	_set_shapes_disabled_deferred(true)
 
+func _set_shapes_disabled_deferred(disabled: bool) -> void:
+	_shapes_set_disabled_rec(self, disabled)
+
+func _shapes_set_disabled_rec(node: Node, disabled: bool) -> void:
+	if node is CollisionShape2D:
+		(node as CollisionShape2D).set_deferred("disabled", disabled)
+	for c in node.get_children():
+		_shapes_set_disabled_rec(c, disabled)
+		
+func _disable_shapes_deferred(node: Node, disabled: bool) -> void:
+	if node is CollisionShape2D:
+		(node as CollisionShape2D).set_deferred("disabled", disabled)
+	for c in node.get_children():
+		_disable_shapes_deferred(c, disabled)
+		
 func _set_colliders_disabled(disabled: bool) -> void:
 	# Deshabilita/rehabilita todos los CollisionShape2D dentro del enemigo (recursivo)
 	_set_colliders_disabled_rec(self, disabled)
