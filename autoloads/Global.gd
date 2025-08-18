@@ -115,7 +115,16 @@ func scale_enemy_stats():
 	enemigo_money = base_enemigo_money + scale_factor * 2
 	enemigo_score = base_enemigo_score + scale_factor * 2
 
-
+func dificultad() -> String: # "danger level"
+	if easy_mode:
+		return "easy"
+	elif normal_mode:
+		return "normal"
+	elif hard_mode:
+		return "hard"
+	else:
+		return ""
+		
 #game over checks
 func check_infiltrados():
 	print("--------enemigo llego------")

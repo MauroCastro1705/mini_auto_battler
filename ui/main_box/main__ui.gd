@@ -3,13 +3,18 @@ extends Control
 @onready var button: Button = $Button
 @onready var is_button_pressed:bool = false
 
-@onready var exp_label: Label = $BoxContainer/MarginContainer/HBoxContainer/exp/VBoxContainer/xp_label
-@onready var atk_speed_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_speed/VBoxContainer/Label2
-@onready var atk_dmg_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_dmg/VBoxContainer/Label2
-@onready var atk_range_label: Label = $BoxContainer/MarginContainer/HBoxContainer/atk_range/VBoxContainer/Label2
-@onready var enemy_label: Label = $BoxContainer/MarginContainer/HBoxContainer/enemy_level/VBoxContainer/Label2
-var start_position = Vector2(0, 1200)
-var final_position = Vector2(0, 1100)#original 0, 770
+# 1st row
+@onready var exp_label: Label = %xp_label
+@onready var atk_speed_label: Label = %atk_speed
+@onready var atk_dmg_label: Label = %dmg
+@onready var atk_range_label: Label = %range
+@onready var enemy_lvl_label: Label = %enemy_lvl
+
+# 2nd row
+@onready var wave_num_label: Label = %wave_num
+@onready var dificulty_label: Label = %dificulty
+@onready var enemis_left_label: Label = %enemis_left
+
 
 func _ready():
 	Global.stats_updated.connect(update_labels)
@@ -23,18 +28,18 @@ func update_labels() -> void:
 	atk_speed_label.text = str("%.1f" % shots_per_second)
 	atk_dmg_label.text = str(Global.bullet_dmg)
 	atk_range_label.text = str(int(round(Global.atk_range)))
-	enemy_label.text = str(Global.enemigo_level)
-
-
+	enemy_lvl_label.text = str(Global.enemigo_level)
+	wave_num_label.text = str(Global.current_wave)
+	dificulty_label.text = Global.dificultad()
+	enemis_left_label.text = str(Global.get_enemies_per_wave())
+	
 func _on_button_pressed() -> void:
 	if is_button_pressed == false:
 		is_button_pressed = true
 		button.text = "Hide stats"
 		stat_box.show()
-		print("escondo stats")
 
 	else:
 		is_button_pressed = false
 		button.text = "Show stats"
 		stat_box.hide()
-		print("NO escondo stats")

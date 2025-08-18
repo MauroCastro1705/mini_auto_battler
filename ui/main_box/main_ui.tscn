@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://don1dyvu4dkv8"]
+[gd_scene load_steps=6 format=3 uid="uid://don1dyvu4dkv8"]
 
 [ext_resource type="Script" uid="uid://b1tsougdq3xbs" path="res://ui/main_box/main__ui.gd" id="1_mmnkx"]
 [ext_resource type="Texture2D" uid="uid://i7fyesnlgvgr" path="res://assets/bullets/ui pixel/00.png" id="2_k7cv3"]
-[ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="2_t765n"]
+[ext_resource type="Theme" uid="uid://foctmuh1sh2g" path="res://resources/text_stats_tittles.tres" id="3_vcpxn"]
+[ext_resource type="LabelSettings" uid="uid://dht5im0nim5we" path="res://resources/stat_tittle_black.tres" id="4_gpijd"]
 [ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="4_vcpxn"]
 
 [node name="Main_ui" type="Control"]
@@ -23,7 +24,7 @@ anchor_top = 0.8
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -173.544
-offset_bottom = 2.32007
+offset_bottom = -12.6799
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
@@ -44,148 +45,245 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="stats" type="HBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
+alignment = 1
 
-[node name="exp" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
+[node name="exp" type="MarginContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/exp"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats/exp"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/exp/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/exp/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_t765n")
 text = "Exp"
+label_settings = ExtResource("4_gpijd")
+horizontal_alignment = 1
 
-[node name="xp_label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/exp/VBoxContainer"]
+[node name="xp_label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/exp/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="atk_speed" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
+[node name="atk_speed" type="MarginContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/atk_speed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_speed"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_speed/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_speed/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_t765n")
 text = "Atk per 
 second"
+label_settings = ExtResource("4_gpijd")
 
-[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_speed/VBoxContainer"]
+[node name="atk_speed" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_speed/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="atk_dmg" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
+[node name="atk_dmg" type="MarginContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/atk_dmg"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_dmg"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_dmg/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_dmg/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_t765n")
 text = "Atk dmg"
+label_settings = ExtResource("4_gpijd")
 
-[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_dmg/VBoxContainer"]
+[node name="dmg" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_dmg/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="atk_range" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
+[node name="atk_range" type="MarginContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/atk_range"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_range"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_range/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_range/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_t765n")
 text = "Atk range"
+label_settings = ExtResource("4_gpijd")
 
-[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/atk_range/VBoxContainer"]
+[node name="range" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/atk_range/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="enemy_level" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
+[node name="enemy_level" type="MarginContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/enemy_level"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats/enemy_level"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/enemy_level/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/enemy_level/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_t765n")
 text = "Enemy 
 Level"
+label_settings = ExtResource("4_gpijd")
 
-[node name="Label2" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/enemy_level/VBoxContainer"]
+[node name="enemy_lvl" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats/enemy_level/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_t765n")
+theme = ExtResource("3_vcpxn")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stats2" type="HBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="wave" type="MarginContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats2"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/wave"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_vcpxn")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/wave/VBoxContainer"]
+layout_mode = 2
+text = "Wave"
+label_settings = ExtResource("4_gpijd")
+
+[node name="wave_num" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/wave/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_vcpxn")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="enemigos_restantes" type="MarginContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats2"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/enemigos_restantes"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_vcpxn")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/enemigos_restantes/VBoxContainer"]
+layout_mode = 2
+text = "enemies 
+to kill"
+label_settings = ExtResource("4_gpijd")
+
+[node name="enemis_left" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/enemigos_restantes/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_vcpxn")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dificulty" type="MarginContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats2"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/dificulty"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("3_vcpxn")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/dificulty/VBoxContainer"]
+layout_mode = 2
+text = "Danger Level"
+label_settings = ExtResource("4_gpijd")
+
+[node name="dificulty" type="Label" parent="BoxContainer/MarginContainer/VBoxContainer/stats2/dificulty/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_vcpxn")
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 548.0
-offset_top = -110.32
-offset_right = 680.0
-offset_bottom = -73.3201
+offset_left = 573.0
+offset_top = -127.32
+offset_right = 705.0
+offset_bottom = -90.3201
 theme = ExtResource("4_vcpxn")
 text = "Show stats"
 
