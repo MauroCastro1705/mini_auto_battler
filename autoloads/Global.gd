@@ -4,6 +4,7 @@ signal enemy_killed
 signal stats_updated
 signal bomb_droped
 signal wave_advanced
+signal enemigo_se_infiltro
 
 #player vars
 var player:Node = null
@@ -26,9 +27,14 @@ var mobs_killed:int = 0
 var bullet_dmg:float = 8
 var bullet_speed: float = 400
 
+#dificulty system:
+var easy_mode:bool = false
+var normal_mode:bool = true
+var hard_mode:bool = false
+
 #enemigos
 var easy_enemigo_infiltrate_count:int = 5 #sistema de dificultad
-var normal_enemigo_infitrate_count:int = 3
+var normal_enemigo_infiltrate_count:int = 3
 var hard_enemigo_infiltrate_count:int = 0
 var enemigos_infiltrados:int = 0
 
@@ -66,6 +72,7 @@ var wave_enemy_count := {
 
 func _ready() -> void:
 	enemy_killed.connect(update_enemy_kills)
+	enemigo_se_infiltro.connect(check_infiltrados)
 	emit_signal("stats_updated")
 	emit_signal("bomb_droped")
 	
@@ -107,3 +114,15 @@ func scale_enemy_stats():
 	enemigo_speed = base_enemigo_speed + scale_factor * 1.1
 	enemigo_money = base_enemigo_money + scale_factor * 2
 	enemigo_score = base_enemigo_score + scale_factor * 2
+
+
+#game over checks
+func check_infiltrados():
+	print("--------enemigo llego------")
+	enemigos_infiltrados += 1
+	if normal_mode and enemigos_infiltrados == normal_enemigo_infiltrate_count:
+		print("game over")
+	if easy_mode and enemigos_infiltrados == easy_enemigo_infiltrate_count:
+		print("game over")
+	if hard_mode and enemigos_infiltrados == hard_enemigo_infiltrate_count:
+		print("game over")
