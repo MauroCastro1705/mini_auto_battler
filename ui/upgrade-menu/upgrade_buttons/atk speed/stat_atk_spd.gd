@@ -78,7 +78,7 @@ func _apply_to_global() -> void:
 func _update_ui() -> void:
 	var current_sps := _sps_for_level(level)
 	var next_sps := _sps_for_level(min(level + 1, MAX_LEVEL))
-	var cost = ((level >= MAX_LEVEL) if 0 else _cost_for_level(level))
+	var cost := 0 if level >= MAX_LEVEL else _cost_for_level(level)
 
 	# Mostrar "SPS actual → SPS siguiente" con 2 decimales
 	stat_value.text = "%0.2f SPS → %0.2f SPS" % [current_sps, next_sps]
