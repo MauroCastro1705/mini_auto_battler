@@ -21,7 +21,7 @@ var level:int = 1
 var xp_to_next:int = 10
 var attack_speed := 1.5 # Cooldown in seconds (lower = faster)
 var atk_speed_level:= 1
-var attack_cooldown
+var attack_cooldown:float = 0.7
 var atk_range:float = 350
 var mobs_killed:int = 0
 
