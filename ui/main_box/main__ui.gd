@@ -23,9 +23,8 @@ func _ready():
 	button.text = "Show stats"
 	
 func update_labels() -> void:
-	var shots_per_second = 1.0 / Global.attack_speed
 	exp_label.text = str(Global.xp)
-	atk_speed_label.text = str("%.1f" % shots_per_second)
+	atk_speed_label.text = "%.1f" % Global.attack_speed
 	atk_dmg_label.text = str(Global.bullet_dmg)
 	atk_range_label.text = str(int(round(Global.atk_range)))
 	enemy_lvl_label.text = str(Global.enemigo_level)

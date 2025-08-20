@@ -15,23 +15,18 @@ func _ready() -> void:
 	Global.stats_updated.connect(update_global)
 	update_global() # Initial call
 	queue_redraw()
+	atk_timer.wait_time = Global.attack_cooldown
 
 func update_global() -> void:
-	shoot_cooldown = max(0.05, Global.attack_speed) # pequeño clamp defensivo
+	atk_timer.wait_time = Global.attack_cooldown
 	if atk_range.shape is CircleShape2D:
 		(atk_range.shape as CircleShape2D).radius = Global.atk_range
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw()
-	time_since_shot += delta
-
 	var target := get_nearest_enemy()
 	if is_instance_valid(target):
 		look_at(target.global_position)
-
-	if time_since_shot >= shoot_cooldown:
-		shoot()
-		time_since_shot = 0.0
 
 func get_nearest_enemy() -> Node:
 	var nearest: Node = null
@@ -53,6 +48,9 @@ func get_nearest_enemy() -> Node:
 func remove_enemy(enemy: Node) -> void:
 	# Llamada desde Enemy.deactivate() para garantizar limpieza aunque no haya body_exited
 	enemies_in_range.erase(enemy)
+	
+func _on_atk_timer_timeout() -> void:
+	shoot()
 
 func shoot() -> void:
 	var target := get_nearest_enemy()
