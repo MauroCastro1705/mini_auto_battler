@@ -4,6 +4,7 @@
 
 [resource]
 font = ExtResource("1_tenfq")
-font_size = 22
-font_color = Color(0, 0, 0, 1)
-outline_size = 1
+font_size = 24
+font_color = Color(0.788109, 0.330761, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)

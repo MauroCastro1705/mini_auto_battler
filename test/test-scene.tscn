@@ -63,7 +63,7 @@ texture = ExtResource("1_b3u66")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_5d1lj")]
-position = Vector2(371, 807)
+position = Vector2(371, 857)
 rotation = -1.57079
 
 [node name="focal_point" type="Marker2D" parent="."]

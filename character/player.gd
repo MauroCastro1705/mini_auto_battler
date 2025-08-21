@@ -16,9 +16,12 @@ func _ready() -> void:
 	update_global() # Initial call
 	queue_redraw()
 	atk_timer.wait_time = Global.attack_cooldown
+	atk_timer.start()
 
 func update_global() -> void:
 	atk_timer.wait_time = Global.attack_cooldown
+	atk_timer.start()
+	print("atk cooldown:" , Global.attack_cooldown)
 	if atk_range.shape is CircleShape2D:
 		(atk_range.shape as CircleShape2D).radius = Global.atk_range
 
@@ -43,6 +46,7 @@ func get_nearest_enemy() -> Node:
 		if dist < min_dist:
 			min_dist = dist
 			nearest = enemy
+			
 	return nearest
 
 func remove_enemy(enemy: Node) -> void:

@@ -14,7 +14,7 @@ var stat_level:int = 1
 # --- Estado ---
 var level: int = 1
 # --- Balance/config ---
-const BASE_COOLDOWN := 1.0        # segundos por disparo base (1.0 -> 1 SPS base)
+const BASE_COOLDOWN := 1.0 / 0.7 # segundos por disparo base (1.0 -> 1 SPS base)
 const MIN_COOLDOWN := 0.15        # seguridad: nunca menos de esto (≈6.66 SPS)
 const BONUS_CAP := 0.60           # cap total de reducción de cooldown: 60%
 const BONUS_K := 0.35             # rapidez para acercarse al cap (sube => mejoras fuertes al principio)
