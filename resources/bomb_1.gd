@@ -25,6 +25,9 @@ func _ready() -> void:
 	update_bomb_ui()
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch or event is InputEventScreenDrag:
+		if get_viewport().gui_get_focus_owner() != null:
+			return  # hay un control UI recibiendo input, no muevas la mira
 	if event is InputEventScreenTouch:
 		var st := event as InputEventScreenTouch
 		if st.pressed:
