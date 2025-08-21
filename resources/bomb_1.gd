@@ -1,8 +1,14 @@
 extends CharacterBody2D
 
+
 var damage:int = 10
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sprite_collision: CollisionShape2D = $explosion_area/CollisionShape2D
+@onready var bomb_reticule: Node2D = %bomb_reticule
+@onready var show_bomb: Button = $CanvasLayer/show_bomb
+@onready var launch_boomb: Button = $CanvasLayer/launch_boomb
+
+
 var speed:float = 400.0
 
 # --- Controles táctiles ---
@@ -12,7 +18,8 @@ var _deadzone_px := 12.0  # evita “temblequeo” cuando el dedo está casi enc
 
 func _ready() -> void:
 	sprite.hide()
-
+	bomb_reticule.hide()
+	
 func _input(event: InputEvent) -> void:
 	# Pulsa pantalla
 	if event is InputEventScreenTouch:
@@ -37,6 +44,13 @@ func _physics_process(_delta: float) -> void:
 	get_input()
 	move_and_slide()
 
+func update_bomb_ui():
+	if Global.player_bombs < 1:
+		launch_boomb.text = "no bombs left"
+	else:
+		launch_boomb.text = "Launch Bomb"
+
+
 func get_input() -> void:
 	if _is_touching:
 		# Mover hacia la posición del dedo
@@ -51,6 +65,7 @@ func get_input() -> void:
 		velocity = input_direction * speed
 
 func explode() -> void:
+	update_bomb_ui()
 	if Global.player_bombs < 1:
 		print("no hay bombas disponibles")
 		speed = 400
@@ -77,3 +92,12 @@ func set_bomb_params() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	sprite.hide()
 	speed = 400
+	bomb_reticule.hide()
+
+
+func _on_button_pressed() -> void:
+	bomb_reticule.show()
+
+
+func _on_launch_boomb_pressed() -> void:
+	explode()

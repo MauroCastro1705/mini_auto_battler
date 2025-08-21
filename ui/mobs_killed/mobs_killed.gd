@@ -12,5 +12,5 @@ func on_enemy_killed():
 	_update_text()
 
 func _update_text():
-	mobs_killed.text = str(Global.mobs_killed)
+	mobs_killed.text = str(Global.mobs_killed_in_total)
 	score_label.text = str(Global.player_score)

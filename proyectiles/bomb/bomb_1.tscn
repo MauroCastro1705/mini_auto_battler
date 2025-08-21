@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://b631jjvhgsbol"]
+[gd_scene load_steps=19 format=3 uid="uid://b631jjvhgsbol"]
 
 [ext_resource type="Script" uid="uid://bqjbqf1nm4y8u" path="res://resources/bomb_1.gd" id="1_2ydn0"]
 [ext_resource type="Texture2D" uid="uid://dy470e2tip1od" path="res://assets/bullets/efectos-magicos/03.png" id="2_438kd"]
+[ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="3_ivrvo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_438kd"]
 radius = 16.0
@@ -127,21 +128,42 @@ animation = &"explosion"
 frame = 11
 frame_progress = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="show_bomb" type="Button" parent="CanvasLayer"]
+offset_left = 133.0
+offset_top = 1026.0
+offset_right = 209.0
+offset_bottom = 1063.0
+theme = ExtResource("3_ivrvo")
+text = "BOMB"
+
+[node name="launch_boomb" type="Button" parent="CanvasLayer"]
+offset_left = 563.0
+offset_top = 974.0
+offset_right = 706.0
+offset_bottom = 1011.0
+theme = ExtResource("3_ivrvo")
+text = "Launch Bomb"
+
+[node name="bomb_reticule" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="bomb_reticule"]
 offset_left = 5.0
 offset_top = -1.0
 offset_right = 671.0
 offset_bottom = 2.0
 color = Color(0.216889, 0.660703, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="bomb_reticule"]
 offset_left = -723.0
 offset_top = -1.0
 offset_right = -5.0
 offset_bottom = 2.0
 color = Color(0.216889, 0.660703, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="ColorRect3" type="ColorRect" parent="bomb_reticule"]
 offset_left = -1.0
 offset_top = -5.0
 offset_right = 1085.0
@@ -149,7 +171,7 @@ offset_bottom = -2.0
 rotation = -1.5708
 color = Color(0.216889, 0.660703, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="."]
+[node name="ColorRect4" type="ColorRect" parent="bomb_reticule"]
 offset_left = -1.0
 offset_top = 1291.0
 offset_right = 1286.0
@@ -158,3 +180,5 @@ rotation = -1.5708
 color = Color(0.216889, 0.660703, 0, 1)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/show_bomb" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/launch_boomb" to="." method="_on_launch_boomb_pressed"]

@@ -6,6 +6,7 @@ signal bomb_droped
 signal wave_advanced
 signal enemigo_se_infiltro
 
+
 #player vars
 var player:Node = null
 var planet
@@ -24,6 +25,7 @@ var atk_speed_level:= 1
 var attack_cooldown:float = 0.7
 var atk_range:float = 350
 var mobs_killed:int = 0
+var mobs_killed_in_total:int = 0
 
 #BULLET
 var bullet_dmg:float = 8
@@ -92,6 +94,7 @@ func get_enemies_per_wave() -> int:
 		
 func update_enemy_kills():#update de valors del player dinero y score
 	mobs_killed += 1
+	mobs_killed_in_total += 1
 	player_money += enemigo_money
 	player_score += enemigo_score
 
