@@ -118,6 +118,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 # Mostrar/ocultar retícula y armar/desarmar lanzamiento
 func _on_button_pressed() -> void:
+	get_viewport().set_input_as_handled() # evita que llegue al Player
 	# Este es el handler de show_bomb
 	if is_aiming:
 		# Cancelar apuntado
@@ -135,4 +136,5 @@ func _on_button_pressed() -> void:
 	update_bomb_ui()
 
 func _on_launch_boomb_pressed() -> void:
+	get_viewport().set_input_as_handled() # evita que llegue al Player
 	_attempt_launch()
