@@ -5,6 +5,7 @@ extends BoxContainer
 @onready var stat_level_label: Label = %stat_level
 var stat_comprado:float = 1.0
 var stat_cost:int = 50
+@onready var button: Button = $MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/Button
 
 var sps_growth := 5.0 # how much more per level
 var stat_level:int = 1

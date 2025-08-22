@@ -109,10 +109,10 @@ process_mode = 3
 visible = false
 
 [node name="Bombs" parent="CanvasLayer" instance=ExtResource("13_6p2hi")]
-offset_left = 21.0
-offset_top = 984.0
-offset_right = -9.76
-offset_bottom = 977.56
+offset_left = 597.0
+offset_top = 11.0
+offset_right = 566.24
+offset_bottom = 4.56001
 metadata/_edit_lock_ = true
 
 [node name="Upgrade-menu" parent="CanvasLayer" instance=ExtResource("9_jipin")]

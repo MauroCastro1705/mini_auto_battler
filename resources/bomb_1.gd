@@ -24,18 +24,24 @@ func _ready() -> void:
 	launch_boomb.disabled = true
 	update_bomb_ui()
 
+func _is_over_ui(pos: Vector2) -> bool:
+	return get_viewport().gui_pick(pos) != null
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		var st := event as InputEventScreenTouch
+		if _is_over_ui(st.position):
+			return
 		if st.pressed:
 			_is_touching = true
 			_touch_pos = st.position
 		else:
 			_is_touching = false
 			velocity = Vector2.ZERO
-
 	elif event is InputEventScreenDrag:
 		var sd := event as InputEventScreenDrag
+		if _is_over_ui(sd.position):
+			return
 		_is_touching = true
 		_touch_pos = sd.position
 
@@ -57,7 +63,7 @@ func update_bomb_ui():
 		launch_boomb.disabled = not is_aiming
 
 	# Botón de mostrar/ocultar retícula
-	show_bomb.text = "Cancel" if is_aiming else "Show Bomb"
+	show_bomb.text = "Cancel" if is_aiming else "Aim"
 
 func get_input() -> void:
 	if _is_touching:

@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://divwri80mossj"]
+
+[ext_resource type="Texture2D" uid="uid://3rlfjte22ca5" path="res://assets/PNG/Blue/Double/bar_square_large_square.png" id="1_fj4ej"]
+[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_w7iem"]
+[ext_resource type="StyleBox" uid="uid://c7g5rc2ugjvde" path="res://resources/blue_button.tres" id="2_7v5ay"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7v5ay"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_fj4ej")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0.336391, 0.7292, 0.944221, 1)
+
+[resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 2
+Button/fonts/font = ExtResource("1_w7iem")
+Button/styles/hover = SubResource("StyleBoxTexture_7v5ay")
+Button/styles/normal = ExtResource("2_7v5ay")

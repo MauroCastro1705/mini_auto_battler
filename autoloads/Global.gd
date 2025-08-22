@@ -21,7 +21,13 @@ var xp:int = 0
 var level:int = 1
 var xp_to_next:int = 10
 var attack_speed := 1.5 # Cooldown in seconds (lower = faster)
+#persistent level stats
 var atk_speed_level:= 1
+var atk_range_level:= 1
+var bullet_dmg_level:= 1
+var bullet_speed_level:= 1
+
+
 var attack_cooldown:float = 0.7
 var atk_range:float = 350
 var mobs_killed:int = 0
