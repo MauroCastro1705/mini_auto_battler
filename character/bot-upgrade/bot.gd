@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @onready var bullet_pool: Node = $BulletPool
 @onready var atk_timer: Timer = $Timer
 @onready var atk_range: CollisionShape2D = $Enemy_detector/CollisionShape2D
@@ -8,7 +7,6 @@ extends CharacterBody2D
 @onready var ship: AnimatedSprite2D = $Node2D/ship
 
 var enemies_in_range: Array[Node] = []
-
 var show_range := true
 
 func _ready() -> void:
@@ -32,6 +30,9 @@ func _process(_delta: float) -> void:
 	if is_instance_valid(target):
 		look_at(target.global_position)
 
+func _physics_process(delta: float) -> void:
+	pass
+
 func get_nearest_enemy() -> Node:
 	var nearest: Node = null
 	var min_dist := INF
@@ -54,7 +55,6 @@ func remove_enemy(enemy: Node) -> void:
 	# Llamada desde Enemy.deactivate() para garantizar limpieza aunque no haya body_exited
 	enemies_in_range.erase(enemy)
 	
-
 
 func shoot() -> void:
 	var target := get_nearest_enemy()
