@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://uk1si8avoosq"]
+
+[ext_resource type="Script" uid="uid://blwb0crwny6rm" path="res://character/bot-upgrade/bot.gd" id="1_ty82c"]
+[ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/bulletPool/BulletPool.tscn" id="2_nimyx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3vjt"]
+radius = 15.0333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kq4qt"]
+radius = 68.2642
+
+[node name="Bot" type="CharacterBody2D"]
+script = ExtResource("1_ty82c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i3vjt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="BulletPool" parent="." instance=ExtResource("2_nimyx")]
+
+[node name="Enemy_detector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_detector"]
+shape = SubResource("CircleShape2D_kq4qt")
+debug_color = Color(0.894681, 0.255644, 0.493707, 0.42)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Enemy_detector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="body_exited" from="Enemy_detector" to="." method="_on_enemy_detector_body_exited"]
