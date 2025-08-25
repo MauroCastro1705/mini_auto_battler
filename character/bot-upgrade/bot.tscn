@@ -72,7 +72,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_0pe05")
 }],
 "loop": true,
-"name": &"default",
+"name": &"jet",
 "speed": 15.0
 }]
 
@@ -223,10 +223,12 @@ shape = SubResource("CircleShape2D_kq4qt")
 debug_color = Color(0.894681, 0.255644, 0.493707, 0.42)
 
 [node name="Node2D" type="Node2D" parent="."]
+rotation = 1.5708
 
 [node name="propulsor" type="AnimatedSprite2D" parent="Node2D"]
 sprite_frames = SubResource("SpriteFrames_5rmea")
-frame_progress = 0.767965
+animation = &"jet"
+frame_progress = 0.676569
 
 [node name="ship" type="AnimatedSprite2D" parent="Node2D"]
 sprite_frames = SubResource("SpriteFrames_jyunx")

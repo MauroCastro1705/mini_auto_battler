@@ -4,27 +4,27 @@ extends CharacterBody2D
 @onready var bullet_pool: Node = $BulletPool
 @onready var atk_timer: Timer = $Timer
 @onready var atk_range: CollisionShape2D = $Enemy_detector/CollisionShape2D
+@onready var propulsor: AnimatedSprite2D = $Node2D/propulsor
+@onready var ship: AnimatedSprite2D = $Node2D/ship
 
 var enemies_in_range: Array[Node] = []
-var shoot_cooldown := 0.8
-var time_since_shot := 0.0
 
 var show_range := true
 
 func _ready() -> void:
-
 	Global.stats_updated.connect(update_global)
 	update_global() # Initial call
 	queue_redraw()
-	atk_timer.wait_time = Global.attack_cooldown
+	atk_timer.wait_time = Global.bot_atk_cooldown
 	atk_timer.start()
+	propulsor.play("jet")
 
 func update_global() -> void:
-	atk_timer.wait_time = Global.attack_cooldown
+	atk_timer.wait_time = Global.bot_atk_cooldown
 	atk_timer.start()
-	print("atk cooldown:" , Global.attack_cooldown)
+	print("atk cooldown:" , Global.bot_atk_cooldown)
 	if atk_range.shape is CircleShape2D:
-		(atk_range.shape as CircleShape2D).radius = Global.atk_range
+		(atk_range.shape as CircleShape2D).radius = Global.bot_atk_range
 
 func _process(_delta: float) -> void:
 	queue_redraw()

@@ -32,6 +32,10 @@ var attack_cooldown:float = 0.7
 var atk_range:float = 350
 var mobs_killed:int = 0
 var mobs_killed_in_total:int = 0
+#Player bot stats (upgrade)
+var bot_atk_cooldown:= 1.5
+var bot_atk_range:float = 200
+
 
 #BULLET
 var bullet_dmg:float = 8

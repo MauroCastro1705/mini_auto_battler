@@ -131,9 +131,9 @@ frame_progress = 1.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="show_bomb" type="Button" parent="CanvasLayer"]
-offset_left = 474.0
+offset_left = 461.0
 offset_top = 974.0
-offset_right = 550.0
+offset_right = 537.0
 offset_bottom = 1011.0
 theme = ExtResource("3_ivrvo")
 text = "AIM

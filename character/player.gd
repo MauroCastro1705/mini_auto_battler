@@ -5,8 +5,7 @@ extends CharacterBody2D
 @onready var atk_range: CollisionShape2D = $enemy_detector/CollisionShape2D
 
 var enemies_in_range: Array[Node] = []
-var shoot_cooldown := 0.8
-var time_since_shot := 0.0
+
 
 var show_range := true
 
