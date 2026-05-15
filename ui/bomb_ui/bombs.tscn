@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://3dje4lvy4x3p"]
+[gd_scene format=3 uid="uid://3dje4lvy4x3p"]
 
 [ext_resource type="Script" uid="uid://l3tees00tjuj" path="res://ui/bomb_ui/bombs_UI.gd" id="1_ww53d"]
 [ext_resource type="Texture2D" uid="uid://revjaw4idqp1" path="res://assets/bullets/ui pixel/All.png" id="2_kxjir"]
@@ -7,17 +7,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnx5q"]
 
-[node name="Bombs" type="Control"]
+[node name="Bombs" type="Control" unique_id=930065602]
 layout_mode = 3
 anchor_right = 0.158
 anchor_bottom = 0.098
-offset_right = -0.120003
-offset_bottom = -0.0800018
+offset_right = -0.12000275
+offset_bottom = -8.439995
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ww53d")
 
-[node name="BoxContainer" type="BoxContainer" parent="."]
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=2097258502]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.089
@@ -28,14 +28,14 @@ offset_right = 25.5879
 offset_bottom = 12.2739
 grow_horizontal = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="BoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer" unique_id=2099508780]
 layout_mode = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
 
-[node name="ColorRect" type="NinePatchRect" parent="BoxContainer/MarginContainer"]
+[node name="ColorRect" type="NinePatchRect" parent="BoxContainer/MarginContainer" unique_id=560556740]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("2_kxjir")
@@ -45,10 +45,10 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer" unique_id=1687032659]
 layout_mode = 2
 
-[node name="level" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer"]
+[node name="level" type="MarginContainer" parent="BoxContainer/MarginContainer/HBoxContainer" unique_id=826375784]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/margin_left = 10
@@ -56,24 +56,24 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/level"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/level" unique_id=201769191]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = ExtResource("3_gnx5q")
 theme_override_constants/separation = 1
 
-[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer" unique_id=480225190]
 layout_mode = 2
 theme = ExtResource("3_gnx5q")
 text = "Bombs"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer" unique_id=909174300]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="bomb_amount" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer"]
+[node name="bomb_amount" type="Label" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer" unique_id=995607367]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_gnx5q")
@@ -81,12 +81,12 @@ text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer" unique_id=2014928165]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gnx5q")
 
-[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer/Panel"]
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/HBoxContainer/Panel" unique_id=559105553]
 position = Vector2(13, 11)
 scale = Vector2(0.056, 0.056)
 texture = ExtResource("4_gnx5q")

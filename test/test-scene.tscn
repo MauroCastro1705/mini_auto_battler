@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cauvt5eegmfco"]
+[gd_scene format=3 uid="uid://cauvt5eegmfco"]
 
 [ext_resource type="PackedScene" uid="uid://cfoeue187p1kd" path="res://character/player.tscn" id="1_5d1lj"]
 [ext_resource type="Texture2D" uid="uid://bh2hl5owsoik4" path="res://assets/Planets/planet03.png" id="1_b3u66"]
@@ -40,16 +40,16 @@ shader_parameter/bg_speed = 0.1
 shader_parameter/mid_speed = 0.5
 shader_parameter/fg_speed = 1.0
 
-[node name="Test-scene" type="Node2D"]
+[node name="Test-scene" type="Node2D" unique_id=1225439251]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=896491299]
 offset_right = 720.0
 offset_bottom = 1280.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=754768464]
 material = SubResource("ShaderMaterial_ehe6g")
 offset_right = 720.0
 offset_bottom = 1280.0
@@ -57,39 +57,39 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=978525830]
 position = Vector2(360, 1273)
 scale = Vector2(0.410937, 0.410937)
 texture = ExtResource("1_b3u66")
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("1_5d1lj")]
+[node name="Player" parent="." unique_id=2129326642 instance=ExtResource("1_5d1lj")]
 position = Vector2(371, 857)
 rotation = -1.57079
 
-[node name="focal_point" type="Marker2D" parent="."]
+[node name="focal_point" type="Marker2D" parent="." unique_id=1767070196]
 position = Vector2(334, 465)
 
-[node name="GameManager" parent="." instance=ExtResource("3_ad8ri")]
+[node name="GameManager" parent="." unique_id=1482678331 instance=ExtResource("3_ad8ri")]
 
-[node name="EnemySpawner" parent="." instance=ExtResource("4_kvgnx")]
+[node name="EnemySpawner" parent="." unique_id=673509843 instance=ExtResource("4_kvgnx")]
 
-[node name="EnemyPool" parent="." instance=ExtResource("4_l0d6b")]
+[node name="EnemyPool" parent="." unique_id=185661671 instance=ExtResource("4_l0d6b")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1115904670]
 
-[node name="MobsKilled" parent="CanvasLayer" instance=ExtResource("7_v52jn")]
+[node name="MobsKilled" parent="CanvasLayer" unique_id=2045745597 instance=ExtResource("7_v52jn")]
 offset_left = -88.0
 offset_top = 76.2
 offset_right = -88.0
 offset_bottom = 76.24
 metadata/_edit_lock_ = true
 
-[node name="WaveControl" parent="CanvasLayer" instance=ExtResource("16_pd52j")]
+[node name="WaveControl" parent="CanvasLayer" unique_id=1622120156 instance=ExtResource("16_pd52j")]
 offset_top = 3.0
 offset_bottom = 3.0
 
-[node name="ExpBar" parent="CanvasLayer" instance=ExtResource("10_3wmdq")]
+[node name="ExpBar" parent="CanvasLayer" unique_id=428253076 instance=ExtResource("10_3wmdq")]
 anchor_left = 0.027
 anchor_top = 0.102
 anchor_right = 0.08
@@ -99,68 +99,68 @@ offset_top = 666.44
 offset_right = 654.4
 offset_bottom = 658.76
 
-[node name="Main_ui" parent="CanvasLayer" instance=ExtResource("5_l0d6b")]
+[node name="Main_ui" parent="CanvasLayer" unique_id=599386934 instance=ExtResource("5_l0d6b")]
 offset_left = 1.0
 offset_top = 2.71997
 offset_right = 1.0
 offset_bottom = 6.67993
 
-[node name="LogroPopUp" parent="CanvasLayer" instance=ExtResource("8_jipin")]
+[node name="LogroPopUp" parent="CanvasLayer" unique_id=1813450779 instance=ExtResource("8_jipin")]
 process_mode = 3
 visible = false
 
-[node name="Bombs" parent="CanvasLayer" instance=ExtResource("13_6p2hi")]
+[node name="Bombs" parent="CanvasLayer" unique_id=903814416 instance=ExtResource("13_6p2hi")]
 offset_left = 27.0
 offset_top = 967.0
 offset_right = -3.76
 offset_bottom = 960.56
 metadata/_edit_lock_ = true
 
-[node name="Upgrade-menu" parent="CanvasLayer" instance=ExtResource("9_jipin")]
+[node name="Upgrade-menu" parent="CanvasLayer" unique_id=1336667159 instance=ExtResource("9_jipin")]
 visible = false
 
-[node name="Always" parent="CanvasLayer" instance=ExtResource("8_q134b")]
+[node name="Always" parent="CanvasLayer" unique_id=1515457200 instance=ExtResource("8_q134b")]
 offset_left = 11.0
 offset_right = 11.28
 metadata/_edit_lock_ = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1868201870]
 wait_time = 5.0
 autostart = true
 
-[node name="Bomb1" parent="." instance=ExtResource("13_ehe6g")]
+[node name="Bomb1" parent="." unique_id=1667665772 instance=ExtResource("13_ehe6g")]
 position = Vector2(316, 514)
 collision_mask = 8
 safe_margin = 1.0
 
-[node name="walls" type="Node2D" parent="."]
+[node name="walls" type="Node2D" parent="." unique_id=2075340124]
 
-[node name="Pared" parent="walls" instance=ExtResource("15_3wcnv")]
+[node name="Pared" parent="walls" unique_id=698736935 instance=ExtResource("15_3wcnv")]
 visible = false
 position = Vector2(20, 1)
 metadata/_edit_lock_ = true
 
-[node name="Pared2" parent="walls" instance=ExtResource("15_3wcnv")]
+[node name="Pared2" parent="walls" unique_id=1151831329 instance=ExtResource("15_3wcnv")]
 visible = false
 position = Vector2(698, 0)
 metadata/_edit_lock_ = true
 
-[node name="Pared3" parent="walls" instance=ExtResource("15_3wcnv")]
+[node name="Pared3" parent="walls" unique_id=1695538715 instance=ExtResource("15_3wcnv")]
 visible = false
 position = Vector2(848, 1076)
 rotation = 1.57079
 metadata/_edit_lock_ = true
 
-[node name="Pared4" parent="walls" instance=ExtResource("15_3wcnv")]
+[node name="Pared4" parent="walls" unique_id=838161973 instance=ExtResource("15_3wcnv")]
 visible = false
 position = Vector2(947, -33)
 rotation = 1.57079
 metadata/_edit_lock_ = true
 
-[node name="Planet" parent="." instance=ExtResource("17_5oahq")]
+[node name="Planet" parent="." unique_id=1976689480 instance=ExtResource("17_5oahq")]
 position = Vector2(365, 1103)
 
-[node name="Bot" parent="." instance=ExtResource("18_0pl55")]
-position = Vector2(377, 519)
+[node name="Bot" parent="." unique_id=1613566249 instance=ExtResource("18_0pl55")]
+position = Vector2(533, 663)
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

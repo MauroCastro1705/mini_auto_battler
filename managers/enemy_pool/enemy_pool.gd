@@ -20,7 +20,7 @@ func _ready():
 
 func get_enemy() -> Node:
 	for enemy in pool:
-		if is_instance_valid(enemy) and not enemy.active:
+		if is_instance_valid(enemy) and not enemy.active and enemy.is_dead:
 			return enemy
 	var enemy = enemy_scene.instantiate()
 	add_child(enemy)  # igual que arriba: primero al árbol

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnp2dnfpc6rmn"]
+[gd_scene format=3 uid="uid://bnp2dnfpc6rmn"]
 
 [ext_resource type="Script" uid="uid://b4j7unrex7oy" path="res://ui/wave ui/wave_control.gd" id="1_ofigo"]
 [ext_resource type="Texture2D" uid="uid://bmhd1le7ivmya" path="res://assets/PNG/bola_verde.png" id="2_raohq"]
@@ -14,7 +14,7 @@ shadow_size = 6
 shadow_color = Color(0.898039, 0, 0, 0.72549)
 shadow_offset = Vector2(0, 1)
 
-[node name="WaveControl" type="Control"]
+[node name="WaveControl" type="Control" unique_id=711850568]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,8 +25,8 @@ script = ExtResource("1_ofigo")
 active_texture = ExtResource("2_raohq")
 inactive_texture = ExtResource("3_n4tl8")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
+[node name="Label" type="Label" parent="." unique_id=406181668]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 154.0
 offset_right = 410.0
@@ -34,45 +34,45 @@ offset_bottom = 198.0
 text = "Wave:"
 label_settings = SubResource("LabelSettings_w4vgn")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=151948622]
 custom_minimum_size = Vector2(10, 25)
-layout_mode = 2
+layout_mode = 0
 offset_left = 678.0
 offset_top = 611.0
 offset_right = 703.0
 offset_bottom = 752.0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=623211509]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 texture = ExtResource("3_n4tl8")
 expand_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1072377798]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 texture = ExtResource("3_n4tl8")
 expand_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=801913035]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 texture = ExtResource("3_n4tl8")
 expand_mode = 2
 
-[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer" unique_id=789253666]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 texture = ExtResource("3_n4tl8")
 expand_mode = 2
 
-[node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer" unique_id=1826057665]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 texture = ExtResource("3_n4tl8")
 expand_mode = 2
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=970251861]
 wait_time = 2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

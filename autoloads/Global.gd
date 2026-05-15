@@ -4,6 +4,7 @@ signal enemy_killed
 signal stats_updated
 signal bomb_droped
 signal wave_advanced
+signal level_advanced
 signal enemigo_se_infiltro
 
 
@@ -38,7 +39,7 @@ var bot_atk_range:float = 200
 
 
 #BULLET
-var bullet_dmg:float = 8
+var bullet_dmg:float = 6
 var bullet_speed: float = 400
 
 #dificulty system:
@@ -67,7 +68,14 @@ var base_enemigo_score:int = 10
 
 
 # --- WAVE SYSTEM ---
-var current_wave:int = 1
+var current_wave:int = 1 # global wave counter (kept for UI compatibility)
+
+# Level system
+var current_level:int = 1
+var max_levels:int = 10
+var waves_per_level:int = 5
+var current_wave_in_level:int = 1
+
 var max_wave_before_boss:int = 5
 var is_boss_wave:bool = false
 var wave_enemy_count := {
@@ -97,10 +105,17 @@ func update_scores():
 	print("SCORE: ", player_score, "  MONEY: ", player_money)
 
 func get_enemies_per_wave() -> int:
+	# Prefer explicit overrides per global wave index if present
 	if wave_enemy_count.has(current_wave):
 		return wave_enemy_count[current_wave]
-	else:
-		return 1 if is_boss_wave else 5 + current_wave * 2
+	# Boss waves are usually single tough enemy
+	if is_boss_wave:
+		return 1
+	# Base formula: scales with level and wave within level
+	var base = 5
+	var level_scale = (current_level - 1) * 3
+	var wave_scale = (current_wave_in_level - 1) * 2
+	return base + level_scale + wave_scale
 		
 func update_enemy_kills():#update de valors del player dinero y score
 	mobs_killed += 1
@@ -109,26 +124,67 @@ func update_enemy_kills():#update de valors del player dinero y score
 	player_score += enemigo_score
 
 	if mobs_killed >= get_enemies_per_wave():
-		#se avanza de wave
+		# advance wave within level or progress to next level
 		next_wave()
-		is_boss_wave = current_wave % (max_wave_before_boss + 1) == 0
-		print("Next Wave: ", current_wave)
+		print("Next Wave: ", current_wave, " (Level:", current_level, " WaveInLevel:", current_wave_in_level, ")")
 	
 func next_wave():
 	mobs_killed = 0
+	# advance global wave count and wave within current level
 	current_wave += 1
+	current_wave_in_level += 1
+
+	if current_wave_in_level > waves_per_level:
+		# level complete -> start next level
+		start_next_level()
+		return
+
 	enemigos_infiltrados = 0
 	emit_signal("wave_advanced")
+	# update boss flag for the new wave
+	is_boss_wave = current_wave % (max_wave_before_boss + 1) == 0
 	scale_enemy_stats()
 	
 	#emigos se hacen mas poderos al avanzar las oleadas
 func scale_enemy_stats():
+	# Use global wave as aggregate difficulty driver to keep existing behaviour,
+	# but add level influence as multiplier
 	var scale_factor = current_wave
+	var level_multiplier = 1.0 + (current_level - 1) * 0.15
 
-	enemigo_max_hp = base_enemigo_hp + scale_factor * 3.0
-	enemigo_speed = base_enemigo_speed + scale_factor * 1.1
-	enemigo_money = base_enemigo_money + scale_factor * 2
-	enemigo_score = base_enemigo_score + scale_factor * 2
+	enemigo_max_hp = base_enemigo_hp + scale_factor * 3.0 * level_multiplier
+	enemigo_speed = base_enemigo_speed + scale_factor * 1.1 * level_multiplier
+	enemigo_money = base_enemigo_money + int(scale_factor * 2 * level_multiplier)
+	enemigo_score = base_enemigo_score + int(scale_factor * 2 * level_multiplier)
+
+	# Ensure integers where appropriate
+	enemigo_money = max(1, enemigo_money)
+	enemigo_score = max(1, enemigo_score)
+
+	# update boss flag too
+	is_boss_wave = current_wave % (max_wave_before_boss + 1) == 0
+
+
+func start_next_level():
+	if current_level >= max_levels:
+		print("All levels completed or max level reached")
+		return
+	current_level += 1
+	current_wave_in_level = 1
+	# set global wave to the next wave index (keeps continuity)
+	# optional: you may want to reset global wave count instead
+	# keep enemies counters clean
+	mobs_killed = 0
+	enemigos_infiltrados = 0
+	enemies_reset_for_level()
+	emit_signal("level_advanced")
+	emit_signal("wave_advanced")
+	scale_enemy_stats()
+
+func enemies_reset_for_level():
+	# helper to recompute or reset any level-scoped vars
+	# Keep current_wave as-is to preserve UI that displays global wave
+	return
 
 func dificultad() -> String: # "danger level"
 	if easy_mode:
