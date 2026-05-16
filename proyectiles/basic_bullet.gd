@@ -54,15 +54,23 @@ func _physics_process(delta: float) -> void:
 	# Siguiente posición
 	var next_pos := global_position + direction * speed * delta
 
-	# Barrido anti-túnel
-	var space := get_world_2d().direct_space_state
-	var params := PhysicsRayQueryParameters2D.create(_prev_pos, next_pos)
-	params.collide_with_bodies = true
-	params.collide_with_areas  = false
-	params.collision_mask      = ENEMY_MASK
-	params.exclude             = [self]
-
-	var hit := space.intersect_ray(params)
+	# multi-ray sweep (center + two side rays) to reduce tunneling
+	var space = get_world_2d().direct_space_state
+	var hit = null
+	var thickness = max(2.0, speed * delta * 0.1)
+	var perp := Vector2(-direction.y, direction.x)
+	var offsets := [Vector2.ZERO, perp * thickness, -perp * thickness]
+	for off in offsets:
+		var from = _prev_pos + off
+		var to = next_pos + off
+		var params := PhysicsRayQueryParameters2D.create(from, to)
+		params.collide_with_bodies = true
+		params.collide_with_areas  = false
+		params.collision_mask      = ENEMY_MASK
+		params.exclude             = [self]
+		hit = space.intersect_ray(params)
+		if hit:
+			break
 	if hit:
 		var where: Vector2 = hit["position"]
 		global_position = where
