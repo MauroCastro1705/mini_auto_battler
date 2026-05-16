@@ -38,6 +38,7 @@ var bot_atk_cooldown:= 1.5
 var bot_atk_range:float = 200
 
 
+
 #BULLET
 var bullet_dmg:float = 6
 var bullet_speed: float = 400
@@ -100,8 +101,8 @@ func _ready() -> void:
 	
 
 func update_scores():
-	player_money += enemigo_money
-	player_score += enemigo_score
+	# Kept for compatibility: do not modify money/score here to avoid double-counting.
+	# Score and money are updated by `update_enemy_kills()` and coin arrival respectively.
 	print("SCORE: ", player_score, "  MONEY: ", player_money)
 
 func get_enemies_per_wave() -> int:
@@ -120,7 +121,6 @@ func get_enemies_per_wave() -> int:
 func update_enemy_kills():#update de valors del player dinero y score
 	mobs_killed += 1
 	mobs_killed_in_total += 1
-	player_money += enemigo_money
 	player_score += enemigo_score
 
 	if mobs_killed >= get_enemies_per_wave():
@@ -130,12 +130,10 @@ func update_enemy_kills():#update de valors del player dinero y score
 	
 func next_wave():
 	mobs_killed = 0
-	# advance global wave count and wave within current level
 	current_wave += 1
 	current_wave_in_level += 1
-
+	
 	if current_wave_in_level > waves_per_level:
-		# level complete -> start next level
 		start_next_level()
 		return
 
@@ -176,12 +174,10 @@ func start_next_level():
 	# keep enemies counters clean
 	mobs_killed = 0
 	enemigos_infiltrados = 0
-	enemies_reset_for_level()
 	emit_signal("level_advanced")
-	emit_signal("wave_advanced")
-	scale_enemy_stats()
-
-func enemies_reset_for_level():
+	if mobs_killed >= get_enemies_per_wave():
+		next_wave()
+		print("Next Wave: ", current_wave, " (Level:", current_level, " WaveInLevel:", current_wave_in_level, ")")
 	# helper to recompute or reset any level-scoped vars
 	# Keep current_wave as-is to preserve UI that displays global wave
 	return

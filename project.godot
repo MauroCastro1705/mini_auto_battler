@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 Global="*res://autoloads/Global.gd"
 DamageNumbers="*res://autoloads/damageNumbers.gd"
 LogrosData="*res://logros/data_logros/data_logros.gd"
+CoinScript="*uid://d3uhl7s38pbsv"
 
 [display]
 

@@ -12,6 +12,8 @@ var is_dead := false
 @onready var health_bar: Control = %HealthBar
 @onready var ship: Node2D = $Node2D
 @onready var propulsor: AnimatedSprite2D = %propulsor
+@onready var coin: Sprite2D = $coin
+@export var travel_position: Node
 
 # Guarda capas/máscaras originales para reponer al activar
 var _orig_layer: int
@@ -23,10 +25,6 @@ var _orig_mask: int
 #el VALUE es el daño que recibio
 #damage_numbers_origin.global_position = es solo el nodo donde va a mostrar el numero
 #----------------------------
-
-
-
-
 
 
 
@@ -111,6 +109,8 @@ func take_damage(amount: int) -> void:
 		propulsor.visible = false
 		# DESACTIVAR EN DIFERIDO (evita flushing queries)
 		call_deferred("_disable_collisions_now")
+		# Spawn a coin that will travel to the UI money node
+		call_deferred("_spawn_and_travel_coin")
 		
 func deactivate():
 	# Estado lógico
@@ -140,6 +140,54 @@ func _on_ship_animation_finished() -> void:
 	if ship_sprite.animation == "die" and is_dead:
 		# Al terminar la anim de muerte, ocúltate/queda ya desactivado
 		deactivate()
+
+
+# Spawn a visual coin and tween it to the configured `travel_position`.
+# The coin is duplicated and added to the scene root so it survives enemy freeing.
+func _spawn_and_travel_coin() -> void:
+	# Prefer delegating coin creation/movement to Global if available
+	if CoinScript.has_method("spawn_coin_from_sprite"):
+		CoinScript.spawn_coin_from_sprite(coin, global_position, Global.enemigo_money)
+		return
+
+	# Fallback: local behaviour if Global helper is not present
+	if not coin:
+		return
+
+	var coin_instance: Node = coin.duplicate() as Node
+	if coin_instance is CanvasItem:
+		(coin_instance as CanvasItem).visible = true
+	var root = get_tree().get_root()
+	root.add_child(coin_instance)
+	coin_instance.global_position = global_position
+
+	var target: Vector2 = global_position
+	if travel_position and is_instance_valid(travel_position):
+		if travel_position is Node2D:
+			target = (travel_position as Node2D).global_position
+		elif travel_position is Control:
+			var control_pos: Vector2 = (travel_position as Control).get_global_position()
+			var canvas_xform = get_viewport().get_canvas_transform()
+			if canvas_xform:
+				target = canvas_xform.xform_inv(control_pos)
+			else:
+				target = control_pos
+
+	var t = get_tree().create_tween()
+	t.tween_property(coin_instance, "global_position", target, 0.6).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if coin_instance is Node2D:
+		t.tween_property(coin_instance, "scale", Vector2(0.5, 0.5), 0.6)
+	if coin_instance is CanvasItem:
+		t.tween_property(coin_instance, "modulate:a", 0.0, 0.6)
+
+	await t.finished
+
+	if Global.has_variable("player_money") and Global.has_variable("enemigo_money"):
+		Global.player_money += Global.enemigo_money
+		Global.emit_signal("stats_updated")
+
+	if is_instance_valid(coin_instance):
+		coin_instance.queue_free()
 
 # -----------------------
 # Helpers de colisiones
