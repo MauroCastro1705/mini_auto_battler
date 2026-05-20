@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://nmrvlp0jipfk"]
+[gd_scene format=3 uid="uid://nmrvlp0jipfk"]
 
 [ext_resource type="Script" uid="uid://cr5n1wbok54m1" path="res://logros/logro_pop_up.gd" id="1_4qdmu"]
 [ext_resource type="Texture2D" uid="uid://da58yydbyuoid" path="res://assets/PNG/Grey/Double/button_square_header_small_square_screws.png" id="2_wrxem"]
@@ -14,7 +14,7 @@ font_size = 30
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="LogroPopUp" type="Control"]
+[node name="LogroPopUp" type="Control" unique_id=2097833243]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 8
@@ -31,7 +31,7 @@ grow_vertical = 2
 pivot_offset = Vector2(16, 19)
 script = ExtResource("1_4qdmu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=924060686]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.00392157, 0.00392157, 0.00392157, 0.32549)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1357553967]
 z_index = 50
 layout_mode = 1
 anchors_preset = 8
@@ -64,7 +64,7 @@ patch_margin_top = 66
 patch_margin_right = 24
 patch_margin_bottom = 24
 
-[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=851072420]
 z_index = 50
 layout_mode = 1
 anchors_preset = 8
@@ -81,14 +81,14 @@ grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer" unique_id=1195783556]
 z_index = 50
 layout_mode = 2
 focus_mode = 1
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="tittle" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="tittle" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=1266334205]
 unique_name_in_owner = true
 z_index = 50
 layout_mode = 2
@@ -97,7 +97,7 @@ label_settings = ExtResource("3_wrxem")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="description" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="description" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=1234201298]
 unique_name_in_owner = true
 z_index = 50
 layout_mode = 2
@@ -106,15 +106,15 @@ label_settings = ExtResource("4_83cml")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="icon" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="icon" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=748518284]
 unique_name_in_owner = true
 z_index = 50
 layout_mode = 2
 
-[node name="Button" type="Button" parent="NinePatchRect"]
+[node name="Button" type="Button" parent="NinePatchRect" unique_id=291416703]
 process_mode = 3
 z_index = 55
-layout_mode = 2
+layout_mode = 0
 offset_left = 98.0
 offset_top = 122.0
 offset_right = 278.0
@@ -123,7 +123,7 @@ size_flags_vertical = 4
 theme = ExtResource("5_tkdba")
 text = "Continuar"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1424118238]
 layout_mode = 0
 offset_left = -298.0
 offset_top = -132.0

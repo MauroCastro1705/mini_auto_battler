@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs31xaw2a4pni"]
+[gd_scene format=3 uid="uid://cs31xaw2a4pni"]
 
 [ext_resource type="Texture2D" uid="uid://dhyl6ii7jaik8" path="res://resources/particle_test.png" id="1_07122"]
 
@@ -19,7 +19,7 @@ scale_min = 0.2
 scale_max = 0.5
 color_initial_ramp = SubResource("GradientTexture1D_engwa")
 
-[node name="GPUParticles2D" type="GPUParticles2D"]
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=333584173]
 emitting = false
 amount = 10
 texture = ExtResource("1_07122")

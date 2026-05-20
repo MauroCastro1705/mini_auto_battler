@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmkqhqfuge65l"]
+[gd_scene format=3 uid="uid://bmkqhqfuge65l"]
 
 [ext_resource type="Script" uid="uid://cst4m6j302knw" path="res://ui/upgrade-menu/upgrade_buttons/bullet speed/stat_bullet_spd.gd" id="1_oh3y1"]
 [ext_resource type="Texture2D" uid="uid://c4ejevqoai3wj" path="res://assets/PNG/Blue/Double/button_square_header_small_square_screws.png" id="2_j36de"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="3_lsblt"]
 [ext_resource type="Theme" uid="uid://divwri80mossj" path="res://resources/button_modern_shop.tres" id="4_i62wm"]
 
-[node name="stat_atk_spd" type="BoxContainer"]
+[node name="stat_atk_spd" type="BoxContainer" unique_id=2020656678]
 script = ExtResource("1_oh3y1")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=318761508]
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=1727652291]
 layout_mode = 2
 texture = ExtResource("2_j36de")
 patch_margin_left = 25
@@ -23,59 +23,59 @@ patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=585749579]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=188551279]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=523111936]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="stat_title" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="stat_title" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1889873644]
 unique_name_in_owner = true
 layout_mode = 2
 text = "stat title"
 label_settings = ExtResource("3_lsblt")
 horizontal_alignment = 1
 
-[node name="stat_level" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="stat_level" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1257589814]
 unique_name_in_owner = true
 layout_mode = 2
 text = "stat level"
 label_settings = ExtResource("3_lsblt")
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1647180850]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=5833437]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="stat_value" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="stat_value" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=339436568]
 unique_name_in_owner = true
 layout_mode = 2
 text = "+2"
 label_settings = ExtResource("3_lsblt")
 horizontal_alignment = 1
 
-[node name="precio" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="precio" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=555161558]
 unique_name_in_owner = true
 layout_mode = 2
 text = "100$"
 label_settings = ExtResource("3_lsblt")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1373339247]
 custom_minimum_size = Vector2(100, 45)
 layout_mode = 2
 theme = ExtResource("4_i62wm")

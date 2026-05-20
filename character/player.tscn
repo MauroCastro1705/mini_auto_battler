@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfoeue187p1kd"]
+[gd_scene format=3 uid="uid://cfoeue187p1kd"]
 
 [ext_resource type="Script" uid="uid://ceoyvg1jautwm" path="res://character/player.gd" id="1_2orxn"]
 [ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/bulletPool/BulletPool.tscn" id="2_monf5"]
@@ -10,25 +10,25 @@ radius = 48.0104
 [sub_resource type="CircleShape2D" id="CircleShape2D_monf5"]
 radius = 145.003
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1921912381 groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_2orxn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516060368]
 shape = SubResource("CircleShape2D_aypkh")
 
-[node name="atk_timer" type="Timer" parent="."]
+[node name="atk_timer" type="Timer" parent="." unique_id=207564940]
 
-[node name="BulletPool" parent="." instance=ExtResource("2_monf5")]
+[node name="BulletPool" parent="." unique_id=1891825684 instance=ExtResource("2_monf5")]
 
-[node name="enemy_detector" type="Area2D" parent="."]
+[node name="enemy_detector" type="Area2D" parent="." unique_id=466743673]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_detector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_detector" unique_id=1586389684]
 shape = SubResource("CircleShape2D_monf5")
 debug_color = Color(0.686657, 0.38346, 0.82136, 0.42)
 
-[node name="Nairan-Battlecruiser-Base" type="Sprite2D" parent="."]
+[node name="Nairan-Battlecruiser-Base" type="Sprite2D" parent="." unique_id=2026172737]
 position = Vector2(-3, 1)
 rotation = 1.5708
 texture = ExtResource("3_aypkh")

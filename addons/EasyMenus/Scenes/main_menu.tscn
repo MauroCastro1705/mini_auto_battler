@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://dq6tvhqcy2aps"]
+
+[ext_resource type="Script" uid="uid://dx58m4jro5wl2" path="res://addons/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
+[ext_resource type="PackedScene" uid="uid://qlskttl1wjr7" path="res://addons/EasyMenus/Scenes/options_menu.tscn" id="2_pwqpr"]
+
+[sub_resource type="Shader" id="Shader_8xl82"]
+code = "shader_type canvas_item;
+//I DONT OWN THIS i just took it directly from balatros source code teehee
+//and then converted it into godots shader language myself
+//shoutouts localthunk, buy balatro
+
+uniform bool polar_coordinates = false;  //cool polar coordinates effect
+uniform vec2 polar_center = vec2(0.5);
+uniform float polar_zoom = 1.;
+uniform float polar_repeat = 1.;
+
+uniform highp float spin_rotation; 
+uniform highp float spin_speed = 1;
+uniform highp vec2 offset = vec2(0., 0.); 
+uniform highp vec4 colour_1 : source_color;
+uniform highp vec4 colour_2 : source_color;
+uniform highp vec4 colour_3 : source_color;
+uniform highp float contrast = 2.;
+uniform highp float spin_amount = 0.36;
+uniform highp float pixel_filter = 700.;
+#define SPIN_EASE 1.0
+
+
+vec4 effect(vec2 screenSize, vec2 screen_coords){
+	//Convert to UV coords (0-1) and floor for pixel effect
+	highp float pixel_size = length(screenSize.xy) / pixel_filter;
+    highp vec2 uv = (floor(screen_coords.xy*(1./pixel_size))*pixel_size - 0.5*screenSize.xy)/length(screenSize.xy) - offset;
+    highp float uv_len = length(uv);
+	
+	//Adding in a center swirl, changes with time. Only applies meaningfully if the 'spin amount' is a non-zero number
+    highp float speed = (spin_rotation*SPIN_EASE*0.2) + 302.2;
+    highp float new_pixel_angle = (atan(uv.y, uv.x)) + speed - SPIN_EASE*20.*(1.*spin_amount*uv_len + (1. - 1.*spin_amount));
+    highp vec2 mid = (screenSize.xy/length(screenSize.xy))/2.;
+    uv = (vec2((uv_len * cos(new_pixel_angle) + mid.x), (uv_len * sin(new_pixel_angle) + mid.y)) - mid);
+	
+	//Now add the paint effect to the swirled UV
+    uv *= 30.;
+    speed = TIME*(spin_speed);
+	highp vec2 uv2 = vec2(uv.x+uv.y);
+	
+	for(int i=0; i < 5; i++) {
+		uv2 += sin(max(uv.x, uv.y)) + uv;
+		uv  += 0.5*vec2(cos(5.1123314 + 0.353*uv2.y + speed*0.131121),sin(uv2.x - 0.113*speed));
+		uv  -= 1.0*cos(uv.x + uv.y) - 1.0*sin(uv.x*0.711 - uv.y);
+	}
+	
+	//Make the paint amount range from 0 - 2
+    highp float contrast_mod = (0.25*contrast + 0.5*spin_amount + 1.2);
+	highp float paint_res = min(2., max(0.,length(uv)*(0.035)*contrast_mod));
+    highp float c1p = max(0.,1. - contrast_mod*abs(1.-paint_res));
+    highp float c2p = max(0.,1. - contrast_mod*abs(paint_res));
+    highp float c3p = 1. - min(1., c1p + c2p);
+	
+	
+	highp vec4 ret_col = (0.3/contrast)*colour_1 + (1. - 0.3/contrast)*(colour_1*c1p + colour_2*c2p + vec4(c3p*colour_3.rgb, c3p*colour_1.a));
+	return ret_col;
+}
+
+vec2 polar_coords(vec2 uv, vec2 center, float zoom, float repeat){
+	vec2 dir = uv - center;
+	float radius = length(dir) * 2.0;
+	float angle = atan(dir.y , dir.x) * 1.0 / (PI * 2.0);
+	return mod(vec2(radius * zoom, angle * repeat), 1.0);
+}
+
+void fragment() {
+	vec2 polarCoords = UV;
+	if (polar_coordinates){
+		polarCoords = polar_coords(UV.xy, polar_center, polar_zoom, polar_repeat);
+	}
+	COLOR *= effect(TEXTURE_PIXEL_SIZE, polarCoords);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q74m2"]
+shader = SubResource("Shader_8xl82")
+shader_parameter/polar_coordinates = false
+shader_parameter/polar_center = Vector2(0.5, 0.5)
+shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_repeat = 1.0
+shader_parameter/spin_rotation = 3.195
+shader_parameter/spin_speed = 20.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.74509805, 1, 0.9019608, 0)
+shader_parameter/colour_2 = Color(0.85490197, 0.16470589, 0, 1)
+shader_parameter/colour_3 = Color(0.5176471, 0.12941177, 0.4392157, 1)
+shader_parameter/contrast = 1.0
+shader_parameter/spin_amount = 1.05
+shader_parameter/pixel_filter = 700.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcxwf"]
+font_size = 25
+font_color = Color(0.36061624, 0.3573326, 0.2763212, 1)
+outline_size = 3
+
+[sub_resource type="Animation" id="Animation_q74m2"]
+length = 0.001
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_h3q7e"]
+resource_name = "menu"
+length = 20.0
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gl8oq"]
+_data = {
+&"RESET": SubResource("Animation_q74m2"),
+&"menu": SubResource("Animation_h3q7e")
+}
+
+[node name="MainMenu" type="Control" unique_id=1199553587]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lbw7r")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1174897725]
+layout_mode = 0
+offset_right = 731.0
+offset_bottom = 1294.0
+color = Color(0.9137255, 0.7529412, 0.5803922, 1)
+
+[node name="efecto" type="ColorRect" parent="." unique_id=1447986563]
+material = SubResource("ShaderMaterial_q74m2")
+layout_mode = 0
+offset_left = -167.0
+offset_top = 765.0
+offset_right = 889.0
+offset_bottom = 1287.0
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=612335238]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -312.5
+offset_top = 418.0
+offset_right = 312.5
+offset_bottom = 768.0
+grow_horizontal = 2
+theme_override_constants/separation = 40
+metadata/_edit_group_ = true
+
+[node name="Title" type="Label" parent="Content" unique_id=92825347]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "¡Sí mi Coronel, yo rescato su corcel!"
+label_settings = SubResource("LabelSettings_bcxwf")
+horizontal_alignment = 1
+
+[node name="StartGameButton" type="Button" parent="Content" unique_id=2024838948]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../QuitButton")
+theme_override_font_sizes/font_size = 22
+text = "Jugar"
+
+[node name="OptionsButton" type="Button" parent="Content" unique_id=1879395559]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../StartGameButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../StartGameButton")
+theme_override_font_sizes/font_size = 22
+text = "Opciones"
+
+[node name="Credits" type="Button" parent="Content" unique_id=1762333994]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../StartGameButton")
+focus_next = NodePath("../StartGameButton")
+focus_previous = NodePath("../OptionsButton")
+theme_override_font_sizes/font_size = 22
+text = "Creditos"
+
+[node name="QuitButton" type="Button" parent="Content" unique_id=949410700]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../StartGameButton")
+focus_next = NodePath("../StartGameButton")
+focus_previous = NodePath("../OptionsButton")
+theme_override_font_sizes/font_size = 22
+text = "Salir
+"
+
+[node name="OptionsMenu" parent="." unique_id=1314518107 instance=ExtResource("2_pwqpr")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=408855804]
+libraries/ = SubResource("AnimationLibrary_gl8oq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2145759124]
+volume_db = 10.0
+autoplay = true
+
+[connection signal="pressed" from="Content/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Content/OptionsButton" to="." method="open_options"]
+[connection signal="pressed" from="Content/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Content/QuitButton" to="." method="quit"]
+[connection signal="close" from="OptionsMenu" to="." method="close_options"]

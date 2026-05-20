@@ -1,4 +1,4 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dht5im0nim5we"]
+[gd_resource type="LabelSettings" format=3 uid="uid://dht5im0nim5we"]
 
 [ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_tenfq"]
 

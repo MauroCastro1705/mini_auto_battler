@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg4kuqvhon4ns"]
+[gd_scene format=3 uid="uid://cg4kuqvhon4ns"]
 
 [ext_resource type="Script" uid="uid://bsxhggvts1ck7" path="res://ui/upgrade-menu/upgrade_menu.gd" id="1_bk28g"]
 [ext_resource type="LabelSettings" uid="uid://5ecbv5n03n7k" path="res://resources/text_tittle.tres" id="2_bk28g"]
@@ -9,10 +9,10 @@
 [ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="7_p1gsx"]
 [ext_resource type="PackedScene" uid="uid://coj7sp71b7lbc" path="res://ui/upgrade-menu/generic_shop_button/generic_button.tscn" id="8_1t0f5"]
 
-[node name="Upgrade-menu" type="Node2D"]
+[node name="Upgrade-menu" type="Node2D" unique_id=904537215]
 script = ExtResource("1_bk28g")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1640451081]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -21,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1084027003]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +33,7 @@ grow_vertical = 2
 color = Color(0.0627451, 0.0784314, 0.0980392, 1)
 metadata/_edit_lock_ = true
 
-[node name="ship upgrades" type="VBoxContainer" parent="Control"]
+[node name="ship upgrades" type="VBoxContainer" parent="Control" unique_id=885267590]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -45,13 +45,13 @@ grow_horizontal = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/ship upgrades"]
+[node name="Label" type="Label" parent="Control/ship upgrades" unique_id=1504967572]
 layout_mode = 2
 text = "Ship Upgrades"
 label_settings = ExtResource("2_bk28g")
 horizontal_alignment = 1
 
-[node name="upgrade-ui-holder" type="HBoxContainer" parent="Control"]
+[node name="upgrade-ui-holder" type="HBoxContainer" parent="Control" unique_id=1551873537]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 188.0
@@ -60,19 +60,19 @@ offset_bottom = 363.0
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="stat_atk_spd" parent="Control/upgrade-ui-holder" instance=ExtResource("5_1iani")]
+[node name="stat_atk_spd" parent="Control/upgrade-ui-holder" unique_id=1711862252 instance=ExtResource("5_1iani")]
 layout_mode = 2
 
-[node name="stat_atk_range" parent="Control/upgrade-ui-holder" instance=ExtResource("3_r63c2")]
+[node name="stat_atk_range" parent="Control/upgrade-ui-holder" unique_id=1951632494 instance=ExtResource("3_r63c2")]
 layout_mode = 2
 
-[node name="stat_bullet_dmg" parent="Control/upgrade-ui-holder" instance=ExtResource("4_6ilka")]
+[node name="stat_bullet_dmg" parent="Control/upgrade-ui-holder" unique_id=1978963802 instance=ExtResource("4_6ilka")]
 layout_mode = 2
 
-[node name="stat_bullet_speed" parent="Control/upgrade-ui-holder" instance=ExtResource("5_bk28g")]
+[node name="stat_bullet_speed" parent="Control/upgrade-ui-holder" unique_id=1234136390 instance=ExtResource("5_bk28g")]
 layout_mode = 2
 
-[node name="skill upgrades" type="VBoxContainer" parent="Control"]
+[node name="skill upgrades" type="VBoxContainer" parent="Control" unique_id=403922881]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -88,13 +88,13 @@ grow_vertical = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/skill upgrades"]
+[node name="Label" type="Label" parent="Control/skill upgrades" unique_id=1939901900]
 layout_mode = 2
 text = "Skill Upgrades"
 label_settings = ExtResource("2_bk28g")
 horizontal_alignment = 1
 
-[node name="return_button" type="Button" parent="Control"]
+[node name="return_button" type="Button" parent="Control" unique_id=914507262]
 layout_mode = 0
 offset_left = 613.0
 offset_top = 28.0
@@ -103,7 +103,7 @@ offset_bottom = 65.0
 theme = ExtResource("7_p1gsx")
 text = "Return"
 
-[node name="upgrade skills-ui-holder" type="HBoxContainer" parent="Control"]
+[node name="upgrade skills-ui-holder" type="HBoxContainer" parent="Control" unique_id=680828829]
 layout_mode = 0
 offset_top = 515.0
 offset_right = 719.0
@@ -111,17 +111,17 @@ offset_bottom = 732.0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="generic_button" parent="Control/upgrade skills-ui-holder" instance=ExtResource("8_1t0f5")]
+[node name="generic_button" parent="Control/upgrade skills-ui-holder" unique_id=517961814 instance=ExtResource("8_1t0f5")]
 layout_mode = 2
 tittle = "objectSkill"
 
-[node name="generic_button2" parent="Control/upgrade skills-ui-holder" instance=ExtResource("8_1t0f5")]
+[node name="generic_button2" parent="Control/upgrade skills-ui-holder" unique_id=1672707782 instance=ExtResource("8_1t0f5")]
 layout_mode = 2
 
-[node name="generic_button3" parent="Control/upgrade skills-ui-holder" instance=ExtResource("8_1t0f5")]
+[node name="generic_button3" parent="Control/upgrade skills-ui-holder" unique_id=216783371 instance=ExtResource("8_1t0f5")]
 layout_mode = 2
 
-[node name="upgrade skills-ui-holder2" type="HBoxContainer" parent="Control"]
+[node name="upgrade skills-ui-holder2" type="HBoxContainer" parent="Control" unique_id=510046821]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 751.0
@@ -130,16 +130,16 @@ offset_bottom = 968.0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="generic_button" parent="Control/upgrade skills-ui-holder2" instance=ExtResource("8_1t0f5")]
+[node name="generic_button" parent="Control/upgrade skills-ui-holder2" unique_id=1534355833 instance=ExtResource("8_1t0f5")]
 layout_mode = 2
 
-[node name="generic_button2" parent="Control/upgrade skills-ui-holder2" instance=ExtResource("8_1t0f5")]
+[node name="generic_button2" parent="Control/upgrade skills-ui-holder2" unique_id=1672045886 instance=ExtResource("8_1t0f5")]
 layout_mode = 2
 
-[node name="generic_button3" parent="Control/upgrade skills-ui-holder2" instance=ExtResource("8_1t0f5")]
+[node name="generic_button3" parent="Control/upgrade skills-ui-holder2" unique_id=1183575613 instance=ExtResource("8_1t0f5")]
 layout_mode = 2
 
-[node name="store" type="Button" parent="."]
+[node name="store" type="Button" parent="." unique_id=2083379540]
 visible = false
 offset_left = 501.0
 offset_top = 18.0

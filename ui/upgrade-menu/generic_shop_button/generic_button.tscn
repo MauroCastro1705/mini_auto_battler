@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://coj7sp71b7lbc"]
+[gd_scene format=3 uid="uid://coj7sp71b7lbc"]
 
 [ext_resource type="Script" uid="uid://lewrf6djsxmn" path="res://ui/upgrade-menu/generic_shop_button/generic_button.gd" id="1_m1at4"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="2_amugd"]
@@ -59,7 +59,7 @@ shadow_size = 25
 shadow_color = Color(0.62, 0, 0.0103332, 1)
 shadow_offset = Vector2(0, 0)
 
-[node name="generic_button" type="BoxContainer"]
+[node name="generic_button" type="BoxContainer" unique_id=950750400]
 anchors_preset = -1
 anchor_right = 0.027
 anchor_bottom = 0.015
@@ -70,14 +70,14 @@ tittle = "Object Skill"
 value = 32
 skill_level = "5"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=15889219]
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=1539435904]
 layout_mode = 2
 texture = ExtResource("2_f4a5i")
 patch_margin_left = 8
@@ -85,45 +85,45 @@ patch_margin_top = 36
 patch_margin_right = 8
 patch_margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1975637655]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=1395367815]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=1048881162]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="stat_title" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="stat_title" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1890421636]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Object Skill"
 label_settings = ExtResource("2_amugd")
 horizontal_alignment = 1
 
-[node name="stat_level" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="stat_level" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1161967024]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Level: 5"
 label_settings = ExtResource("2_amugd")
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1124934994]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=1325166462]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 10
 
-[node name="sprite" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="sprite" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1926431530]
 unique_name_in_owner = true
 position = Vector2(57, 28)
 scale = Vector2(3.75, 3.75)
@@ -131,33 +131,33 @@ sprite_frames = SubResource("SpriteFrames_vc8jk")
 autoplay = "default"
 frame_progress = 0.761237
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=2073796679]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="precio" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="precio" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=590890883]
 unique_name_in_owner = true
 layout_mode = 2
 text = "32$"
 label_settings = ExtResource("2_amugd")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=231808798]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("5_aa1fd")
 text = "Buy!"
 
-[node name="vendido" type="ColorRect" parent="MarginContainer"]
+[node name="vendido" type="ColorRect" parent="MarginContainer" unique_id=1885242923]
 visible = false
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 color = Color(0.101961, 0.101961, 0.101961, 0.807843)
 
-[node name="Label" type="Label" parent="MarginContainer/vendido"]
+[node name="Label" type="Label" parent="MarginContainer/vendido" unique_id=1249737403]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 141.0

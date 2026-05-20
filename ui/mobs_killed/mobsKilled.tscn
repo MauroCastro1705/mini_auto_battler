@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://j74g4us3ueir"]
+[gd_scene format=3 uid="uid://j74g4us3ueir"]
 
 [ext_resource type="Script" uid="uid://co1un7r8owo0p" path="res://ui/mobs_killed/mobs_killed.gd" id="1_pdrxs"]
 [ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="2_mvf4e"]
@@ -10,7 +10,7 @@ font_color = Color(0.993959, 0, 0.143332, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[node name="MobsKilled" type="Control"]
+[node name="MobsKilled" type="Control" unique_id=2079468694]
 layout_mode = 3
 anchor_left = 0.2
 anchor_top = 0.01
@@ -23,17 +23,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pdrxs")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=2117736145]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 50
 
-[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer3"]
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer3" unique_id=715686914]
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 
-[node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer" unique_id=1688302819]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
@@ -42,7 +42,7 @@ label_settings = ExtResource("2_n1edi")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="mobsKilled" type="Label" parent="HBoxContainer3/HBoxContainer"]
+[node name="mobsKilled" type="Label" parent="HBoxContainer3/HBoxContainer" unique_id=1157679839]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
@@ -50,18 +50,18 @@ text = "12"
 label_settings = ExtResource("2_n1edi")
 horizontal_alignment = 1
 
-[node name="HBoxContainer2" type="VBoxContainer" parent="HBoxContainer3"]
+[node name="HBoxContainer2" type="VBoxContainer" parent="HBoxContainer3" unique_id=1011848981]
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 
-[node name="Label2" type="Label" parent="HBoxContainer3/HBoxContainer2"]
+[node name="Label2" type="Label" parent="HBoxContainer3/HBoxContainer2" unique_id=1044329372]
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 text = "Score:"
 label_settings = SubResource("LabelSettings_n1edi")
 horizontal_alignment = 1
 
-[node name="scoreLabel" type="Label" parent="HBoxContainer3/HBoxContainer2"]
+[node name="scoreLabel" type="Label" parent="HBoxContainer3/HBoxContainer2" unique_id=2031454002]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_mvf4e")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvuxl5jl1lkpp"]
+[gd_scene format=3 uid="uid://cvuxl5jl1lkpp"]
 
 [ext_resource type="Script" uid="uid://dv4lfojcspiht" path="res://ui/exp_bar/exp_bar.gd" id="1_01o4c"]
 [ext_resource type="Texture2D" uid="uid://s4rtpv1gn3gg" path="res://assets/bullets/ui pixel/04.png" id="2_01o4c"]
@@ -13,7 +13,7 @@ region = Rect2(229, 198, 6, 35)
 atlas = ExtResource("2_01o4c")
 region = Rect2(149, 198, 6, 35)
 
-[node name="ExpBar" type="Control"]
+[node name="ExpBar" type="Control" unique_id=1648484198]
 layout_mode = 3
 anchor_right = 0.053
 anchor_bottom = 0.09
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_01o4c")
 
-[node name="ColorRect" type="NinePatchRect" parent="."]
+[node name="ColorRect" type="NinePatchRect" parent="." unique_id=464375621]
 layout_mode = 0
 offset_left = -3.0
 offset_top = -4.0
@@ -38,7 +38,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1624492226]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 5.0
@@ -54,7 +54,7 @@ stretch_margin_bottom = 2
 texture_under = SubResource("AtlasTexture_4x1gj")
 texture_progress = SubResource("AtlasTexture_gwsp1")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2126448913]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 85.0

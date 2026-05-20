@@ -8,10 +8,6 @@
 
 config_version=5
 
-[animation]
-
-compatibility/default_parent_skeleton_in_mesh_instance_3d=true
-
 [application]
 
 config/name="mini_battler"
@@ -25,6 +21,9 @@ Global="*res://autoloads/Global.gd"
 DamageNumbers="*res://autoloads/damageNumbers.gd"
 LogrosData="*res://logros/data_logros/data_logros.gd"
 CoinScript="*uid://d3uhl7s38pbsv"
+StartupLoader="*uid://c85t4c8lhfq6q"
+MenuTemplateManager="*uid://dhx8qpjv2wxfo"
+SceneChanger="*uid://w1cssnuaomn1"
 
 [display]
 

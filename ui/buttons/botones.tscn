@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://h4ossd5u1cw5"]
+[gd_scene format=3 uid="uid://h4ossd5u1cw5"]
 
 [ext_resource type="Script" uid="uid://baedf5klijs16" path="res://ui/buttons/botones.gd" id="1_tuw11"]
 
-[node name="Botones" type="Control"]
+[node name="Botones" type="Control" unique_id=1104828649]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tuw11")
 
-[node name="atkrange" type="Button" parent="."]
+[node name="atkrange" type="Button" parent="." unique_id=1181162017]
 layout_mode = 0
 offset_left = 464.0
 offset_top = 15.0
@@ -19,7 +19,7 @@ offset_right = 627.0
 offset_bottom = 46.0
 text = "aumentar atk range"
 
-[node name="atkspeed" type="Button" parent="."]
+[node name="atkspeed" type="Button" parent="." unique_id=102857977]
 layout_mode = 0
 offset_left = 464.0
 offset_top = 61.0

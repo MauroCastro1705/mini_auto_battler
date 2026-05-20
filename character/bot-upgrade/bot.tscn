@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://uk1si8avoosq"]
+[gd_scene format=3 uid="uid://uk1si8avoosq"]
 
 [ext_resource type="Script" uid="uid://blwb0crwny6rm" path="res://character/bot-upgrade/bot.gd" id="1_ty82c"]
 [ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/bulletPool/BulletPool.tscn" id="2_nimyx"]
@@ -204,33 +204,33 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Bot" type="CharacterBody2D"]
+[node name="Bot" type="CharacterBody2D" unique_id=432953007]
 script = ExtResource("1_ty82c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1331039961]
 shape = SubResource("CircleShape2D_i3vjt")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=533966897]
 
-[node name="BulletPool" parent="." instance=ExtResource("2_nimyx")]
+[node name="BulletPool" parent="." unique_id=663888676 instance=ExtResource("2_nimyx")]
 
-[node name="Enemy_detector" type="Area2D" parent="."]
+[node name="Enemy_detector" type="Area2D" parent="." unique_id=1592402133]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_detector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_detector" unique_id=1165105009]
 shape = SubResource("CircleShape2D_kq4qt")
 debug_color = Color(0.894681, 0.255644, 0.493707, 0.42)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=959111999]
 rotation = 1.5708
 
-[node name="propulsor" type="AnimatedSprite2D" parent="Node2D"]
+[node name="propulsor" type="AnimatedSprite2D" parent="Node2D" unique_id=31553378]
 sprite_frames = SubResource("SpriteFrames_5rmea")
 animation = &"jet"
 frame_progress = 0.676569
 
-[node name="ship" type="AnimatedSprite2D" parent="Node2D"]
+[node name="ship" type="AnimatedSprite2D" parent="Node2D" unique_id=1226743577]
 sprite_frames = SubResource("SpriteFrames_jyunx")
 animation = &"alive"
 

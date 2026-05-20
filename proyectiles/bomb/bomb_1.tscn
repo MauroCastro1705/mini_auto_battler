@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b631jjvhgsbol"]
+[gd_scene format=3 uid="uid://b631jjvhgsbol"]
 
 [ext_resource type="Script" uid="uid://bqjbqf1nm4y8u" path="res://resources/bomb_1.gd" id="1_2ydn0"]
 [ext_resource type="Texture2D" uid="uid://dy470e2tip1od" path="res://assets/bullets/efectos-magicos/03.png" id="2_438kd"]
@@ -102,35 +102,35 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Bomb1" type="CharacterBody2D"]
+[node name="Bomb1" type="CharacterBody2D" unique_id=553202609]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_2ydn0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2119559498]
 shape = SubResource("CircleShape2D_438kd")
 debug_color = Color(0.792928, 0.403547, 0.379331, 0.42)
 
-[node name="explosion_area" type="Area2D" parent="."]
+[node name="explosion_area" type="Area2D" parent="." unique_id=1311497528]
 light_mask = 0
 visibility_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explosion_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explosion_area" unique_id=1167002159]
 visible = false
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_2ydn0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1769373178]
 scale = Vector2(1.21875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_02u5d")
 animation = &"explosion"
 frame = 11
 frame_progress = 1.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1651845028]
 
-[node name="show_bomb" type="Button" parent="CanvasLayer"]
+[node name="show_bomb" type="Button" parent="CanvasLayer" unique_id=50095384]
 offset_left = 461.0
 offset_top = 974.0
 offset_right = 537.0
@@ -139,7 +139,7 @@ theme = ExtResource("3_ivrvo")
 text = "AIM
 "
 
-[node name="launch_boomb" type="Button" parent="CanvasLayer"]
+[node name="launch_boomb" type="Button" parent="CanvasLayer" unique_id=1575635544]
 offset_left = 563.0
 offset_top = 974.0
 offset_right = 706.0
@@ -147,24 +147,24 @@ offset_bottom = 1011.0
 theme = ExtResource("3_ivrvo")
 text = "Launch Bomb"
 
-[node name="bomb_reticule" type="Node2D" parent="."]
+[node name="bomb_reticule" type="Node2D" parent="." unique_id=1387063753]
 unique_name_in_owner = true
 
-[node name="ColorRect" type="ColorRect" parent="bomb_reticule"]
+[node name="ColorRect" type="ColorRect" parent="bomb_reticule" unique_id=1963265272]
 offset_left = 5.0
 offset_top = -1.0
 offset_right = 671.0
 offset_bottom = 2.0
 color = Color(0.216889, 0.660703, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="bomb_reticule"]
+[node name="ColorRect2" type="ColorRect" parent="bomb_reticule" unique_id=746483651]
 offset_left = -723.0
 offset_top = -1.0
 offset_right = -5.0
 offset_bottom = 2.0
 color = Color(0.216889, 0.660703, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="bomb_reticule"]
+[node name="ColorRect3" type="ColorRect" parent="bomb_reticule" unique_id=1067901943]
 offset_left = -1.0
 offset_top = -5.0
 offset_right = 1085.0
@@ -172,7 +172,7 @@ offset_bottom = -2.0
 rotation = -1.5708
 color = Color(0.216889, 0.660703, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="bomb_reticule"]
+[node name="ColorRect4" type="ColorRect" parent="bomb_reticule" unique_id=1813944838]
 offset_left = -1.0
 offset_top = 1291.0
 offset_right = 1286.0

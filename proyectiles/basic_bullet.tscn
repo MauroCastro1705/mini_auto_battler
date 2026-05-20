@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drkv304xf07bc"]
+[gd_scene format=3 uid="uid://drkv304xf07bc"]
 
 [ext_resource type="Script" uid="uid://byjw12ddh4a3f" path="res://proyectiles/basic_bullet.gd" id="1_76keq"]
 [ext_resource type="Texture2D" uid="uid://diiti2huiftxs" path="res://assets/bullets/All_Fire_Bullet_Pixel_16x16_00.png" id="2_qi2b6"]
@@ -42,19 +42,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1ux5"]
 radius = 4.0
 
-[node name="BasicBullet" type="Node2D"]
+[node name="BasicBullet" type="Node2D" unique_id=1198179705]
 script = ExtResource("1_76keq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=581025891]
 position = Vector2(-2.88538, -1.48422)
 sprite_frames = SubResource("SpriteFrames_76keq")
 frame_progress = 0.716995
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1918729576]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=237955809]
 position = Vector2(-0.0573082, 0)
 shape = SubResource("CircleShape2D_i1ux5")
 
