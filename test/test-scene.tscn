@@ -18,7 +18,6 @@
 [ext_resource type="Script" uid="uid://bxh2fp42rn47m" path="res://enemies/coins_layer.gd" id="15_8s3e5"]
 [ext_resource type="PackedScene" uid="uid://bnp2dnfpc6rmn" path="res://ui/wave ui/wave_control.tscn" id="16_pd52j"]
 [ext_resource type="PackedScene" uid="uid://pue181nk6b4y" path="res://character/planet/planet.tscn" id="17_5oahq"]
-[ext_resource type="PackedScene" uid="uid://uk1si8avoosq" path="res://character/bot-upgrade/bot.tscn" id="18_0pl55"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehe6g"]
 shader = ExtResource("1_s3pen")
@@ -65,8 +64,9 @@ texture = ExtResource("1_b3u66")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=2129326642 instance=ExtResource("1_5d1lj")]
-position = Vector2(371, 857)
+position = Vector2(336, 531)
 rotation = -1.57079
+shoot_mode = 0
 
 [node name="focal_point" type="Marker2D" parent="." unique_id=1767070196]
 position = Vector2(334, 465)
@@ -160,6 +160,3 @@ metadata/_edit_lock_ = true
 
 [node name="Planet" parent="." unique_id=1976689480 instance=ExtResource("17_5oahq")]
 position = Vector2(365, 1103)
-
-[node name="Bot" parent="." unique_id=1613566249 instance=ExtResource("18_0pl55")]
-position = Vector2(533, 663)
