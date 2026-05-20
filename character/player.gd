@@ -11,7 +11,7 @@ var enemies_in_range: Array[Node] = []
 var show_range := true
 var auto_target_enabled := false
 var crosshair_active := false
-const SHOOT_MODE_CLICK := 0
+const SHOOT_MODE_CLICK := 0# normal shoot
 const SHOOT_MODE_AIM := 1 # auto-shoot but aiming via crosshair
 const SHOOT_MODE_AUTO := 2 # auto-shoot and auto-aim nearest enemy
 
@@ -180,10 +180,8 @@ func _on_enemy_detector_body_entered(body: Node) -> void:
 func _on_enemy_detector_body_exited(body: Node) -> void:
 	enemies_in_range.erase(body)
 
-
 func enable_auto_target(enable: bool) -> void:
 	auto_target_enabled = enable
-
 
 func set_shoot_mode(mode: int) -> void:
 	## modos validos: 0 = click, 1 = aim, 2 = auto
@@ -202,7 +200,6 @@ func set_shoot_mode(mode: int) -> void:
 			crosshair_active = true
 	else:
 		print("[Player] set_shoot_mode: invalid mode", mode)
-
 
 func _input(event) -> void:
 	var cam := get_viewport().get_camera_2d()
