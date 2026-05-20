@@ -1,6 +1,7 @@
 extends Node
 const OptionConstants = preload("res://addons/EasyMenus/Scripts/options_constants.gd")
 const InputMapUpdater = preload("res://addons/EasyMenus/Scripts/input_map_updater.gd")
+const StartupLoader = preload("uid://c85t4c8lhfq6q")
 
 @onready var startup_loader = StartupLoader
 

@@ -131,10 +131,11 @@ color = Color(0.9137255, 0.7529412, 0.5803922, 1)
 [node name="efecto" type="ColorRect" parent="." unique_id=1447986563]
 material = SubResource("ShaderMaterial_q74m2")
 layout_mode = 0
-offset_left = -167.0
-offset_top = 765.0
-offset_right = 889.0
-offset_bottom = 1287.0
+offset_left = 607.0
+offset_top = 33.0
+offset_right = 1663.0
+offset_bottom = 555.0
+rotation = 1.5707964
 
 [node name="Content" type="VBoxContainer" parent="." unique_id=612335238]
 unique_name_in_owner = true
