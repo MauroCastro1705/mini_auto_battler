@@ -13,6 +13,8 @@ var player:Node = null
 var planet
 var player_score:int = 0
 var player_money:int = 100
+var player_resource_1:int = 0
+var player_resource_2:int = 0
 var player_logros:int = 0
 var player_bombs:int = 300
 var player_bomb_dmg:int = 20

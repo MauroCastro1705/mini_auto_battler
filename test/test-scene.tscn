@@ -80,10 +80,10 @@ position = Vector2(334, 465)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1115904670]
 
 [node name="MobsKilled" parent="CanvasLayer" unique_id=2045745597 instance=ExtResource("7_v52jn")]
-offset_left = -88.0
-offset_top = 76.2
-offset_right = -88.0
-offset_bottom = 76.24
+offset_left = -93.0
+offset_top = 121.2
+offset_right = -93.0
+offset_bottom = 121.240005
 metadata/_edit_lock_ = true
 
 [node name="WaveControl" parent="CanvasLayer" unique_id=1622120156 instance=ExtResource("16_pd52j")]

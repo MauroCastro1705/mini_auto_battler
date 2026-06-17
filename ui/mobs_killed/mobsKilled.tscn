@@ -2,13 +2,23 @@
 
 [ext_resource type="Script" uid="uid://co1un7r8owo0p" path="res://ui/mobs_killed/mobs_killed.gd" id="1_pdrxs"]
 [ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="2_mvf4e"]
-[ext_resource type="LabelSettings" uid="uid://b6hlj2skjt0gj" path="res://resources/damage_numbers.tres" id="2_n1edi"]
-[ext_resource type="FontFile" uid="uid://brio1r1ioqvln" path="res://assets/fonts/SYNNova-Regular.otf" id="4_7pjj5"]
+[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="3_mvf4e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7pjj5"]
+font = ExtResource("3_mvf4e")
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gefeu"]
+font = ExtResource("3_mvf4e")
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_n1edi"]
-font = ExtResource("4_7pjj5")
 font_size = 23
-font_color = Color(0.993959, 0, 0.143332, 1)
+font_color = Color(0.91956365, 0.64429754, 0.30437854, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
@@ -40,7 +50,7 @@ custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 text = "Enemies Killed:"
-label_settings = ExtResource("2_n1edi")
+label_settings = SubResource("LabelSettings_7pjj5")
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -49,7 +59,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_mvf4e")
 text = "12"
-label_settings = ExtResource("2_n1edi")
+label_settings = SubResource("LabelSettings_gefeu")
 horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="VBoxContainer" parent="HBoxContainer3" unique_id=1011848981]
