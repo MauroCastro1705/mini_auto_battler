@@ -65,6 +65,8 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." unique_id=2129326642 instance=ExtResource("1_5d1lj")]
 position = Vector2(336, 531)
 rotation = -1.57079
+dot_radius = 1.0
+dot_color = Color(0.14117648, 0.9411765, 0.043137256, 0.9019608)
 shoot_mode = 0
 
 [node name="focal_point" type="Marker2D" parent="." unique_id=1767070196]

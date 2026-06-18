@@ -145,6 +145,9 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=1921912381 groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_2orxn")
+move_speed = 100.0
+dot_radius = 6.0
+dot_color = Color(0.88530725, 0.05347985, 1.92523e-07, 0.9019608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516060368]
 rotation = -1.5707941
@@ -166,7 +169,7 @@ z_index = 100
 position = Vector2(65, 28)
 texture = ExtResource("3_hhoun")
 region_enabled = true
-region_rect = Rect2(96, 48, 16, 16)
+region_rect = Rect2(99, 3, 10, 10)
 
 [node name="Nairan-Battlecruiser-Base" type="Sprite2D" parent="." unique_id=2026172737]
 z_index = 1
@@ -187,6 +190,13 @@ sprite_frames = SubResource("SpriteFrames_ynykn")
 animation = &"shield"
 frame = 3
 frame_progress = 0.85990953
+
+[node name="Movement_crosshair" type="Sprite2D" parent="." unique_id=1299798454]
+position = Vector2(2, -1)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("3_hhoun")
+region_enabled = true
+region_rect = Rect2(96, 48, 16, 16)
 
 [connection signal="timeout" from="atk_timer" to="." method="_on_atk_timer_timeout"]
 [connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
