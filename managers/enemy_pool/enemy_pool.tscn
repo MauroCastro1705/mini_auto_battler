@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bvjn1n354h5vr"]
 
 [ext_resource type="Script" uid="uid://cqlni0b52ggsg" path="res://managers/enemy_pool/enemy_pool.gd" id="1_eyr4k"]
-[ext_resource type="PackedScene" uid="uid://oeppwgem6t1w" path="res://enemies/enemigo_1.tscn" id="2_nxtno"]
+[ext_resource type="PackedScene" uid="uid://oeppwgem6t1w" path="res://enemies/enemy_1/enemigo_1.tscn" id="2_nxtno"]
+[ext_resource type="PackedScene" uid="uid://catp51noup8ju" path="res://enemies/enemy_2/enemigo_2.tscn" id="3_fwpx5"]
 
 [node name="EnemyPool" type="Node" unique_id=999780797]
 script = ExtResource("1_eyr4k")
 enemy_scene = ExtResource("2_nxtno")
+enemy_scenes = Array[PackedScene]([ExtResource("2_nxtno"), ExtResource("3_fwpx5")])

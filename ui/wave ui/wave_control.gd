@@ -16,8 +16,19 @@ func _ready():
 func update_display():
 	var wave = Global.current_wave
 	wave_text_update()
+	# Keep textures active for waves that have passed.
+	# Completed waves = current wave index - 1
+	var completed = Global.current_wave - 1
+	# If we've completed at least one full cycle, show all active
+	if completed >= wave_count:
+		for i in range(wave_count):
+			slots[i].texture = active_texture
+		return
+
+	# Otherwise activate slots up to the current index
+	var idx = (wave - 1) % wave_count
 	for i in range(wave_count):
-		slots[i].texture = active_texture if i == (wave - 1) % wave_count else inactive_texture
+		slots[i].texture = active_texture if i <= idx else inactive_texture
 		
 func wave_text_update():
 	label.text = "Wave:" + str(Global.current_wave)

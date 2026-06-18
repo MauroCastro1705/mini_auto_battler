@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bvjn1n354h5vr" path="res://managers/enemy_pool/enemy_pool.tscn" id="4_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://don1dyvu4dkv8" path="res://ui/main_box/main_ui.tscn" id="5_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://j74g4us3ueir" path="res://ui/mobs_killed/mobsKilled.tscn" id="7_v52jn"]
-[ext_resource type="PackedScene" uid="uid://nmrvlp0jipfk" path="res://logros/Logro_popUp.tscn" id="8_jipin"]
 [ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/always_ui/Level_and_money.tscn" id="8_q134b"]
 [ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://ui/upgrade-menu/upgrade-menu.tscn" id="9_jipin"]
 [ext_resource type="PackedScene" uid="uid://cvuxl5jl1lkpp" path="res://ui/exp_bar/exp_bar.tscn" id="10_3wmdq"]
@@ -106,10 +105,6 @@ offset_top = 2.71997
 offset_right = 1.0
 offset_bottom = 6.67993
 
-[node name="LogroPopUp" parent="CanvasLayer" unique_id=1813450779 instance=ExtResource("8_jipin")]
-process_mode = 3
-visible = false
-
 [node name="Bombs" parent="CanvasLayer" unique_id=903814416 instance=ExtResource("13_6p2hi")]
 offset_left = 27.0
 offset_top = 967.0
@@ -130,6 +125,7 @@ layer = 17
 script = ExtResource("15_8s3e5")
 
 [node name="Bomb1" parent="." unique_id=1667665772 instance=ExtResource("13_ehe6g")]
+visible = false
 position = Vector2(316, 514)
 collision_mask = 8
 safe_margin = 1.0

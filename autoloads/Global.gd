@@ -61,6 +61,9 @@ var enemigo_max_hp:float = 22.0
 var enemigo_level:int = 1
 var enemigo_score:int = 10
 var enemigo_money:int = 10
+var enemigo_resource_1_value:int = 1
+var enemigo_resource_2_value:int = 1
+
 # --- ENEMY SCALING ---
 var base_enemigo_hp:float = 22.0
 var base_enemigo_speed:float = 20.0
@@ -154,7 +157,7 @@ func scale_enemy_stats():
 
 	enemigo_max_hp = base_enemigo_hp + scale_factor * 3.0 * level_multiplier
 	enemigo_speed = base_enemigo_speed + scale_factor * 1.1 * level_multiplier
-	enemigo_money = base_enemigo_money + int(scale_factor * 2 * level_multiplier)
+	enemigo_money = base_enemigo_money + int(scale_factor * 1.2 * level_multiplier)
 	enemigo_score = base_enemigo_score + int(scale_factor * 2 * level_multiplier)
 
 	# Ensure integers where appropriate

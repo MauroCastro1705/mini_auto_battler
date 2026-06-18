@@ -13,8 +13,10 @@ extends Node
 
 var enemies_spawned: int = 0
 var enemies_to_spawn: int = 0
-
 var _spawn_timer: Timer = null
+
+# Selected type for the next spawn tick (uses EnemyPool indices). -1 = any
+var _next_type_index: int = -1
 
 func _ready():
 	Global.wave_advanced.connect(_on_wave_advanced)
@@ -40,7 +42,19 @@ func _schedule_next_spawn() -> void:
 	if enemies_spawned >= enemies_to_spawn:
 		_spawn_timer.stop()
 		return
-	var wait = randf_range(spawn_rate_min, spawn_rate_max)
+	# Choose enemy type for this tick using pool's rarities
+	_next_type_index = -1
+	var wait: float
+	if is_instance_valid(enemy_pool) and enemy_pool.enemy_scenes.size() > 0:
+		_next_type_index = enemy_pool._select_scene_index()
+		# use per-type interval if configured
+		if enemy_pool.spawn_intervals.size() == enemy_pool.enemy_scenes.size():
+			wait = float(enemy_pool.spawn_intervals[_next_type_index])
+		else:
+			wait = randf_range(spawn_rate_min, spawn_rate_max)
+	else:
+		wait = randf_range(spawn_rate_min, spawn_rate_max)
+
 	_spawn_timer.wait_time = wait
 	_spawn_timer.start()
 
@@ -62,7 +76,9 @@ func _spawn_enemies_tick() -> void:
 
 	for i in range(to_spawn):
 		var spawn_pos = get_random_position_in_area()
-		var enemy = enemy_pool.get_enemy()
+		# request enemy of the selected type for this tick if available
+		var requested_type = _next_type_index if _next_type_index >= 0 else -1
+		var enemy = enemy_pool.get_enemy(requested_type)
 		# defensive: ensure enemy is valid and not active
 		if is_instance_valid(enemy) and not enemy.active:
 			enemy.activate(spawn_pos)
@@ -70,6 +86,9 @@ func _spawn_enemies_tick() -> void:
 		else:
 			# skip and continue; avoid blocking other spawns
 			continue
+
+	# reset selection so next schedule re-evaluates type/interval
+	_next_type_index = -1
 
 
 func _on_wave_advanced() -> void:

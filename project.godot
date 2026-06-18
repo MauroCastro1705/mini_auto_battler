@@ -13,7 +13,7 @@ config_version=5
 config/name="mini_battler"
 run/main_scene="uid://cauvt5eegmfco"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://cn2j0kjvrd11c"
 
 [autoload]
 
