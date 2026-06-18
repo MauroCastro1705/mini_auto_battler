@@ -14,6 +14,7 @@ var is_dead := false
 @onready var propulsor: AnimatedSprite2D = %propulsor
 @export var travel_position: Node
 @onready var resource_1: Sprite2D = $resource_1
+@onready var shield: AnimatedSprite2D = $Node2D/shield
 
 # Guarda capas/máscaras originales para reponer al activar
 var _orig_layer: int
@@ -29,6 +30,7 @@ var _orig_mask: int
 
 
 func _ready():
+	shield.hide()
 	Global.stats_updated.connect(enemy_update_stats)
 	add_to_group("enemigos")
 	enemy_update_stats()
@@ -87,6 +89,9 @@ func activate(pos: Vector2):
 	ship_sprite.play("alive")
 	propulsor.visible = true
 	propulsor.play("alive")
+	if Global.player_score >= 500: #mostramos el escudo porque son enemigos mas fuertes)?
+		shield.show()
+		shield.play("shield")
 
 func _enable_collisions_next_frame() -> void:
 	_set_shapes_disabled_deferred(false)
@@ -104,6 +109,7 @@ func take_damage(amount: int) -> void:
 
 	if hp <= 0:
 		is_dead = true
+		shield.hide()
 		Global.emit_signal("enemy_killed")
 		ship_sprite.play("die")
 		propulsor.visible = false

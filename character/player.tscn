@@ -3,22 +3,152 @@
 [ext_resource type="Script" uid="uid://ceoyvg1jautwm" path="res://character/player.gd" id="1_2orxn"]
 [ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/bulletPool/BulletPool.tscn" id="2_monf5"]
 [ext_resource type="Texture2D" uid="uid://blbxwv550oj6n" path="res://assets/ships/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Designs - Base/PNGs/Nairan - Battlecruiser - Base.png" id="3_aypkh"]
+[ext_resource type="Texture2D" uid="uid://bj0gu85v6t1ki" path="res://assets/Crosshairs/ELR_Corsshairs.png" id="3_hhoun"]
+[ext_resource type="Texture2D" uid="uid://b25nrkqpgdsqu" path="res://assets/ships/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Engine Effects/PNGs/Nairan - Battlecruiser - Engine.png" id="5_bdyh8"]
+[ext_resource type="Texture2D" uid="uid://b4kkc382dbnij" path="res://assets/ships/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Shields/PNGs/Nairan - Battlecruiser - Shield.png" id="6_qe16m"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_aypkh"]
-radius = 48.0104
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhoun"]
+radius = 19.999989
+height = 86.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_monf5"]
 radius = 145.003
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aypkh"]
-size = Vector2(15, 15)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe16m"]
+atlas = ExtResource("5_bdyh8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkowc"]
+atlas = ExtResource("5_bdyh8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw6nv"]
+atlas = ExtResource("5_bdyh8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpic6"]
+atlas = ExtResource("5_bdyh8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6pse"]
+atlas = ExtResource("5_bdyh8")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6sb3"]
+atlas = ExtResource("5_bdyh8")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn1kw"]
+atlas = ExtResource("5_bdyh8")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps75u"]
+atlas = ExtResource("5_bdyh8")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u2u7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe16m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkowc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw6nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpic6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6pse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6sb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn1kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps75u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u2u7"]
+atlas = ExtResource("6_qe16m")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j51ly"]
+atlas = ExtResource("6_qe16m")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqqx8"]
+atlas = ExtResource("6_qe16m")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1kp2"]
+atlas = ExtResource("6_qe16m")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw5rd"]
+atlas = ExtResource("6_qe16m")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t461u"]
+atlas = ExtResource("6_qe16m")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh4hd"]
+atlas = ExtResource("6_qe16m")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr573"]
+atlas = ExtResource("6_qe16m")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ynykn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u2u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j51ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqqx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1kp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw5rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t461u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh4hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr573")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 8.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1921912381 groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_2orxn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516060368]
-shape = SubResource("CircleShape2D_aypkh")
+rotation = -1.5707941
+shape = SubResource("CapsuleShape2D_hhoun")
 
 [node name="atk_timer" type="Timer" parent="." unique_id=207564940]
 
@@ -34,12 +164,28 @@ debug_color = Color(0.686657, 0.38346, 0.82136, 0.42)
 [node name="Crosshair" type="Sprite2D" parent="." unique_id=314159265]
 z_index = 100
 position = Vector2(65, 28)
-texture = SubResource("PlaceholderTexture2D_aypkh")
+texture = ExtResource("3_hhoun")
+region_enabled = true
+region_rect = Rect2(96, 48, 16, 16)
 
 [node name="Nairan-Battlecruiser-Base" type="Sprite2D" parent="." unique_id=2026172737]
+z_index = 1
 position = Vector2(-3, 1)
 rotation = 1.5708
 texture = ExtResource("3_aypkh")
+
+[node name="engine_animation" type="AnimatedSprite2D" parent="Nairan-Battlecruiser-Base" unique_id=1051369884]
+z_index = -1
+position = Vector2(7.267736e-06, 2)
+sprite_frames = SubResource("SpriteFrames_3u2u7")
+autoplay = "default"
+
+[node name="shield_animation" type="AnimatedSprite2D" parent="Nairan-Battlecruiser-Base" unique_id=205040344]
+visible = false
+position = Vector2(0, 4.3711452e-08)
+sprite_frames = SubResource("SpriteFrames_ynykn")
+animation = &"shield"
+frame_progress = 0.18321158
 
 [connection signal="timeout" from="atk_timer" to="." method="_on_atk_timer_timeout"]
 [connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]

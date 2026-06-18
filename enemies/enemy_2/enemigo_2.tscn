@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://catp51noup8ju"]
 
 [ext_resource type="Script" uid="uid://djpbesxml2b76" path="res://enemies/enemy_2/enemigo_2.gd" id="1_bksnl"]
-[ext_resource type="Texture2D" uid="uid://grlsniseg64e" path="res://assets/ships/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Base/PNGs/Kla'ed - Bomber - Base.png" id="2_qh06v"]
-[ext_resource type="Texture2D" uid="uid://bta3lbvs6hfa7" path="res://assets/ships/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Destruction/PNGs/Kla'ed - Bomber - Destruction.png" id="3_rcu0h"]
-[ext_resource type="Texture2D" uid="uid://d2cxqybf1hajf" path="res://assets/ships/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Engine/PNGs/Kla'ed - Bomber - Engine.png" id="4_qh06v"]
+[ext_resource type="Texture2D" path="res://assets/ships/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Base/PNGs/Kla'ed - Bomber - Base.png" id="2_qh06v"]
+[ext_resource type="Texture2D" path="res://assets/ships/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Destruction/PNGs/Kla'ed - Bomber - Destruction.png" id="3_rcu0h"]
+[ext_resource type="Texture2D" path="res://assets/ships/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Engine/PNGs/Kla'ed - Bomber - Engine.png" id="4_qh06v"]
 [ext_resource type="PackedScene" uid="uid://dds2tk2k5qqxa" path="res://ui/life_bar.tscn" id="5_jv174"]
+[ext_resource type="Texture2D" uid="uid://bagtoumiygwl6" path="res://assets/ships/enemigos/Kla'ed/Shield/PNGs/Kla'ed - Bomber - Shield.png" id="5_rcu0h"]
 [ext_resource type="Texture2D" uid="uid://o20cgbcyriea" path="res://assets/PNG/recurso_1.png" id="6_qh06v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dg88b"]
-radius = 14.0
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1a8c"]
 atlas = ExtResource("2_qh06v")
@@ -167,6 +168,56 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg1su"]
+atlas = ExtResource("5_rcu0h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cou8h"]
+atlas = ExtResource("5_rcu0h")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvki8"]
+atlas = ExtResource("5_rcu0h")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d78h5"]
+atlas = ExtResource("5_rcu0h")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xanu5"]
+atlas = ExtResource("5_rcu0h")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k7ur"]
+atlas = ExtResource("5_rcu0h")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ia6ls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg1su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cou8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvki8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d78h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xanu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k7ur")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 10.0
+}]
+
 [node name="Enemigo2" type="CharacterBody2D" unique_id=2117935791 groups=["enemigos"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -192,6 +243,13 @@ sprite_frames = SubResource("SpriteFrames_qbc4w")
 animation = &"alive"
 autoplay = "alive"
 frame_progress = 0.6069415
+
+[node name="shield" type="AnimatedSprite2D" parent="Node2D" unique_id=419605879]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ia6ls")
+animation = &"shield"
+autoplay = "shield"
+frame_progress = 0.23722112
 
 [node name="HealthBar" parent="." unique_id=628092068 instance=ExtResource("5_jv174")]
 unique_name_in_owner = true
