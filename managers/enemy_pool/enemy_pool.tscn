@@ -8,4 +8,4 @@
 script = ExtResource("1_eyr4k")
 enemy_scene = ExtResource("2_nxtno")
 enemy_scenes = Array[PackedScene]([ExtResource("2_nxtno"), ExtResource("3_fwpx5")])
-spawn_rarities = Array[float]([3.0, 1.0])
+spawn_rarities = Array[float]([5.0, 1.0])

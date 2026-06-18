@@ -5,10 +5,9 @@ extends CharacterBody2D
 @onready var atk_range: CollisionShape2D = $enemy_detector/CollisionShape2D
 @onready var crosshair: Sprite2D = $Crosshair
 
+@export var draw_range:bool = false
 var enemies_in_range: Array[Node] = []
 
-
-var show_range := true
 var auto_target_enabled := false
 var crosshair_active := false
 const SHOOT_MODE_CLICK := 0# normal shoot
@@ -26,7 +25,7 @@ func _ready() -> void:
 	Global.player = self
 	Global.stats_updated.connect(update_global)
 	update_global() # Initial call
-	queue_redraw()
+	#queue_redraw()
 	atk_timer.wait_time = Global.attack_cooldown
 	atk_timer.start()
 
@@ -38,7 +37,7 @@ func update_global() -> void:
 		(atk_range.shape as CircleShape2D).radius = Global.atk_range
 
 func _process(_delta: float) -> void:
-	queue_redraw()
+	#queue_redraw()
 
 	# Support action-based touch input named "finger_touch" (can be mapped to mouse for debugging)
 	var cam := get_viewport().get_camera_2d()
@@ -246,11 +245,12 @@ func _input(event) -> void:
 			crosshair_active = true
 
 func _draw():
-	var radius = atk_range.shape.radius
-	var color = Color(0, 0, 1, 0.3)
-	var thickness = 2.0  # Thickness of the outline
-	var angle_from = 0
-	var angle_to = TAU  # Full circle (2 * PI)
-	var point_count = 64  # More points = smoother circle
-
-	draw_arc(Vector2.ZERO, radius, angle_from, angle_to, point_count, color, thickness)
+	if draw_range:
+		var radius = atk_range.shape.radius
+		var color = Color(0, 0, 1, 0.3)
+		var thickness = 2.0  # Thickness of the outline
+		var angle_from = 0
+		var angle_to = TAU  # Full circle (2 * PI)
+		var point_count = 64  # More points = smoother circle
+	
+		draw_arc(Vector2.ZERO, radius, angle_from, angle_to, point_count, color, thickness)

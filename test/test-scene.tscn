@@ -116,8 +116,10 @@ metadata/_edit_lock_ = true
 visible = false
 
 [node name="Level_and_money" parent="CanvasLayer" unique_id=1515457200 instance=ExtResource("8_q134b")]
-offset_left = 11.0
-offset_right = 11.28
+offset_left = -8.0
+offset_top = -2.0
+offset_right = -7.720001
+offset_bottom = -1.8800049
 metadata/_edit_lock_ = true
 
 [node name="CoinsLayer" type="CanvasLayer" parent="." unique_id=1999999999]

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ceoyvg1jautwm" path="res://character/player.gd" id="1_2orxn"]
 [ext_resource type="PackedScene" uid="uid://c8x4ucao8pxl0" path="res://managers/bulletPool/BulletPool.tscn" id="2_monf5"]
-[ext_resource type="Texture2D" uid="uid://blbxwv550oj6n" path="res://assets/ships/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Designs - Base/PNGs/Nairan - Battlecruiser - Base.png" id="3_aypkh"]
 [ext_resource type="Texture2D" uid="uid://bj0gu85v6t1ki" path="res://assets/Crosshairs/ELR_Corsshairs.png" id="3_hhoun"]
-[ext_resource type="Texture2D" uid="uid://b25nrkqpgdsqu" path="res://assets/ships/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Engine Effects/PNGs/Nairan - Battlecruiser - Engine.png" id="5_bdyh8"]
-[ext_resource type="Texture2D" uid="uid://b4kkc382dbnij" path="res://assets/ships/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Shields/PNGs/Nairan - Battlecruiser - Shield.png" id="6_qe16m"]
+[ext_resource type="Texture2D" uid="uid://blbxwv550oj6n" path="res://assets/ships/aliados/Nairan/Designs - Base/PNGs/Nairan - Battlecruiser - Base.png" id="4_qe16m"]
+[ext_resource type="Texture2D" uid="uid://b25nrkqpgdsqu" path="res://assets/ships/aliados/Nairan/Engine Effects/PNGs/Nairan - Battlecruiser - Engine.png" id="6_dkowc"]
+[ext_resource type="Texture2D" uid="uid://b4kkc382dbnij" path="res://assets/ships/aliados/Nairan/Shields/PNGs/Nairan - Battlecruiser - Shield.png" id="8_pw6nv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhoun"]
 radius = 19.999989
@@ -15,35 +15,35 @@ height = 86.0
 radius = 145.003
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qe16m"]
-atlas = ExtResource("5_bdyh8")
+atlas = ExtResource("6_dkowc")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkowc"]
-atlas = ExtResource("5_bdyh8")
+atlas = ExtResource("6_dkowc")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pw6nv"]
-atlas = ExtResource("5_bdyh8")
+atlas = ExtResource("6_dkowc")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpic6"]
-atlas = ExtResource("5_bdyh8")
+atlas = ExtResource("6_dkowc")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6pse"]
-atlas = ExtResource("5_bdyh8")
+atlas = ExtResource("6_dkowc")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6sb3"]
-atlas = ExtResource("5_bdyh8")
+atlas = ExtResource("6_dkowc")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hn1kw"]
-atlas = ExtResource("5_bdyh8")
+atlas = ExtResource("6_dkowc")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ps75u"]
-atlas = ExtResource("5_bdyh8")
+atlas = ExtResource("6_dkowc")
 region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3u2u7"]
@@ -78,64 +78,64 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3u2u7"]
-atlas = ExtResource("6_qe16m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_45wte"]
+atlas = ExtResource("8_pw6nv")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j51ly"]
-atlas = ExtResource("6_qe16m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vi7a"]
+atlas = ExtResource("8_pw6nv")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xqqx8"]
-atlas = ExtResource("6_qe16m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqwjq"]
+atlas = ExtResource("8_pw6nv")
 region = Rect2(256, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a1kp2"]
-atlas = ExtResource("6_qe16m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_aayji"]
+atlas = ExtResource("8_pw6nv")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aw5rd"]
-atlas = ExtResource("6_qe16m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m6fa"]
+atlas = ExtResource("8_pw6nv")
 region = Rect2(512, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t461u"]
-atlas = ExtResource("6_qe16m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_e72n5"]
+atlas = ExtResource("8_pw6nv")
 region = Rect2(640, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gh4hd"]
-atlas = ExtResource("6_qe16m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sexlj"]
+atlas = ExtResource("8_pw6nv")
 region = Rect2(768, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yr573"]
-atlas = ExtResource("6_qe16m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_svssn"]
+atlas = ExtResource("8_pw6nv")
 region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ynykn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3u2u7")
+"texture": SubResource("AtlasTexture_45wte")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j51ly")
+"texture": SubResource("AtlasTexture_8vi7a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xqqx8")
+"texture": SubResource("AtlasTexture_fqwjq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a1kp2")
+"texture": SubResource("AtlasTexture_aayji")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aw5rd")
+"texture": SubResource("AtlasTexture_3m6fa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t461u")
+"texture": SubResource("AtlasTexture_e72n5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gh4hd")
+"texture": SubResource("AtlasTexture_sexlj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yr573")
+"texture": SubResource("AtlasTexture_svssn")
 }],
 "loop": true,
 "name": &"shield",
@@ -172,20 +172,21 @@ region_rect = Rect2(96, 48, 16, 16)
 z_index = 1
 position = Vector2(-3, 1)
 rotation = 1.5708
-texture = ExtResource("3_aypkh")
+texture = ExtResource("4_qe16m")
 
 [node name="engine_animation" type="AnimatedSprite2D" parent="Nairan-Battlecruiser-Base" unique_id=1051369884]
 z_index = -1
 position = Vector2(7.267736e-06, 2)
 sprite_frames = SubResource("SpriteFrames_3u2u7")
 autoplay = "default"
+frame_progress = 0.15711746
 
 [node name="shield_animation" type="AnimatedSprite2D" parent="Nairan-Battlecruiser-Base" unique_id=205040344]
-visible = false
 position = Vector2(0, 4.3711452e-08)
 sprite_frames = SubResource("SpriteFrames_ynykn")
 animation = &"shield"
-frame_progress = 0.18321158
+frame = 3
+frame_progress = 0.85990953
 
 [connection signal="timeout" from="atk_timer" to="." method="_on_atk_timer_timeout"]
 [connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
