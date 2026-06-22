@@ -125,8 +125,8 @@ theme_override_constants/margin_bottom = 10
 
 [node name="sprite" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1926431530]
 unique_name_in_owner = true
-position = Vector2(57, 28)
-scale = Vector2(3.75, 3.75)
+position = Vector2(69.5, 28)
+scale = Vector2(5.3125005, 3.75)
 sprite_frames = SubResource("SpriteFrames_vc8jk")
 autoplay = "default"
 frame_progress = 0.761237

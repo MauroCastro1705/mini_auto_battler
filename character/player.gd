@@ -23,6 +23,8 @@ var moving: bool = false
 var _move_pulse_time: float = 0.0
 @export var move_pulse_alpha_min: float = 0.6
 @export var move_pulse_alpha_max: float = 1.0
+@onready var engine_animation: AnimatedSprite2D = $"Nairan-Battlecruiser-Base/engine_animation"
+@onready var shield_animation: AnimatedSprite2D = $"Nairan-Battlecruiser-Base/shield_animation"
 
 # Hold-to-move settings
 @export var hold_threshold: float = 0.3
@@ -53,6 +55,9 @@ func _ready() -> void:
 	#queue_redraw()
 	atk_timer.wait_time = Global.attack_cooldown
 	atk_timer.start()
+	# ensure engine animation is off until we move
+	if is_instance_valid(engine_animation):
+		engine_animation.hide()
 
 func update_global() -> void:
 	atk_timer.wait_time = Global.attack_cooldown
@@ -372,6 +377,14 @@ func _physics_process(delta: float) -> void:
 			look_at(move_target)
 		# Update path while moving
 		_update_movement_path()
+
+	# Toggle engine animation visibility based on moving state
+	if is_instance_valid(engine_animation):
+		if moving:
+			engine_animation.show()
+		else:
+			engine_animation.hide()
+
 
 
 func _ensure_movement_crosshair_world_parent() -> void:

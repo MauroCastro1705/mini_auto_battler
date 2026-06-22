@@ -185,6 +185,7 @@ autoplay = "default"
 frame_progress = 0.15711746
 
 [node name="shield_animation" type="AnimatedSprite2D" parent="Nairan-Battlecruiser-Base" unique_id=205040344]
+visible = false
 position = Vector2(0, 4.3711452e-08)
 sprite_frames = SubResource("SpriteFrames_ynykn")
 animation = &"shield"
