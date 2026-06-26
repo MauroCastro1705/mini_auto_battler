@@ -1,11 +1,13 @@
 extends Control
-@onready var level_label: Label = $BoxContainer/MarginContainer/HBoxContainer/level/VBoxContainer/Label2
-@onready var money_label: Label = $BoxContainer/MarginContainer/HBoxContainer/player_money/VBoxContainer/Label2
+
+
 @onready var resourse_1: Label = %resourse_1
 @onready var resourse_2: Label = %resourse_2
-@onready var resource_2_texture: TextureRect = $BoxContainer/MarginContainer/HBoxContainer/player_resource_2/VBoxContainer/resource_2_texture
-@onready var resource_1_texture: TextureRect = $BoxContainer/MarginContainer/HBoxContainer/player_resource_1/VBoxContainer/resource_1_texture
 @onready var coin_texture: TextureRect = %Coin_texture
+@onready var level_label: Label = %level
+@onready var money_label: Label = %money
+@onready var resource_1_texture: TextureRect = %resource_1_texture
+@onready var resource_2_texture: TextureRect = %resource_2_texture
 
 
 

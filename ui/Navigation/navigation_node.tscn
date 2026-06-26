@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://mcuywqnewpm5"]
+
+[ext_resource type="Script" uid="uid://lse4j5wv5c5l" path="res://ui/Navigation/navigation_node.gd" id="1_fb085"]
+
+[node name="NavigationNode" type="Control" unique_id=1030187482]
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fb085")
+nav_1_name = "Research"
+nav_2_name = "Mining"
+nav_3_name = "Defense"
+nav_4_name = "Upgrades"
+nav_5_name = "City"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=382253964]
+layout_mode = 0
+offset_top = 1208.0
+offset_right = 723.0
+offset_bottom = 1280.0
+size_flags_horizontal = 3
+color = Color(0.13725491, 0.12156863, 0.41568628, 1)
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=409756]
+layout_mode = 0
+offset_top = 1208.0
+offset_right = 721.0
+offset_bottom = 1280.0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1335092529]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=411688246]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=1254980652]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=169999002]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="nav_1" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=8086929]
+unique_name_in_owner = true
+layout_mode = 2
+text = "nav1"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=1251213366]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=222548029]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="nav_2" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=798559119]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nav 2
+"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=483323639]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1510537909]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="nav_3" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=935131530]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nav 3"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=1837564691]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer4" unique_id=471211605]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="nav_4" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer4" unique_id=1898809870]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nav 4"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=1870280591]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer5" unique_id=757972609]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="nav_5" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer5" unique_id=292481942]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nav 5"
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/nav_1" to="." method="_on_nav_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/nav_2" to="." method="_on_nav_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/nav_3" to="." method="_on_nav_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer4/nav_4" to="." method="_on_nav_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer5/nav_5" to="." method="_on_nav_5_pressed"]

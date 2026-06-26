@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bhy62wjmyxrdf"]
+
+[ext_resource type="Script" uid="uid://c1y5q56yxagkc" path="res://ui/level_money/level_money.gd" id="1_1se4p"]
+[ext_resource type="Theme" uid="uid://qcd6164qa1bv" path="res://resources/text.tres" id="1_8u7em"]
+[ext_resource type="Texture2D" uid="uid://d34mrbuobrp8v" path="res://assets/PNG/coin.png" id="4_5n5s7"]
+[ext_resource type="Texture2D" uid="uid://o20cgbcyriea" path="res://assets/PNG/recurso_1.png" id="5_qss0n"]
+[ext_resource type="Texture2D" uid="uid://b4ywysy6mjdw3" path="res://assets/PNG/recurso_2.png" id="6_mh3ko"]
+
+[node name="Level_and_money" type="Control" unique_id=1059391085]
+layout_mode = 3
+anchor_right = 0.22100002
+anchor_bottom = 0.143
+offset_right = -0.120010376
+offset_bottom = -0.040008545
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(87, 83)
+script = ExtResource("1_1se4p")
+
+[node name="BoxContainer" type="VBoxContainer" parent="." unique_id=29228602]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -7.0
+offset_top = 12.0
+offset_right = 150.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="level" type="MarginContainer" parent="BoxContainer" unique_id=832635566]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="HBoxContainer" parent="BoxContainer/level" unique_id=1964584108]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("1_8u7em")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BoxContainer/level/VBoxContainer" unique_id=559810919]
+layout_mode = 2
+theme = ExtResource("1_8u7em")
+text = "Level"
+
+[node name="level" type="Label" parent="BoxContainer/level/VBoxContainer" unique_id=594276239]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_8u7em")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="player_money" type="MarginContainer" parent="BoxContainer" unique_id=999040500]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="BoxContainer/player_money" unique_id=2138215627]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("1_8u7em")
+theme_override_constants/separation = 2
+
+[node name="Coin_texture" type="TextureRect" parent="BoxContainer/player_money/VBoxContainer" unique_id=1526966837]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+texture = ExtResource("4_5n5s7")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="money" type="Label" parent="BoxContainer/player_money/VBoxContainer" unique_id=948708889]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_8u7em")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="player_resource_1" type="MarginContainer" parent="BoxContainer" unique_id=1155574944]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="BoxContainer/player_resource_1" unique_id=1356428861]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("1_8u7em")
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="resource_1_texture" type="TextureRect" parent="BoxContainer/player_resource_1/VBoxContainer" unique_id=1173121393]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+texture = ExtResource("5_qss0n")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="resourse_1" type="Label" parent="BoxContainer/player_resource_1/VBoxContainer" unique_id=297392597]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_8u7em")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="player_resource_2" type="MarginContainer" parent="BoxContainer" unique_id=1664028729]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="BoxContainer/player_resource_2" unique_id=789371708]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_8u7em")
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="resource_2_texture" type="TextureRect" parent="BoxContainer/player_resource_2/VBoxContainer" unique_id=1503171806]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+texture = ExtResource("6_mh3ko")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="resourse_2" type="Label" parent="BoxContainer/player_resource_2/VBoxContainer" unique_id=262740904]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_8u7em")
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
