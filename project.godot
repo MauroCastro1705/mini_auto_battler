@@ -54,6 +54,7 @@ folder_colors={
 
 player=""
 enemigos=""
+ui_blocking=""
 
 [gui]
 

@@ -10,7 +10,7 @@
 atlas = ExtResource("2_fyq6c")
 region = Rect2(112, 36, 16, 8)
 
-[node name="NavigationNode" type="Control" unique_id=1030187482]
+[node name="NavigationNode" type="Control" unique_id=1030187482 groups=["ui_blocking"]]
 z_index = 4
 layout_mode = 3
 anchors_preset = 15
