@@ -73,7 +73,6 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_54ne2")
 action_mode = 0
-button_mask = 0
 text = "nav1"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1251213366]
@@ -143,10 +142,10 @@ text = "Nav 5"
 
 [node name="ExpBar" parent="." unique_id=1648484198 instance=ExtResource("3_ssjvw")]
 layout_mode = 1
-offset_left = 683.0
-offset_top = 6.0
-offset_right = 678.84
-offset_bottom = -1.199997
+offset_left = 670.0
+offset_top = 83.0
+offset_right = 665.84
+offset_bottom = 75.799995
 
 [node name="Level_and_money" parent="." unique_id=1059391085 instance=ExtResource("4_54ne2")]
 layout_mode = 1

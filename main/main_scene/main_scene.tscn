@@ -11,14 +11,6 @@
 [node name="MainScene" type="Node2D" unique_id=1710543075]
 script = ExtResource("1_kji5l")
 
-[node name="NavigationNode" parent="." unique_id=1030187482 node_paths=PackedStringArray("nav_1_scene", "nav_2_scene", "nav_3_scene", "nav_4_scene", "nav_5_scene") instance=ExtResource("2_h64k3")]
-nav_1_scene = NodePath("../escenas_principales/ResearchScene")
-nav_2_scene = NodePath("../escenas_principales/MiningScene")
-nav_3_scene = NodePath("../escenas_principales/Test-scene")
-nav_4_scene = NodePath("../escenas_principales/Upgrade-menu")
-nav_5_scene = NodePath("../escenas_principales/StatsEscene")
-nav_5_name = "Stats"
-
 [node name="escenas_principales" type="Node" parent="." unique_id=1881885875]
 
 [node name="Test-scene" parent="escenas_principales" unique_id=1225439251 instance=ExtResource("3_fjpt5")]
@@ -34,3 +26,12 @@ visible = false
 
 [node name="Upgrade-menu" parent="escenas_principales" unique_id=904537215 instance=ExtResource("7_xcydx")]
 visible = false
+
+[node name="NavigationNode" parent="." unique_id=1030187482 node_paths=PackedStringArray("nav_1_scene", "nav_2_scene", "nav_3_scene", "nav_4_scene", "nav_5_scene") instance=ExtResource("2_h64k3")]
+z_index = 5
+nav_1_scene = NodePath("../escenas_principales/ResearchScene")
+nav_2_scene = NodePath("../escenas_principales/MiningScene")
+nav_3_scene = NodePath("../escenas_principales/Test-scene")
+nav_4_scene = NodePath("../escenas_principales/Upgrade-menu")
+nav_5_scene = NodePath("../escenas_principales/StatsEscene")
+nav_5_name = "Stats"

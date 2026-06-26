@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://veon0exi0utd" path="res://managers/enemy_spawner/enemy_spawner.tscn" id="4_kvgnx"]
 [ext_resource type="PackedScene" uid="uid://bvjn1n354h5vr" path="res://managers/enemy_pool/enemy_pool.tscn" id="4_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://j74g4us3ueir" path="res://ui/mobs_killed/mobsKilled.tscn" id="7_v52jn"]
-[ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://Escenas_principales/Upgrade_scene/upgrade-menu/upgrade-menu.tscn" id="9_jipin"]
 [ext_resource type="PackedScene" uid="uid://3dje4lvy4x3p" path="res://ui/bomb_ui/bombs.tscn" id="13_6p2hi"]
 [ext_resource type="PackedScene" uid="uid://b631jjvhgsbol" path="res://proyectiles/bomb/bomb_1.tscn" id="13_ehe6g"]
 [ext_resource type="PackedScene" uid="uid://bqpnlni4edevw" path="res://Escenas_principales/defend_scene/test/paredes/pared.tscn" id="15_3wcnv"]
@@ -54,6 +53,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="sprite_planeta" type="Sprite2D" parent="." unique_id=978525830]
+z_as_relative = false
 position = Vector2(360, 1277.0001)
 scale = Vector2(0.410937, 0.410937)
 texture = ExtResource("1_b3u66")
@@ -98,9 +98,6 @@ offset_top = 971.0
 offset_right = -3.7600021
 offset_bottom = 964.56
 metadata/_edit_lock_ = true
-
-[node name="Upgrade-menu" parent="CanvasLayer" unique_id=1336667159 instance=ExtResource("9_jipin")]
-visible = false
 
 [node name="CoinsLayer" type="CanvasLayer" parent="." unique_id=1999999999]
 layer = 17
