@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b4kkc382dbnij" path="res://assets/ships/aliados/Nairan/Shields/PNGs/Nairan - Battlecruiser - Shield.png" id="8_pw6nv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhoun"]
-radius = 19.999989
-height = 86.0
+radius = 16.000002
+height = 71.99999
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_monf5"]
 radius = 145.003
@@ -167,14 +167,16 @@ debug_color = Color(0.686657, 0.38346, 0.82136, 0.42)
 [node name="Crosshair" type="Sprite2D" parent="." unique_id=314159265]
 z_index = 100
 position = Vector2(65, 28)
+scale = Vector2(1.8, 1.8)
 texture = ExtResource("3_hhoun")
 region_enabled = true
 region_rect = Rect2(99, 3, 10, 10)
 
 [node name="Nairan-Battlecruiser-Base" type="Sprite2D" parent="." unique_id=2026172737]
 z_index = 1
-position = Vector2(-3, 1)
+position = Vector2(-3, 0)
 rotation = 1.5708
+scale = Vector2(0.7652149, 0.7652149)
 texture = ExtResource("4_qe16m")
 
 [node name="engine_animation" type="AnimatedSprite2D" parent="Nairan-Battlecruiser-Base" unique_id=1051369884]
@@ -193,7 +195,7 @@ frame = 3
 frame_progress = 0.85990953
 
 [node name="Movement_crosshair" type="Sprite2D" parent="." unique_id=1299798454]
-position = Vector2(2, -1)
+position = Vector2(75, -15)
 scale = Vector2(1.875, 1.875)
 texture = ExtResource("3_hhoun")
 region_enabled = true
