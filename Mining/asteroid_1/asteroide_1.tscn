@@ -1,3 +1,29 @@
 [gd_scene format=3 uid="uid://cxrqn4kgkvsm0"]
 
-[node name="Asteroide1" type="Node2D" unique_id=2109238618]
+[ext_resource type="Script" uid="uid://dfvs0b8xmok6j" path="res://Mining/asteroid_1/asteroide_1.gd" id="1_egtmk"]
+[ext_resource type="Texture2D" uid="uid://o20cgbcyriea" path="res://assets/PNG/recurso_1.png" id="2_h18lc"]
+
+[node name="Asteroide1" type="Node2D" unique_id=2109238618 groups=["mineable_asteroids"]]
+script = ExtResource("1_egtmk")
+
+[node name="Visual" type="Polygon2D" parent="." unique_id=61260094]
+position = Vector2(79, 87)
+color = Color(0.34592408, 0.28820473, 0.23039132, 1)
+polygon = PackedVector2Array(0, -30, 24, -18, 36, -2, 28, 20, 8, 34, -18, 24, -34, 8, -26, -16)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1190764816]
+offset_left = 34.0
+offset_top = 24.0
+offset_right = 117.0
+offset_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1104859222]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("2_h18lc")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="mineral_label" type="Label" parent="HBoxContainer" unique_id=783870154]
+layout_mode = 2
+text = "recurso"

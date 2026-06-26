@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://coj7sp71b7lbc"]
 
-[ext_resource type="Script" uid="uid://lewrf6djsxmn" path="res://ui/upgrade-menu/generic_shop_button/generic_button.gd" id="1_m1at4"]
+[ext_resource type="Script" uid="uid://lewrf6djsxmn" path="res://Escenas_principales/Upgrade_scene/upgrade-menu/generic_shop_button/generic_button.gd" id="1_m1at4"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="2_amugd"]
 [ext_resource type="Texture2D" uid="uid://c4ejevqoai3wj" path="res://assets/PNG/Blue/Double/button_square_header_small_square_screws.png" id="2_f4a5i"]
 [ext_resource type="Texture2D" uid="uid://diiti2huiftxs" path="res://assets/bullets/All_Fire_Bullet_Pixel_16x16_00.png" id="3_ory34"]

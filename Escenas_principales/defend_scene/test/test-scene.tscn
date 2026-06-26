@@ -7,12 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://veon0exi0utd" path="res://managers/enemy_spawner/enemy_spawner.tscn" id="4_kvgnx"]
 [ext_resource type="PackedScene" uid="uid://bvjn1n354h5vr" path="res://managers/enemy_pool/enemy_pool.tscn" id="4_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://j74g4us3ueir" path="res://ui/mobs_killed/mobsKilled.tscn" id="7_v52jn"]
-[ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/level_money/Level_and_money.tscn" id="8_q134b"]
-[ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://ui/upgrade-menu/upgrade-menu.tscn" id="9_jipin"]
-[ext_resource type="PackedScene" uid="uid://cvuxl5jl1lkpp" path="res://ui/exp_bar/exp_bar.tscn" id="10_3wmdq"]
+[ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://Escenas_principales/Upgrade_scene/upgrade-menu/upgrade-menu.tscn" id="9_jipin"]
 [ext_resource type="PackedScene" uid="uid://3dje4lvy4x3p" path="res://ui/bomb_ui/bombs.tscn" id="13_6p2hi"]
 [ext_resource type="PackedScene" uid="uid://b631jjvhgsbol" path="res://proyectiles/bomb/bomb_1.tscn" id="13_ehe6g"]
-[ext_resource type="PackedScene" uid="uid://bqpnlni4edevw" path="res://test/paredes/pared.tscn" id="15_3wcnv"]
+[ext_resource type="PackedScene" uid="uid://bqpnlni4edevw" path="res://Escenas_principales/defend_scene/test/paredes/pared.tscn" id="15_3wcnv"]
 [ext_resource type="Script" uid="uid://bxh2fp42rn47m" path="res://enemies/coins_layer.gd" id="15_8s3e5"]
 [ext_resource type="PackedScene" uid="uid://bnp2dnfpc6rmn" path="res://ui/wave ui/wave_control.tscn" id="16_pd52j"]
 [ext_resource type="PackedScene" uid="uid://pue181nk6b4y" path="res://character/planet/planet.tscn" id="17_5oahq"]
@@ -90,18 +88,9 @@ offset_right = 165.67996
 offset_bottom = -200.48001
 
 [node name="WaveControl" parent="CanvasLayer" unique_id=1622120156 instance=ExtResource("16_pd52j")]
+visible = false
 offset_top = 3.0
 offset_bottom = 3.0
-
-[node name="ExpBar" parent="CanvasLayer" unique_id=428253076 instance=ExtResource("10_3wmdq")]
-anchor_left = 0.93600005
-anchor_top = 0.623
-anchor_right = 0.989
-anchor_bottom = 0.698
-offset_left = 4.079956
-offset_top = -0.44006348
-offset_right = -0.08001709
-offset_bottom = 14.559998
 
 [node name="Bombs" parent="CanvasLayer" unique_id=903814416 instance=ExtResource("13_6p2hi")]
 offset_left = 27.0
@@ -112,13 +101,6 @@ metadata/_edit_lock_ = true
 
 [node name="Upgrade-menu" parent="CanvasLayer" unique_id=1336667159 instance=ExtResource("9_jipin")]
 visible = false
-
-[node name="Level_and_money" parent="CanvasLayer" unique_id=1515457200 instance=ExtResource("8_q134b")]
-offset_left = 4.0
-offset_top = -2.0
-offset_right = 4.279999
-offset_bottom = -1.8800049
-metadata/_edit_lock_ = true
 
 [node name="CoinsLayer" type="CanvasLayer" parent="." unique_id=1999999999]
 layer = 17

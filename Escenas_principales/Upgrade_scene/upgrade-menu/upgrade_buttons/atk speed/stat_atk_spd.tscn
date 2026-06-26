@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmcrepwr5o15v"]
 
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="1_5b6le"]
-[ext_resource type="Script" uid="uid://d08kieg6no1p0" path="res://ui/upgrade-menu/upgrade_buttons/atk speed/stat_atk_spd.gd" id="1_t5ktq"]
+[ext_resource type="Script" uid="uid://d08kieg6no1p0" path="res://Escenas_principales/Upgrade_scene/upgrade-menu/upgrade_buttons/atk speed/stat_atk_spd.gd" id="1_t5ktq"]
 [ext_resource type="Texture2D" uid="uid://c4ejevqoai3wj" path="res://assets/PNG/Blue/Double/button_square_header_small_square_screws.png" id="2_ju0w7"]
 [ext_resource type="Theme" uid="uid://divwri80mossj" path="res://resources/button_modern_shop.tres" id="4_ju0w7"]
 

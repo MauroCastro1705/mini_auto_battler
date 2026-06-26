@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://iqn15oo6wg7u"]
+
+[ext_resource type="PackedScene" uid="uid://djxqnnd1gchxe" path="res://Escenas_principales/Stats_scene/stat_box/main_ui2.tscn" id="1_t430k"]
+
+[node name="StatsEscene" type="Node2D" unique_id=1614498359]
+
+[node name="Main_ui" parent="." unique_id=55102287 instance=ExtResource("1_t430k")]
+offset_left = -11.0
+offset_top = 468.0
+offset_right = -11.0
+offset_bottom = 471.96002

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dpnj80a72i2pi"]
+
+[ext_resource type="Script" uid="uid://xqtqsvlef08i" path="res://main/main_scene/main_scene.gd" id="1_kji5l"]
+[ext_resource type="PackedScene" uid="uid://mcuywqnewpm5" path="res://ui/Navigation/navigation_node.tscn" id="2_h64k3"]
+[ext_resource type="PackedScene" uid="uid://cauvt5eegmfco" path="res://Escenas_principales/defend_scene/test/test-scene.tscn" id="3_fjpt5"]
+[ext_resource type="PackedScene" uid="uid://br2sbrugljdkk" path="res://Escenas_principales/mining_scene/mining_scene.tscn" id="4_so7jk"]
+[ext_resource type="PackedScene" uid="uid://b75x35f1m30ks" path="res://Escenas_principales/research_scene/research_scene.tscn" id="5_5xgs1"]
+[ext_resource type="PackedScene" uid="uid://iqn15oo6wg7u" path="res://Escenas_principales/Stats_scene/stats_escene.tscn" id="6_d6xx3"]
+[ext_resource type="PackedScene" uid="uid://cg4kuqvhon4ns" path="res://Escenas_principales/Upgrade_scene/upgrade-menu/upgrade-menu.tscn" id="7_xcydx"]
+
+[node name="MainScene" type="Node2D" unique_id=1710543075]
+script = ExtResource("1_kji5l")
+
+[node name="NavigationNode" parent="." unique_id=1030187482 node_paths=PackedStringArray("nav_1_scene", "nav_2_scene", "nav_3_scene", "nav_4_scene", "nav_5_scene") instance=ExtResource("2_h64k3")]
+nav_1_scene = NodePath("../escenas_principales/ResearchScene")
+nav_2_scene = NodePath("../escenas_principales/MiningScene")
+nav_3_scene = NodePath("../escenas_principales/Test-scene")
+nav_4_scene = NodePath("../escenas_principales/Upgrade-menu")
+nav_5_scene = NodePath("../escenas_principales/StatsEscene")
+nav_5_name = "Stats"
+
+[node name="escenas_principales" type="Node" parent="." unique_id=1881885875]
+
+[node name="Test-scene" parent="escenas_principales" unique_id=1225439251 instance=ExtResource("3_fjpt5")]
+
+[node name="MiningScene" parent="escenas_principales" unique_id=709798443 instance=ExtResource("4_so7jk")]
+visible = false
+
+[node name="ResearchScene" parent="escenas_principales" unique_id=356825093 instance=ExtResource("5_5xgs1")]
+visible = false
+
+[node name="StatsEscene" parent="escenas_principales" unique_id=1614498359 instance=ExtResource("6_d6xx3")]
+visible = false
+
+[node name="Upgrade-menu" parent="escenas_principales" unique_id=904537215 instance=ExtResource("7_xcydx")]
+visible = false

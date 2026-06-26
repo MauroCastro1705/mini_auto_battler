@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqoqlehuf2n1m"]
 
 [ext_resource type="Texture2D" uid="uid://c4ejevqoai3wj" path="res://assets/PNG/Blue/Double/button_square_header_small_square_screws.png" id="1_7tgpc"]
-[ext_resource type="Script" uid="uid://yc36yahnpgw8" path="res://ui/upgrade-menu/upgrade_buttons/boton_para_herencia/boton_stat.gd" id="1_g51sb"]
+[ext_resource type="Script" uid="uid://yc36yahnpgw8" path="res://Escenas_principales/Upgrade_scene/upgrade-menu/upgrade_buttons/boton_para_herencia/boton_stat.gd" id="1_g51sb"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="2_g51sb"]
 [ext_resource type="Theme" uid="uid://divwri80mossj" path="res://resources/button_modern_shop.tres" id="3_j0i44"]
 

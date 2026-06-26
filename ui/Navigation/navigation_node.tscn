@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://mcuywqnewpm5"]
 
 [ext_resource type="Script" uid="uid://lse4j5wv5c5l" path="res://ui/Navigation/navigation_node.gd" id="1_fb085"]
+[ext_resource type="Texture2D" uid="uid://revjaw4idqp1" path="res://assets/bullets/ui pixel/All.png" id="2_fyq6c"]
+[ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="3_54ne2"]
+[ext_resource type="PackedScene" uid="uid://cvuxl5jl1lkpp" path="res://ui/exp_bar/exp_bar.tscn" id="3_ssjvw"]
+[ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/level_money/Level_and_money.tscn" id="4_54ne2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c24h6"]
+atlas = ExtResource("2_fyq6c")
+region = Rect2(112, 36, 16, 8)
 
 [node name="NavigationNode" type="Control" unique_id=1030187482]
 z_index = 4
@@ -17,97 +25,134 @@ nav_3_name = "Defense"
 nav_4_name = "Upgrades"
 nav_5_name = "City"
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=382253964]
+[node name="nav bar background" type="NinePatchRect" parent="." unique_id=197134627]
 layout_mode = 0
 offset_top = 1208.0
-offset_right = 723.0
-offset_bottom = 1280.0
+offset_right = 360.0
+offset_bottom = 1244.0
+scale = Vector2(2, 2)
 size_flags_horizontal = 3
-color = Color(0.13725491, 0.12156863, 0.41568628, 1)
-metadata/_edit_lock_ = true
+texture = ExtResource("2_fyq6c")
+region_rect = Rect2(64, 85, 48, 23)
+patch_margin_left = 6
+patch_margin_top = 5
+patch_margin_right = 6
+patch_margin_bottom = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=409756]
+[node name="nav_bar" type="HBoxContainer" parent="." unique_id=409756]
 layout_mode = 0
-offset_top = 1208.0
+offset_top = 1186.0
 offset_right = 721.0
-offset_bottom = 1280.0
+offset_bottom = 1281.0
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1335092529]
+[node name="MarginContainer" type="MarginContainer" parent="nav_bar" unique_id=1335092529]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=411688246]
+[node name="HBoxContainer" type="HBoxContainer" parent="nav_bar/MarginContainer" unique_id=411688246]
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=1254980652]
+[node name="VBoxContainer" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1254980652]
 layout_mode = 2
+alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=169999002]
-custom_minimum_size = Vector2(0, 10)
+[node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer" unique_id=911881676]
+custom_minimum_size = Vector2(10, 25)
 layout_mode = 2
+texture = SubResource("AtlasTexture_c24h6")
+stretch_mode = 5
 
-[node name="nav_1" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=8086929]
+[node name="nav_1" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1703561495]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_54ne2")
+action_mode = 0
+button_mask = 0
 text = "nav1"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=1251213366]
+[node name="VBoxContainer2" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1251213366]
 layout_mode = 2
+alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=222548029]
-custom_minimum_size = Vector2(0, 10)
+[node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=509131719]
+custom_minimum_size = Vector2(10, 25)
 layout_mode = 2
+texture = SubResource("AtlasTexture_c24h6")
+stretch_mode = 5
 
-[node name="nav_2" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=798559119]
+[node name="nav_2" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=798559119]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_54ne2")
 text = "Nav 2
 "
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=483323639]
+[node name="VBoxContainer3" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=483323639]
 layout_mode = 2
+alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1510537909]
-custom_minimum_size = Vector2(0, 10)
+[node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1503878339]
+custom_minimum_size = Vector2(10, 25)
 layout_mode = 2
+texture = SubResource("AtlasTexture_c24h6")
+stretch_mode = 5
 
-[node name="nav_3" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=935131530]
+[node name="nav_3" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=935131530]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_54ne2")
 text = "Nav 3"
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=1837564691]
+[node name="VBoxContainer4" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1837564691]
 layout_mode = 2
+alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer4" unique_id=471211605]
-custom_minimum_size = Vector2(0, 10)
+[node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer4" unique_id=2121396061]
+custom_minimum_size = Vector2(10, 25)
 layout_mode = 2
+texture = SubResource("AtlasTexture_c24h6")
+stretch_mode = 5
 
-[node name="nav_4" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer4" unique_id=1898809870]
+[node name="nav_4" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer4" unique_id=1898809870]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_54ne2")
 text = "Nav 4"
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer" unique_id=1870280591]
+[node name="VBoxContainer5" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1870280591]
 layout_mode = 2
+alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer5" unique_id=757972609]
-custom_minimum_size = Vector2(0, 10)
+[node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer5" unique_id=1637322431]
+custom_minimum_size = Vector2(10, 25)
 layout_mode = 2
+texture = SubResource("AtlasTexture_c24h6")
+stretch_mode = 5
 
-[node name="nav_5" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer5" unique_id=292481942]
+[node name="nav_5" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer5" unique_id=292481942]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_54ne2")
 text = "Nav 5"
 
-[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/nav_1" to="." method="_on_nav_1_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/nav_2" to="." method="_on_nav_2_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/nav_3" to="." method="_on_nav_3_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer4/nav_4" to="." method="_on_nav_4_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer5/nav_5" to="." method="_on_nav_5_pressed"]
+[node name="ExpBar" parent="." unique_id=1648484198 instance=ExtResource("3_ssjvw")]
+layout_mode = 1
+offset_left = 683.0
+offset_top = 6.0
+offset_right = 678.84
+offset_bottom = -1.199997
+
+[node name="Level_and_money" parent="." unique_id=1059391085 instance=ExtResource("4_54ne2")]
+layout_mode = 1
+
+[connection signal="pressed" from="nav_bar/MarginContainer/HBoxContainer/VBoxContainer/nav_1" to="." method="_on_nav_1_pressed"]
+[connection signal="pressed" from="nav_bar/MarginContainer/HBoxContainer/VBoxContainer2/nav_2" to="." method="_on_nav_2_pressed"]
+[connection signal="pressed" from="nav_bar/MarginContainer/HBoxContainer/VBoxContainer3/nav_3" to="." method="_on_nav_3_pressed"]
+[connection signal="pressed" from="nav_bar/MarginContainer/HBoxContainer/VBoxContainer4/nav_4" to="." method="_on_nav_4_pressed"]
+[connection signal="pressed" from="nav_bar/MarginContainer/HBoxContainer/VBoxContainer5/nav_5" to="." method="_on_nav_5_pressed"]

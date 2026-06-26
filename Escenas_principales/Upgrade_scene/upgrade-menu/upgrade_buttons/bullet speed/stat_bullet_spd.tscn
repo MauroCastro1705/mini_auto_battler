@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmkqhqfuge65l"]
 
-[ext_resource type="Script" uid="uid://cst4m6j302knw" path="res://ui/upgrade-menu/upgrade_buttons/bullet speed/stat_bullet_spd.gd" id="1_oh3y1"]
+[ext_resource type="Script" uid="uid://cst4m6j302knw" path="res://Escenas_principales/Upgrade_scene/upgrade-menu/upgrade_buttons/bullet speed/stat_bullet_spd.gd" id="1_oh3y1"]
 [ext_resource type="Texture2D" uid="uid://c4ejevqoai3wj" path="res://assets/PNG/Blue/Double/button_square_header_small_square_screws.png" id="2_j36de"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="3_lsblt"]
 [ext_resource type="Theme" uid="uid://divwri80mossj" path="res://resources/button_modern_shop.tres" id="4_i62wm"]

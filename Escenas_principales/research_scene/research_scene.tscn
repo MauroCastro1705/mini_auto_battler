@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b75x35f1m30ks"]
+
+[node name="ResearchScene" type="Node2D" unique_id=356825093]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1848455]
+offset_right = 738.0
+offset_bottom = 1272.0
+color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1494166208]
+offset_left = 309.0
+offset_top = 535.0
+offset_right = 458.0
+offset_bottom = 558.0
+text = "escena de research"

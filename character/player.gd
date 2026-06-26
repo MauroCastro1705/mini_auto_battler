@@ -16,6 +16,9 @@ var moving: bool = false
 @export var dot_spacing: float = 18.0
 @export var dot_radius: float = 2.0
 @export var dot_color: Color = Color(1, 1, 1, 0.9)
+@export var mining_rate: float = 20.0
+@export var mining_range: float = 80.0
+var mining_target: Node2D = null
 
 # Movement crosshair pulse animation
 @export var move_pulse_speed: float = 6.0
@@ -139,6 +142,9 @@ func _process(_delta: float) -> void:
 				movement_crosshair.visible = false
 				_restore_movement_crosshair_parent()
 				_remove_movement_path()
+	if Input.is_action_pressed("ui_accept"):
+		_try_mine(_delta)
+
 	# If player is using the crosshair, face it; otherwise face nearest enemy (if auto-target enabled)
 	if crosshair_active and is_instance_valid(crosshair) and crosshair.visible:
 		look_at(crosshair.global_position)
@@ -181,6 +187,36 @@ func get_nearest_enemy() -> Node:
 func remove_enemy(enemy: Node) -> void:
 	# Llamada desde Enemy.deactivate() para garantizar limpieza aunque no haya body_exited
 	enemies_in_range.erase(enemy)
+
+func _try_mine(delta: float) -> void:
+	if not is_instance_valid(mining_target):
+		mining_target = _find_nearest_mineable_asteroid()
+
+	if not is_instance_valid(mining_target):
+		return
+
+	var distance := global_position.distance_to(mining_target.global_position)
+	if distance > mining_range:
+		mining_target = null
+		return
+
+	if mining_target.has_method("mine"):
+		mining_target.mine(mining_rate * delta)
+
+func _find_nearest_mineable_asteroid() -> Node2D:
+	var nearest: Node2D = null
+	var nearest_distance := INF
+
+	for node in get_tree().get_nodes_in_group("mineable_asteroids"):
+		if not is_instance_valid(node):
+			continue
+		if node is Node2D:
+			var distance_squared := global_position.distance_squared_to(node.global_position)
+			if distance_squared <= mining_range * mining_range and distance_squared < nearest_distance:
+				nearest_distance = distance_squared
+				nearest = node
+
+	return nearest
 	
 func _on_atk_timer_timeout() -> void:
 	can_shoot = true
