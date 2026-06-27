@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://veon0exi0utd" path="res://managers/enemy_spawner/enemy_spawner.tscn" id="4_kvgnx"]
 [ext_resource type="PackedScene" uid="uid://bvjn1n354h5vr" path="res://managers/enemy_pool/enemy_pool.tscn" id="4_l0d6b"]
 [ext_resource type="PackedScene" uid="uid://j74g4us3ueir" path="res://ui/mobs_killed/mobsKilled.tscn" id="7_v52jn"]
-[ext_resource type="PackedScene" uid="uid://3dje4lvy4x3p" path="res://ui/bomb_ui/bombs.tscn" id="13_6p2hi"]
-[ext_resource type="PackedScene" uid="uid://b631jjvhgsbol" path="res://proyectiles/bomb/bomb_1.tscn" id="13_ehe6g"]
 [ext_resource type="PackedScene" uid="uid://bqpnlni4edevw" path="res://Escenas_principales/defend_scene/test/paredes/pared.tscn" id="15_3wcnv"]
 [ext_resource type="Script" uid="uid://bxh2fp42rn47m" path="res://enemies/coins_layer.gd" id="15_8s3e5"]
 [ext_resource type="PackedScene" uid="uid://bnp2dnfpc6rmn" path="res://ui/wave ui/wave_control.tscn" id="16_pd52j"]
@@ -53,6 +51,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="sprite_planeta" type="Sprite2D" parent="." unique_id=978525830]
+z_index = 3
 z_as_relative = false
 position = Vector2(360, 1277.0001)
 scale = Vector2(0.410937, 0.410937)
@@ -62,8 +61,6 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." unique_id=2129326642 instance=ExtResource("1_5d1lj")]
 position = Vector2(336, 531)
 rotation = -1.57079
-dot_radius = 1.0
-dot_color = Color(0.14117648, 0.9411765, 0.043137256, 0.9019608)
 shoot_mode = 0
 
 [node name="focal_point" type="Marker2D" parent="." unique_id=1767070196]
@@ -92,22 +89,9 @@ visible = false
 offset_top = 3.0
 offset_bottom = 3.0
 
-[node name="Bombs" parent="CanvasLayer" unique_id=903814416 instance=ExtResource("13_6p2hi")]
-offset_left = 27.0
-offset_top = 971.0
-offset_right = -3.7600021
-offset_bottom = 964.56
-metadata/_edit_lock_ = true
-
 [node name="CoinsLayer" type="CanvasLayer" parent="." unique_id=1999999999]
 layer = 17
 script = ExtResource("15_8s3e5")
-
-[node name="Bomb1" parent="." unique_id=1667665772 instance=ExtResource("13_ehe6g")]
-visible = false
-position = Vector2(316, 514)
-collision_mask = 8
-safe_margin = 1.0
 
 [node name="walls" type="Node2D" parent="." unique_id=2075340124]
 

@@ -4,6 +4,11 @@
 
 [node name="StatsEscene" type="Node2D" unique_id=1614498359]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1820432023]
+offset_right = 731.0
+offset_bottom = 1290.0
+color = Color(0.18717614, 0.18717614, 0.18717614, 1)
+
 [node name="Main_ui" parent="." unique_id=55102287 instance=ExtResource("1_t430k")]
 offset_left = -11.0
 offset_top = 468.0
