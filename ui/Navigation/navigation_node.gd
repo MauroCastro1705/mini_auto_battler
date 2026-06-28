@@ -70,27 +70,30 @@ func set_active_nav(active_index: int) -> void:
 	nav_4_active = active_index == 4
 	nav_5_active = active_index == 5
 
-	set_scene_visibility(nav_1_scene, nav_1_active)
-	set_scene_visibility(nav_2_scene, nav_2_active)
-	set_scene_visibility(nav_3_scene, nav_3_active)
-	set_scene_visibility(nav_4_scene, nav_4_active)
-	set_scene_visibility(nav_5_scene, nav_5_active)
+	set_scene_visibility(nav_1_scene, nav_1_active, arrow1)
+	set_scene_visibility(nav_2_scene, nav_2_active, arrow2)
+	set_scene_visibility(nav_3_scene, nav_3_active, arrow3)
+	set_scene_visibility(nav_4_scene, nav_4_active, arrow4)
+	set_scene_visibility(nav_5_scene, nav_5_active, arrow5)
 
-func set_scene_visibility(scene: Node2D, is_visibles: bool) -> void:
+func set_scene_visibility(scene: Node2D, is_visibles: bool, arrow: TextureRect) -> void:
 	if scene == null:
 		return
 	if is_visibles:
 		if scene.has_method("show"):
 			scene.show()
+			arrow.show()
 		if scene.has_method("set_process"):
 			scene.set_process(true)
 		if scene.has_method("set_physics_process"):
 			scene.set_physics_process(true)
 		if scene.has_method("set_z_index"):
 			scene.set_z_index(3)
+		
 	else:
 		if scene.has_method("hide"):
 			scene.hide()
+			arrow.hide()
 		if scene.has_method("set_process"):
 			scene.set_process(false)
 		if scene.has_method("set_physics_process"):

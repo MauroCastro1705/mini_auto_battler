@@ -1,16 +1,98 @@
 [gd_scene format=3 uid="uid://iqn15oo6wg7u"]
 
-[ext_resource type="PackedScene" uid="uid://djxqnnd1gchxe" path="res://Escenas_principales/Stats_scene/stat_box/main_ui2.tscn" id="1_t430k"]
+[ext_resource type="Script" uid="uid://drlb3legti05j" path="res://Escenas_principales/Stats_scene/stats_escene.gd" id="1_t430k"]
 
 [node name="StatsEscene" type="Node2D" unique_id=1614498359]
+script = ExtResource("1_t430k")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1820432023]
 offset_right = 731.0
 offset_bottom = 1290.0
 color = Color(0.18717614, 0.18717614, 0.18717614, 1)
 
-[node name="Main_ui" parent="." unique_id=55102287 instance=ExtResource("1_t430k")]
-offset_left = -11.0
-offset_top = 468.0
-offset_right = -11.0
-offset_bottom = 471.96002
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=670802180]
+offset_left = 9.0
+offset_top = 231.0
+offset_right = 724.0
+offset_bottom = 969.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1887899155]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1689120930]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1553207212]
+layout_mode = 2
+alignment = 1
+
+[node name="stat name1" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1596045728]
+unique_name_in_owner = true
+layout_mode = 2
+text = "atk speed"
+horizontal_alignment = 1
+
+[node name="stat velue1" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1739150586]
+unique_name_in_owner = true
+layout_mode = 2
+text = "atk speed value"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=527033470]
+layout_mode = 2
+alignment = 1
+
+[node name="stat name2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1425078277]
+unique_name_in_owner = true
+layout_mode = 2
+text = "atk speed"
+horizontal_alignment = 1
+
+[node name="stat velue2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=260411276]
+unique_name_in_owner = true
+layout_mode = 2
+text = "atk speed value"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=386173034]
+layout_mode = 2
+alignment = 1
+
+[node name="stat name3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1130741444]
+unique_name_in_owner = true
+layout_mode = 2
+text = "atk speed"
+horizontal_alignment = 1
+
+[node name="stat velue3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=101589674]
+unique_name_in_owner = true
+layout_mode = 2
+text = "atk speed value"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=195670629]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=75507410]
+layout_mode = 2
+text = "stat 1"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1173801473]
+layout_mode = 2
+text = "stat 2"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=8886561]
+layout_mode = 2
+text = "stat 3"
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=688115022]
+layout_mode = 2
+text = "stat 4"
