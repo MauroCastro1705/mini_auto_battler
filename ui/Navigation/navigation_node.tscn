@@ -33,7 +33,7 @@ offset_bottom = 1239.0
 scale = Vector2(2, 2)
 size_flags_horizontal = 3
 texture = ExtResource("2_fyq6c")
-region_rect = Rect2(64, 85, 48, 23)
+region_rect = Rect2(128, 84.89111, 48, 21.999252)
 patch_margin_left = 6
 patch_margin_top = 5
 patch_margin_right = 6
@@ -41,9 +41,9 @@ patch_margin_bottom = 5
 
 [node name="nav_bar" type="HBoxContainer" parent="." unique_id=409756]
 layout_mode = 0
-offset_top = 1179.0
+offset_top = 1180.0
 offset_right = 721.0
-offset_bottom = 1267.0
+offset_bottom = 1268.0
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="nav_bar" unique_id=1335092529]
@@ -60,6 +60,7 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1254980652]
 layout_mode = 2
+theme_override_constants/separation = 7
 alignment = 2
 
 [node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer" unique_id=911881676]
@@ -77,6 +78,7 @@ text = "nav1"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1251213366]
 layout_mode = 2
+theme_override_constants/separation = 7
 alignment = 2
 
 [node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=509131719]
@@ -94,6 +96,7 @@ text = "Nav 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=483323639]
 layout_mode = 2
+theme_override_constants/separation = 7
 alignment = 2
 
 [node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1503878339]
@@ -110,6 +113,7 @@ text = "Nav 3"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1837564691]
 layout_mode = 2
+theme_override_constants/separation = 7
 alignment = 2
 
 [node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer4" unique_id=2121396061]
@@ -126,6 +130,7 @@ text = "Nav 4"
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="nav_bar/MarginContainer/HBoxContainer" unique_id=1870280591]
 layout_mode = 2
+theme_override_constants/separation = 7
 alignment = 2
 
 [node name="arrow" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer5" unique_id=1637322431]

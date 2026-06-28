@@ -12,12 +12,27 @@ extends Node2D
 @export var mineral_value_per_unit: float = 1.0
 
 @onready var deposit_label: Label = $HBoxContainer/mineral_label
+@onready var texture_rect: TextureRect = $HBoxContainer/TextureRect
+
+
+enum MINERALES { RECURSO_1, RECURSO_2 }
+@export var mineral: MINERALES = MINERALES.RECURSO_1
 
 var current_deposit: float = 0.0
 
+# Diccionario que mapea el enum a su textura
+var textures: Dictionary = {}
+
 func _ready() -> void:
+	textures = {
+		MINERALES.RECURSO_1: load("res://assets/PNG/recurso_1.png"),
+		MINERALES.RECURSO_2: load("res://assets/PNG/recurso_2.png"),
+	}
+
 	current_deposit = max_deposit
 	update_display()
+	texture_rect.texture = textures[mineral]
+	
 
 func _process(_delta: float) -> void:
 	update_display()
@@ -52,3 +67,7 @@ func get_deposit_ratio() -> float:
 	if max_deposit <= 0.0:
 		return 0.0
 	return current_deposit / max_deposit
+
+
+func _on_button_pressed() -> void:
+	mine(1)

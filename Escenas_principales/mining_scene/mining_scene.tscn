@@ -42,4 +42,14 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Asteroide1" parent="." unique_id=2109238618 instance=ExtResource("2_ttn55")]
-position = Vector2(283, 664)
+position = Vector2(170, 693)
+mineral = 1
+
+[node name="Asteroide2" parent="." unique_id=1445109215 instance=ExtResource("2_ttn55")]
+position = Vector2(439, 493)
+max_deposit = 124.0
+
+[node name="Asteroide3" parent="." unique_id=922902300 instance=ExtResource("2_ttn55")]
+position = Vector2(127, 227)
+max_deposit = 260.0
+mineral = 1

@@ -14,6 +14,7 @@ script = ExtResource("1_kji5l")
 [node name="escenas_principales" type="Node" parent="." unique_id=1881885875]
 
 [node name="Test-scene" parent="escenas_principales" unique_id=1225439251 instance=ExtResource("3_fjpt5")]
+visible = false
 
 [node name="MiningScene" parent="escenas_principales" unique_id=709798443 instance=ExtResource("4_so7jk")]
 visible = false
