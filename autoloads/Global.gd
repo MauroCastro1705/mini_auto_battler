@@ -24,7 +24,11 @@ var player_bombs:int = 300
 var player_bomb_dmg:int = 20
 var player_bomb_size:= Vector2(1.25, 1.25)
 
+
+##mining stats
 var player_mine_damage:int = 3
+var can_auto_mine:bool = false
+var auto_mining_damage:int = 2
 
 var xp:int = 0
 var level:int = 1
