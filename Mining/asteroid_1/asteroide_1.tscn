@@ -17,6 +17,30 @@ position = Vector2(83, 87)
 color = Color(0.27602747, 0.22290847, 0.17464092, 1)
 polygon = PackedVector2Array(0, -30, 24, -18, 36, -2, 28, 20, 8, 34, -18, 24, -34, 8, -26, -16)
 
+[node name="Visual3" type="Polygon2D" parent="." unique_id=1756795955]
+position = Vector2(94.35891, 79.90492)
+scale = Vector2(0.36349732, 0.36349732)
+color = Color(0.2107611, 0.16743025, 0.12763897, 1)
+polygon = PackedVector2Array(4, -30, 12, 34, -18, 24, -34, 8, -26, -16)
+
+[node name="Visual4" type="Polygon2D" parent="." unique_id=274035451]
+position = Vector2(98.35891, 79.90492)
+scale = Vector2(0.36349732, 0.36349732)
+color = Color(0.32788306, 0.26918063, 0.21502182, 1)
+polygon = PackedVector2Array(0, -30, 24, -18, 36, -2, 28, 20, 8, 34, -18, 24, -34, 8, -26, -16)
+
+[node name="Visual5" type="Polygon2D" parent="." unique_id=1120544023]
+position = Vector2(71.71891, 96.90492)
+scale = Vector2(0.4034973, 0.36349732)
+color = Color(0.2107611, 0.16743025, 0.12763897, 1)
+polygon = PackedVector2Array(4, -30, 12, 34, -18, 24, -34, 8, -26, -16)
+
+[node name="Visual6" type="Polygon2D" parent="." unique_id=1348731067]
+position = Vector2(75.71891, 96.90492)
+scale = Vector2(0.4034973, 0.36349732)
+color = Color(0.29491788, 0.2410396, 0.19073528, 1)
+polygon = PackedVector2Array(0, -30, 24, -18, 36, -2, 28, 20, 8, 34, -18, 24, -34, 8, -26, -16)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1190764816]
 offset_left = 51.0
 offset_top = 24.0
