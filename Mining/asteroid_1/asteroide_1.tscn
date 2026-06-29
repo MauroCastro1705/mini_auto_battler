@@ -23,6 +23,24 @@ orbit_radius = 125.0
 orbit_speed = 0.25
 center_node = NodePath("../Marker2D")
 
+[node name="AutoMiner2" parent="." unique_id=408905070 node_paths=PackedStringArray("center_node") instance=ExtResource("7_tc4tp")]
+unique_name_in_owner = true
+position = Vector2(87.99999, -85)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+orbit_radius = 125.0
+orbit_speed = 0.25
+center_node = NodePath("../Marker2D")
+
+[node name="AutoMiner3" parent="." unique_id=16411896 node_paths=PackedStringArray("center_node") instance=ExtResource("7_tc4tp")]
+unique_name_in_owner = true
+position = Vector2(-113.99999, -68)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+orbit_radius = 125.0
+orbit_speed = 0.25
+center_node = NodePath("../Marker2D")
+
 [node name="Visual" type="Polygon2D" parent="." unique_id=61260094]
 position = Vector2(-4.9999695, 6)
 scale = Vector2(2.5200007, 2.8399994)

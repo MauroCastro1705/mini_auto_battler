@@ -23,10 +23,17 @@ var pos: Vector2 = Vector2.ZERO
 var textures: Dictionary = {}
 
 #auto miner
+
+
 @onready var auto_miner: Node2D = %AutoMiner
+@onready var auto_miner_2: Node2D = %AutoMiner2
+@onready var auto_miner_3: Node2D = %AutoMiner3
+@onready var miners_array:Array[Node2D] = []
 
 func _ready() -> void:
-	auto_miner.hide()
+	miners_array = [auto_miner, auto_miner_2, auto_miner_3]
+	for miner in miners_array:
+		miner.hide()
 	texture_progress_bar.hide()
 	timer_bar.hide()
 	timer_bar.min_value = 0.0
