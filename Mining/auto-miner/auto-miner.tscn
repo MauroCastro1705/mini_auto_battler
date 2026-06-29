@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://2xie4en1sv82"]
+
+[ext_resource type="Script" uid="uid://o6aaf1x11ga7" path="res://Mining/auto-miner/auto_miner.gd" id="1_2l5hn"]
+[ext_resource type="Texture2D" uid="uid://b0e1feuku6prm" path="res://assets/ships/aliados/Nairan/Engine Effects/PNGs/Nairan - Support Ship - Engine.png" id="1_mhpvk"]
+[ext_resource type="Texture2D" uid="uid://c1at06p28wusb" path="res://assets/ships/aliados/Nairan/Weapon Effects - Projectiles/PNGs/Nairan - Ray.png" id="2_2l5hn"]
+[ext_resource type="Texture2D" uid="uid://d04f53vc1athu" path="res://assets/ships/aliados/Nairan/Designs - Base/PNGs/Nairan - Support Ship - Base.png" id="2_128y8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l5hn"]
+atlas = ExtResource("1_mhpvk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2pn1"]
+atlas = ExtResource("1_mhpvk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq41a"]
+atlas = ExtResource("1_mhpvk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k5nw"]
+atlas = ExtResource("1_mhpvk")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fy0c"]
+atlas = ExtResource("1_mhpvk")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v5ei"]
+atlas = ExtResource("1_mhpvk")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehw1x"]
+atlas = ExtResource("1_mhpvk")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k72xv"]
+atlas = ExtResource("1_mhpvk")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nl045"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l5hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2pn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq41a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k5nw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fy0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v5ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehw1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k72xv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl045"]
+atlas = ExtResource("2_2l5hn")
+region = Rect2(0, 0, 18, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynk7s"]
+atlas = ExtResource("2_2l5hn")
+region = Rect2(18, 0, 18, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqmsw"]
+atlas = ExtResource("2_2l5hn")
+region = Rect2(36, 0, 18, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onuwd"]
+atlas = ExtResource("2_2l5hn")
+region = Rect2(54, 0, 18, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_402fp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl045")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynk7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqmsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onuwd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amcxl"]
+atlas = ExtResource("2_128y8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ynk7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amcxl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AutoMiner" type="Node2D" unique_id=1851151719]
+script = ExtResource("1_2l5hn")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=493744438]
+position = Vector2(0, 0.080005646)
+rotation = 1.5707964
+scale = Vector2(1.3199997, 1.3199997)
+sprite_frames = SubResource("SpriteFrames_nl045")
+autoplay = "default"
+frame_progress = 0.1551731
+offset = Vector2(0, -2.2727299)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1785087478]
+position = Vector2(0, 0.08000183)
+rotation = 1.5707964
+scale = Vector2(1.3199997, 1.3199997)
+sprite_frames = SubResource("SpriteFrames_402fp")
+autoplay = "default"
+frame_progress = 0.85355896
+offset = Vector2(0, -19.696974)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1256268998]
+position = Vector2(0, 0.080005646)
+rotation = 1.5707964
+scale = Vector2(1.3199997, 1.3199997)
+sprite_frames = SubResource("SpriteFrames_ynk7s")
+autoplay = "default"
+offset = Vector2(0, -2.2727299)

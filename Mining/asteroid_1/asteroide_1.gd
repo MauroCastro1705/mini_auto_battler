@@ -7,6 +7,8 @@ extends Node2D
 @onready var auto_miner_button: Button = $auto_miner_button
 @onready var auto_miner_timer: Timer = %auto_miner
 
+
+
 signal mine_collected(amount: float, mineral_type: int)
 
 @onready var texture_progress_bar: TextureProgressBar = %TextureProgressBar
@@ -20,7 +22,11 @@ var current_deposit: float = 0.0
 var pos: Vector2 = Vector2.ZERO
 var textures: Dictionary = {}
 
+#auto miner
+@onready var auto_miner: Node2D = %AutoMiner
+
 func _ready() -> void:
+	auto_miner.hide()
 	texture_progress_bar.hide()
 	timer_bar.hide()
 	timer_bar.min_value = 0.0
@@ -38,6 +44,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	update_display()
 	update_timer_bar()
+
 
 func update_timer_bar() -> void:
 	if not is_auto_mining:
@@ -96,6 +103,8 @@ func _on_auto_miner_button_pressed() -> void:
 	is_auto_mining = true
 	auto_miner_button.hide()   # oculta el botón
 	timer_bar.show()           # muestra la barra
+	auto_miner.show()
+	auto_miner.can_move = true
 	texture_progress_bar.show()
 	timer_bar.value = 0.0      # arranca desde cero
 	auto_miner_timer.start()

@@ -6,51 +6,64 @@
 [ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="4_rg3x4"]
 [ext_resource type="Theme" uid="uid://jr82p6y257fe" path="res://resources/barra_timer.tres" id="5_ylwwk"]
 [ext_resource type="PackedScene" uid="uid://y3fe30xklkhr" path="res://ui/barra_texturada/texture_progress_bar.tscn" id="6_bp4p5"]
+[ext_resource type="PackedScene" uid="uid://2xie4en1sv82" path="res://Mining/auto-miner/auto-miner.tscn" id="7_tc4tp"]
 
 [node name="Asteroide1" type="Node2D" unique_id=2109238618 groups=["mineable_asteroids"]]
 script = ExtResource("1_egtmk")
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=883097271]
+position = Vector2(1.0800171, 6)
+
+[node name="AutoMiner" parent="." unique_id=1851151719 node_paths=PackedStringArray("center_node") instance=ExtResource("7_tc4tp")]
+unique_name_in_owner = true
+position = Vector2(-4.0126038, -124.04367)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+orbit_radius = 125.0
+orbit_speed = 0.25
+center_node = NodePath("../Marker2D")
+
 [node name="Visual" type="Polygon2D" parent="." unique_id=61260094]
-position = Vector2(-0.08001709, 0)
-scale = Vector2(2.8799994, 2.8799994)
+position = Vector2(-4.9999695, 6)
+scale = Vector2(2.5200007, 2.8399994)
 color = Color(0.2107611, 0.16743025, 0.12763897, 1)
 polygon = PackedVector2Array(1.3888893, -29.861118, 9.027779, 34.027782, -18, 24, -34, 8, -26, -16)
 
 [node name="Visual2" type="Polygon2D" parent="." unique_id=637250804]
-position = Vector2(3.919983, 0)
-scale = Vector2(2.8799994, 2.8799994)
+position = Vector2(-0.9999695, 6)
+scale = Vector2(2.5200007, 2.8399994)
 color = Color(0.27602747, 0.22290847, 0.17464092, 1)
 polygon = PackedVector2Array(0, -30, 24, -18, 36, -2, 28, 20, 8, 34, -18, 24, -34, 8, -26, -16)
 
 [node name="Visual3" type="Polygon2D" parent="." unique_id=1756795955]
-position = Vector2(51.51364, -4.593834)
-scale = Vector2(1.0468721, 1.0468721)
+position = Vector2(46.59369, 1.4061737)
+scale = Vector2(0.91601354, 1.0323323)
 color = Color(0.2107611, 0.16743025, 0.12763897, 1)
 polygon = PackedVector2Array(4, -30, 12, 34, -18, 24, -34, 8, -26, -16)
 
 [node name="Visual4" type="Polygon2D" parent="." unique_id=274035451]
-position = Vector2(55.51364, -4.593834)
-scale = Vector2(1.0468721, 1.0468721)
+position = Vector2(50.59369, 1.4061737)
+scale = Vector2(0.91601354, 1.0323323)
 color = Color(0.32788306, 0.26918063, 0.21502182, 1)
 polygon = PackedVector2Array(0, -30, 24, -18, 36, -2, 28, 20, 8, 34, -18, 24, -34, 8, -26, -16)
 
 [node name="Visual5" type="Polygon2D" parent="." unique_id=1120544023]
-position = Vector2(-28.569572, 20.406166)
-scale = Vector2(1.1620722, 1.0468721)
+position = Vector2(-33.489532, 26.406158)
+scale = Vector2(1.0168136, 1.0323323)
 color = Color(0.2107611, 0.16743025, 0.12763897, 1)
 polygon = PackedVector2Array(4, -30, 12, 34, -18, 24, -34, 8, -26, -16)
 
 [node name="Visual6" type="Polygon2D" parent="." unique_id=1348731067]
-position = Vector2(-24.569572, 20.406166)
-scale = Vector2(1.1620722, 1.0468721)
+position = Vector2(-29.489532, 26.406158)
+scale = Vector2(1.0168136, 1.0323323)
 color = Color(0.29491788, 0.2410396, 0.19073528, 1)
 polygon = PackedVector2Array(0, -30, 24, -18, 36, -2, 28, 20, 8, 34, -18, 24, -34, 8, -26, -16)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1190764816]
-offset_left = -56.080017
-offset_top = -135.0
-offset_right = 50.919983
-offset_bottom = -95.0
+offset_left = -61.0
+offset_top = -129.0
+offset_right = 46.0
+offset_bottom = -89.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1104859222]
 custom_minimum_size = Vector2(20, 20)
@@ -66,19 +79,19 @@ label_settings = ExtResource("3_30wf6")
 
 [node name="Button" type="Button" parent="." unique_id=1326164781]
 modulate = Color(1, 1, 1, 0)
-offset_left = -94.08002
-offset_top = -80.0
-offset_right = 89.91998
-offset_bottom = 85.0
+offset_left = -99.0
+offset_top = -74.0
+offset_right = 85.0
+offset_bottom = 91.0
 
 [node name="auto_miner" type="Timer" parent="." unique_id=2032086435]
 unique_name_in_owner = true
 
 [node name="auto_miner_button" type="Button" parent="." unique_id=2067194814]
-offset_left = -52.080017
-offset_top = 111.0
-offset_right = 68.91998
-offset_bottom = 147.0
+offset_left = -57.0
+offset_top = 117.0
+offset_right = 64.0
+offset_bottom = 153.0
 theme = ExtResource("4_rg3x4")
 theme_override_font_sizes/font_size = 18
 text = "Auto-mine
@@ -87,16 +100,20 @@ text = "Auto-mine
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1239836844]
 unique_name_in_owner = true
-offset_left = -45.0
-offset_top = 124.0
-offset_right = 65.0
-offset_bottom = 135.0
+offset_left = -49.919983
+offset_top = 130.0
+offset_right = 60.080017
+offset_bottom = 141.0
 theme = ExtResource("5_ylwwk")
 value = 50.0
 show_percentage = false
 
 [node name="TextureProgressBar" parent="." unique_id=1611485947 instance=ExtResource("6_bp4p5")]
 unique_name_in_owner = true
+offset_left = -67.91998
+offset_top = 126.0
+offset_right = -20.253326
+offset_bottom = 131.66669
 texture_under = null
 texture_progress = null
 
