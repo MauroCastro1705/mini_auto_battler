@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cxrqn4kgkvsm0" path="res://Mining/asteroid_1/asteroide_1.tscn" id="2_ttn55"]
 [ext_resource type="Texture2D" uid="uid://revjaw4idqp1" path="res://assets/bullets/ui pixel/All.png" id="4_ipw8q"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="5_qq5ux"]
+[ext_resource type="Texture2D" uid="uid://o20cgbcyriea" path="res://assets/PNG/recurso_1.png" id="6_t4uwm"]
+[ext_resource type="Texture2D" uid="uid://b4ywysy6mjdw3" path="res://assets/PNG/recurso_2.png" id="7_30xpl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3eujj"]
 shader = ExtResource("1_anqv5")
@@ -46,15 +48,15 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Asteroide1" parent="." unique_id=2109238618 instance=ExtResource("2_ttn55")]
-position = Vector2(151, 624)
+position = Vector2(228, 702)
 mineral = 1
 
 [node name="Asteroide2" parent="." unique_id=1445109215 instance=ExtResource("2_ttn55")]
-position = Vector2(470, 411)
+position = Vector2(547, 489)
 max_deposit = 124.0
 
 [node name="Asteroide3" parent="." unique_id=922902300 instance=ExtResource("2_ttn55")]
-position = Vector2(198, 217)
+position = Vector2(275, 295)
 max_deposit = 260.0
 mineral = 1
 
@@ -66,36 +68,123 @@ offset_bottom = 40.0
 
 [node name="nav bar background" type="NinePatchRect" parent="Control" unique_id=1288592864]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 963.0
-offset_right = 147.0
-offset_bottom = 1004.0
-scale = Vector2(2, 2)
+offset_left = 11.0
+offset_top = 957.0
+offset_right = 334.0
+offset_bottom = 1062.0
 size_flags_horizontal = 3
 texture = ExtResource("4_ipw8q")
 region_rect = Rect2(128, 84.89111, 48, 21.999252)
 patch_margin_left = 6
-patch_margin_top = 5
+patch_margin_top = 6
 patch_margin_right = 6
-patch_margin_bottom = 5
+patch_margin_bottom = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=234629961]
+[node name="nav bar background2" type="NinePatchRect" parent="Control" unique_id=1373891619]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 965.0
+offset_right = 703.0
+offset_bottom = 1060.0
+size_flags_horizontal = 3
+texture = ExtResource("4_ipw8q")
+region_rect = Rect2(128, 84.89111, 48, 21.999252)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="current_minig" type="VBoxContainer" parent="Control" unique_id=1649669976]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 980.0
+offset_right = 688.0
+offset_bottom = 1046.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/current_minig" unique_id=1036591532]
+layout_mode = 2
+text = "Current mining"
+label_settings = ExtResource("5_qq5ux")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/current_minig" unique_id=1874294101]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/current_minig/HBoxContainer" unique_id=877212348]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("6_t4uwm")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="mineral_label1" type="Label" parent="Control/current_minig/HBoxContainer" unique_id=1384234586]
+unique_name_in_owner = true
+layout_mode = 2
+text = "recurso"
+label_settings = ExtResource("5_qq5ux")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/current_minig" unique_id=937135058]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/current_minig/HBoxContainer2" unique_id=2131079164]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("7_30xpl")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="mineral_label2" type="Label" parent="Control/current_minig/HBoxContainer2" unique_id=755779306]
+unique_name_in_owner = true
+layout_mode = 2
+text = "recurso"
+label_settings = ExtResource("5_qq5ux")
+
+[node name="minig stats" type="HBoxContainer" parent="Control" unique_id=234629961]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 980.0
 offset_right = 144.0
 offset_bottom = 1028.0
+theme_override_constants/separation = 13
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=1687374909]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/minig stats" unique_id=1687374909]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer" unique_id=1621712812]
+[node name="Label" type="Label" parent="Control/minig stats/VBoxContainer" unique_id=1621712812]
 layout_mode = 2
 text = "Mining damage"
 label_settings = ExtResource("5_qq5ux")
+horizontal_alignment = 1
 
-[node name="mining_damage" type="Label" parent="Control/HBoxContainer/VBoxContainer" unique_id=892013882]
+[node name="mining_damage" type="Label" parent="Control/minig stats/VBoxContainer" unique_id=892013882]
 unique_name_in_owner = true
 layout_mode = 2
 text = "15"
 label_settings = ExtResource("5_qq5ux")
+horizontal_alignment = 1
+
+[node name="auto_miners" type="VBoxContainer" parent="Control/minig stats" unique_id=212294230]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/minig stats/auto_miners" unique_id=1617094903]
+layout_mode = 2
+text = "Auto miners 
+aviable"
+label_settings = ExtResource("5_qq5ux")
+horizontal_alignment = 1
+
+[node name="mining_damage" type="Label" parent="Control/minig stats/auto_miners" unique_id=1966868010]
+layout_mode = 2
+text = "15"
+label_settings = ExtResource("5_qq5ux")
+horizontal_alignment = 1
+
+[node name="sample_timer" type="Timer" parent="." unique_id=523798921]
+autostart = true
+
+[connection signal="timeout" from="sample_timer" to="." method="_on_sample_timer_timeout"]

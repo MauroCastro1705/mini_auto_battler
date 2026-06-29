@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://y3fe30xklkhr"]
+
+[ext_resource type="Texture2D" uid="uid://s4rtpv1gn3gg" path="res://assets/bullets/ui pixel/04.png" id="1_0theg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yjgx"]
+atlas = ExtResource("1_0theg")
+region = Rect2(295, 102, 34, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnncj"]
+atlas = ExtResource("1_0theg")
+region = Rect2(3, 99, 42, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7whsd"]
+atlas = ExtResource("1_0theg")
+region = Rect2(55, 102, 34, 5)
+margin = Rect2(1, 0, 0, 0)
+
+[node name="TextureProgressBar" type="TextureProgressBar" unique_id=1611485947]
+offset_left = -63.0
+offset_top = 120.0
+offset_right = -15.333332
+offset_bottom = 125.66667
+scale = Vector2(3, 3)
+value = 50.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_5yjgx")
+texture_over = SubResource("AtlasTexture_pnncj")
+texture_progress = SubResource("AtlasTexture_7whsd")

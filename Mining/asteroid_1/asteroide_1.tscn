@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b4ywysy6mjdw3" path="res://assets/PNG/recurso_2.png" id="2_30wf6"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="3_30wf6"]
 [ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="4_rg3x4"]
+[ext_resource type="Theme" uid="uid://jr82p6y257fe" path="res://resources/barra_timer.tres" id="5_ylwwk"]
+[ext_resource type="PackedScene" uid="uid://y3fe30xklkhr" path="res://ui/barra_texturada/texture_progress_bar.tscn" id="6_bp4p5"]
 
 [node name="Asteroide1" type="Node2D" unique_id=2109238618 groups=["mineable_asteroids"]]
 script = ExtResource("1_egtmk")
@@ -74,11 +76,29 @@ unique_name_in_owner = true
 
 [node name="auto_miner_button" type="Button" parent="." unique_id=2067194814]
 offset_left = -52.080017
-offset_top = 123.0
+offset_top = 111.0
 offset_right = 68.91998
-offset_bottom = 160.0
+offset_bottom = 147.0
 theme = ExtResource("4_rg3x4")
-text = "Auto-mine"
+theme_override_font_sizes/font_size = 18
+text = "Auto-mine
+
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1239836844]
+unique_name_in_owner = true
+offset_left = -45.0
+offset_top = 124.0
+offset_right = 65.0
+offset_bottom = 135.0
+theme = ExtResource("5_ylwwk")
+value = 50.0
+show_percentage = false
+
+[node name="TextureProgressBar" parent="." unique_id=1611485947 instance=ExtResource("6_bp4p5")]
+unique_name_in_owner = true
+texture_under = null
+texture_progress = null
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="auto_miner" to="." method="_on_auto_miner_timeout"]
