@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dlvhjldieoq11"]
+
+[ext_resource type="Script" uid="uid://bo02ipncwf26h" path="res://Escenas_principales/research_scene/research button/research_button.gd" id="1_5kc8g"]
+[ext_resource type="Theme" uid="uid://bgwv11hfx4p7d" path="res://resources/button_theme_verison2.tres" id="2_5kc8g"]
+[ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="2_h6ncf"]
+[ext_resource type="Texture2D" uid="uid://br0ydv8ik5mek" path="res://assets/icons/icons for upgrades/iconos (3).png" id="3_6b8ui"]
+[ext_resource type="Texture2D" uid="uid://dl5wokcm5bvlq" path="res://assets/icons/yes.png" id="5_u8maf"]
+[ext_resource type="Texture2D" uid="uid://cys26vr0s7jao" path="res://assets/icons/no.png" id="6_gjy7r"]
+
+[node name="ResearchButton" type="Control" unique_id=1277085318]
+custom_minimum_size = Vector2(100, 170)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5kc8g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1515508537]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="upgrade_name" type="Label" parent="VBoxContainer" unique_id=523159814]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Upgrade 1"
+label_settings = ExtResource("2_h6ncf")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=863666981]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme = ExtResource("2_5kc8g")
+toggle_mode = true
+
+[node name="icon_texture" type="TextureRect" parent="VBoxContainer/Button" unique_id=798101977]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 86.0
+offset_bottom = 79.0
+texture = ExtResource("3_6b8ui")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="confirmation_container" type="HBoxContainer" parent="VBoxContainer" unique_id=71732266]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Button_yes" type="Button" parent="VBoxContainer/confirmation_container" unique_id=1524197507]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme = ExtResource("2_5kc8g")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/confirmation_container/Button_yes" unique_id=1572090428]
+modulate = Color(0.22352941, 0.6862745, 0, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_top = 0.19403076
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("5_u8maf")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Button_no" type="Button" parent="VBoxContainer/confirmation_container" unique_id=300506460]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme = ExtResource("2_5kc8g")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/confirmation_container/Button_no" unique_id=2028876720]
+modulate = Color(1, 0.14509805, 0.10980392, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_top = 0.19403076
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("6_gjy7r")
+expand_mode = 5
+stretch_mode = 5
+
+[connection signal="toggled" from="VBoxContainer/Button" to="." method="_on_button_toggled"]
+[connection signal="pressed" from="VBoxContainer/confirmation_container/Button_yes" to="." method="_on_button_yes_pressed"]
+[connection signal="pressed" from="VBoxContainer/confirmation_container/Button_no" to="." method="_on_button_no_pressed"]

@@ -70,8 +70,8 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_left = 11.0
 offset_top = 957.0
-offset_right = 334.0
-offset_bottom = 1062.0
+offset_right = 329.0
+offset_bottom = 1029.0
 size_flags_horizontal = 3
 texture = ExtResource("4_ipw8q")
 region_rect = Rect2(128, 84.89111, 48, 21.999252)
@@ -144,11 +144,12 @@ label_settings = ExtResource("5_qq5ux")
 
 [node name="minig stats" type="HBoxContainer" parent="Control" unique_id=234629961]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 980.0
-offset_right = 144.0
-offset_bottom = 1028.0
-theme_override_constants/separation = 13
+offset_left = 19.0
+offset_top = 964.0
+offset_right = 267.0
+offset_bottom = 1016.0
+theme_override_constants/separation = 11
+alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/minig stats" unique_id=1687374909]
 layout_mode = 2
@@ -156,7 +157,8 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Control/minig stats/VBoxContainer" unique_id=1621712812]
 layout_mode = 2
-text = "Mining damage"
+text = "Mining
+damage"
 label_settings = ExtResource("5_qq5ux")
 horizontal_alignment = 1
 
@@ -174,13 +176,32 @@ alignment = 1
 [node name="Label" type="Label" parent="Control/minig stats/auto_miners" unique_id=1617094903]
 layout_mode = 2
 text = "Auto miners 
-aviable"
+Damage"
 label_settings = ExtResource("5_qq5ux")
 horizontal_alignment = 1
 
-[node name="mining_damage" type="Label" parent="Control/minig stats/auto_miners" unique_id=1966868010]
+[node name="auto_mining_damage" type="Label" parent="Control/minig stats/auto_miners" unique_id=1966868010]
+unique_name_in_owner = true
 layout_mode = 2
 text = "15"
+label_settings = ExtResource("5_qq5ux")
+horizontal_alignment = 1
+
+[node name="auto_miners2" type="VBoxContainer" parent="Control/minig stats" unique_id=1502078518]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/minig stats/auto_miners2" unique_id=351277254]
+layout_mode = 2
+text = "Auto miners 
+Time"
+label_settings = ExtResource("5_qq5ux")
+horizontal_alignment = 1
+
+[node name="auto_mining_timer" type="Label" parent="Control/minig stats/auto_miners2" unique_id=256492244]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3"
 label_settings = ExtResource("5_qq5ux")
 horizontal_alignment = 1
 

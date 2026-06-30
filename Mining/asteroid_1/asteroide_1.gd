@@ -61,6 +61,7 @@ func update_timer_bar() -> void:
 	# time_left va de wait_time → 0, así que invertimos para que la barra vaya de 0 → 1
 	var progress: float = 1.0 - (auto_miner_timer.time_left / auto_miner_timer.wait_time)
 	timer_bar.value = progress
+	update_timer()
 
 func mine(amount: int, hardness: int) -> float:
 	if current_deposit <= 0:
@@ -118,7 +119,7 @@ func _on_auto_miner_button_pressed() -> void:
 
 func _on_auto_miner_timeout() -> void:
 	timer_bar.value = 1.0      # asegura llegar al 100% exacto
-	auto_mine()
-
-func auto_mine():
 	mine(Global.auto_mining_damage, mineral_hardness)
+
+func update_timer():
+	auto_miner_timer.wait_time = Global.auto_miner_timer

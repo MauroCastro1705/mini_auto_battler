@@ -35,4 +35,4 @@ nav_2_scene = NodePath("../escenas_principales/MiningScene")
 nav_3_scene = NodePath("../escenas_principales/Test-scene")
 nav_4_scene = NodePath("../escenas_principales/Upgrade-menu")
 nav_5_scene = NodePath("../escenas_principales/StatsEscene")
-nav_5_name = "Stats"
+nav_5_name = ""

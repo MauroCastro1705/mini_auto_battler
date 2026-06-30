@@ -7,6 +7,8 @@ signal wave_advanced
 signal level_advanced
 signal enemigo_se_infiltro
 
+#player unlocked scenes
+var locked_scene:bool = false
 
 #player vars
 var player:Node = null
@@ -29,10 +31,14 @@ var player_bomb_size:= Vector2(1.25, 1.25)
 var player_mine_damage:int = 3
 var can_auto_mine:bool = false
 var auto_mining_damage:int = 2
+var auto_miner_timer:float = 5.0
+
+
 
 var xp:int = 0
 var level:int = 1
 var xp_to_next:int = 10
+
 var attack_speed := 1.5 # Cooldown in seconds (lower = faster)
 #persistent level stats
 var atk_speed_level:= 1

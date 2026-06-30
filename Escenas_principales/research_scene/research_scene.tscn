@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b75x35f1m30ks"]
 
+[ext_resource type="PackedScene" uid="uid://b7x3o31i4irj7" path="res://Escenas_principales/research_scene/research_button_generico.tscn" id="1_4skc4"]
+
 [node name="ResearchScene" type="Node2D" unique_id=356825093]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1848455]
@@ -7,9 +9,44 @@ offset_right = 738.0
 offset_bottom = 1272.0
 color = Color(0.14044744, 0.14044744, 0.14044744, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1494166208]
-offset_left = 309.0
-offset_top = 535.0
-offset_right = 458.0
-offset_bottom = 558.0
-text = "escena de research"
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=340172355]
+offset_top = 313.0
+offset_right = 718.0
+offset_bottom = 805.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=442380728]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ResearchButton" parent="VBoxContainer/HBoxContainer" unique_id=1528907865 instance=ExtResource("1_4skc4")]
+layout_mode = 2
+upgrade_name = "caca"
+
+[node name="ResearchButton2" parent="VBoxContainer/HBoxContainer" unique_id=1118483176 instance=ExtResource("1_4skc4")]
+layout_mode = 2
+
+[node name="ResearchButton3" parent="VBoxContainer/HBoxContainer" unique_id=588369201 instance=ExtResource("1_4skc4")]
+layout_mode = 2
+
+[node name="ResearchButton4" parent="VBoxContainer/HBoxContainer" unique_id=1060119978 instance=ExtResource("1_4skc4")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1954813310]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ResearchButton" parent="VBoxContainer/HBoxContainer2" unique_id=2103417885 instance=ExtResource("1_4skc4")]
+layout_mode = 2
+
+[node name="ResearchButton2" parent="VBoxContainer/HBoxContainer2" unique_id=190904366 instance=ExtResource("1_4skc4")]
+layout_mode = 2
+
+[node name="ResearchButton3" parent="VBoxContainer/HBoxContainer2" unique_id=442892387 instance=ExtResource("1_4skc4")]
+layout_mode = 2
+
+[node name="ResearchButton4" parent="VBoxContainer/HBoxContainer2" unique_id=994056908 instance=ExtResource("1_4skc4")]
+layout_mode = 2

@@ -61,7 +61,10 @@ func _on_nav_4_pressed() -> void:
 
 
 func _on_nav_5_pressed() -> void:
-	set_active_nav(5)
+	if Global.locked_scene: #se desbloquea a futuro
+		set_active_nav(5)
+	else:
+		return
 
 func set_active_nav(active_index: int) -> void:
 	nav_1_active = active_index == 1

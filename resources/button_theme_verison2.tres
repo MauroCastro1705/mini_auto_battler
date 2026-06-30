@@ -1,11 +1,11 @@
-[gd_resource type="Theme" format=3 uid="uid://diel1g3cfv58k"]
+[gd_resource type="Theme" format=3 uid="uid://bgwv11hfx4p7d"]
 
-[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_54e5j"]
-[ext_resource type="Texture2D" uid="uid://i7fyesnlgvgr" path="res://assets/bullets/ui pixel/00.png" id="2_8nq33"]
+[ext_resource type="FontFile" uid="uid://crhm4u6p8tbx1" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_dgt3k"]
+[ext_resource type="Texture2D" uid="uid://i7fyesnlgvgr" path="res://assets/bullets/ui pixel/00.png" id="2_6xtxp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nq33"]
-atlas = ExtResource("2_8nq33")
-region = Rect2(128, 85, 48, 22)
+atlas = ExtResource("2_6xtxp")
+region = Rect2(0, 85, 47, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykge7"]
 content_margin_left = 10.0
@@ -25,8 +25,8 @@ region_rect = Rect2(0.414958, 0, 47.2556, 22)
 modulate_color = Color(0.9622, 0.847848, 0.728529, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_54e5j"]
-atlas = ExtResource("2_8nq33")
-region = Rect2(128, 85, 48, 22)
+atlas = ExtResource("2_6xtxp")
+region = Rect2(0, 85, 48, 22)
 filter_clip = true
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7yyq"]
@@ -49,7 +49,7 @@ region_rect = Rect2(0.200645, 0, 47.3807, 22)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 4
 Button/font_sizes/font_size = 19
-Button/fonts/font = ExtResource("1_54e5j")
+Button/fonts/font = ExtResource("1_dgt3k")
 Button/icons/icon = null
 Button/styles/hover = SubResource("StyleBoxTexture_ykge7")
 Button/styles/normal = SubResource("StyleBoxTexture_d7yyq")

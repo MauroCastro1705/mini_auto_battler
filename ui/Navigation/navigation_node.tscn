@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://diel1g3cfv58k" path="res://resources/button_theme.tres" id="3_54ne2"]
 [ext_resource type="PackedScene" uid="uid://cvuxl5jl1lkpp" path="res://ui/exp_bar/exp_bar.tscn" id="3_ssjvw"]
 [ext_resource type="PackedScene" uid="uid://bhy62wjmyxrdf" path="res://ui/level_money/Level_and_money.tscn" id="4_54ne2"]
+[ext_resource type="Texture2D" uid="uid://cs8t2261obbsx" path="res://assets/icons/icons for upgrades/iconos (1).png" id="4_c24h6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c24h6"]
 atlas = ExtResource("2_fyq6c")
@@ -27,9 +28,9 @@ nav_5_name = "City"
 
 [node name="nav bar background" type="NinePatchRect" parent="." unique_id=197134627]
 layout_mode = 0
-offset_top = 1198.0
+offset_top = 1194.0
 offset_right = 360.0
-offset_bottom = 1239.0
+offset_bottom = 1237.0
 scale = Vector2(2, 2)
 size_flags_horizontal = 3
 texture = ExtResource("2_fyq6c")
@@ -41,7 +42,7 @@ patch_margin_bottom = 5
 
 [node name="nav_bar" type="HBoxContainer" parent="." unique_id=409756]
 layout_mode = 0
-offset_top = 1180.0
+offset_top = 1175.0
 offset_right = 721.0
 offset_bottom = 1268.0
 alignment = 1
@@ -71,6 +72,7 @@ stretch_mode = 5
 
 [node name="nav_1" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1703561495]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 40)
 layout_mode = 2
 theme = ExtResource("3_54ne2")
 action_mode = 0
@@ -89,6 +91,7 @@ stretch_mode = 5
 
 [node name="nav_2" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=798559119]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 40)
 layout_mode = 2
 theme = ExtResource("3_54ne2")
 text = "Nav 2
@@ -107,6 +110,7 @@ stretch_mode = 5
 
 [node name="nav_3" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=935131530]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 40)
 layout_mode = 2
 theme = ExtResource("3_54ne2")
 text = "Nav 3"
@@ -124,6 +128,7 @@ stretch_mode = 5
 
 [node name="nav_4" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer4" unique_id=1898809870]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 40)
 layout_mode = 2
 theme = ExtResource("3_54ne2")
 text = "Nav 4"
@@ -141,9 +146,21 @@ stretch_mode = 5
 
 [node name="nav_5" type="Button" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer5" unique_id=292481942]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 40)
 layout_mode = 2
 theme = ExtResource("3_54ne2")
-text = "Nav 5"
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="nav_bar/MarginContainer/HBoxContainer/VBoxContainer5/nav_5" unique_id=1997062864]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 68.0
+offset_bottom = 36.0
+texture = ExtResource("4_c24h6")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="ExpBar" parent="." unique_id=1648484198 instance=ExtResource("3_ssjvw")]
 layout_mode = 1
