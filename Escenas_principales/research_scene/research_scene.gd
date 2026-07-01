@@ -8,8 +8,6 @@ extends Node2D
 @onready var research_bar: ProgressBar = %research_bar
 @onready var texture_progress_bar: TextureProgressBar = %TextureProgressBar
 
-@export var research_visual_node: Node
-@onready var res_text: Label = $VBoxContainer/current_research/HBoxContainer/res_text
 
 
 var reference_button
@@ -17,7 +15,7 @@ var stat_being_research
 var research_finish: bool = false
 
 func _ready() -> void:
-	res_text.text = "Research aviable"
+	#res_text.text = "Research aviable"
 	error_msg.visible = false
 	research_bar.visible = false  # Ocultar barra inicialmente
 	texture_progress_bar.visible = false
@@ -95,13 +93,10 @@ func show_error_message(message: String, color: Color):
 	timer.start()
 
 func set_research_stat(boton_upgrade):
-	# Reiniciar estado de investigación
-	research_visual_node.animated_sprite_2d.show()
-	research_visual_node.animated_sprite_2d.play("default")
-	res_text.text = "Researching..."
 	research_finish = false
 	stat_being_research = boton_upgrade.stat_to_upgrade
 	
+	#res_text.text = "Researching..."
 	# Configurar y mostrar la barra
 	research_bar.visible = true
 	texture_progress_bar.visible = true
@@ -113,6 +108,8 @@ func set_research_stat(boton_upgrade):
 	print("Timer iniciado: ", research_timer.wait_time, " segundos")
 	print("Estadística en investigación: ", stat_being_research)
 	
+
+
 func update_timer_bar() -> void:
 	# Solo actualizar si el timer está activo y la investigación no ha terminado
 	if research_timer.is_stopped() or research_finish:
@@ -123,10 +120,9 @@ func update_timer_bar() -> void:
 	research_bar.value = clamp(progress, 0.0, 1.0)  # Asegurar que no se pase
 
 func _on_research_timer_timeout() -> void:
-	research_visual_node.animated_sprite_2d.hide()
 	research_finish = true
 	research_bar.visible = false  # Ocultar barra cuando termina
-	res_text.text = "Research aviable"
+	#res_text.text = "Research aviable"
 	print("Investigación completada!")
 	
 	# Aquí puedes agregar lógica adicional cuando la investigación termina

@@ -90,6 +90,7 @@ expand_mode = 5
 stretch_mode = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/Button" unique_id=224105545]
+visible = false
 position = Vector2(40.49997, 40)
 scale = Vector2(2.9687498, 2.9375)
 sprite_frames = SubResource("SpriteFrames_u8maf")

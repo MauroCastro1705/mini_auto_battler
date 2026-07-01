@@ -19,9 +19,8 @@ font_color = Color(0, 0.6455197, 0.23712179, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="ResearchScene" type="Node2D" unique_id=356825093 node_paths=PackedStringArray("research_visual_node")]
+[node name="ResearchScene" type="Node2D" unique_id=356825093]
 script = ExtResource("1_es6n5")
-research_visual_node = NodePath("VBoxContainer/current_research/HBoxContainer/Research-NODE")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1848455]
 offset_right = 738.0
@@ -30,32 +29,12 @@ color = Color(0.14044744, 0.14044744, 0.14044744, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=340172355]
 offset_left = 48.0
-offset_top = 259.0
-offset_right = 688.0
-offset_bottom = 809.0
+offset_top = 482.0
+offset_right = 698.0
+offset_bottom = 1060.0
 theme_override_constants/separation = 30
 alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="current_research" type="BoxContainer" parent="VBoxContainer" unique_id=820566616]
-layout_mode = 2
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/current_research" unique_id=1567838887]
-layout_mode = 2
-theme_override_constants/separation = 40
-alignment = 1
-
-[node name="res_text" type="Label" parent="VBoxContainer/current_research/HBoxContainer" unique_id=1823021018]
-custom_minimum_size = Vector2(130, 20)
-layout_mode = 2
-text = "Researching..."
-horizontal_alignment = 1
-
-[node name="Research-NODE" parent="VBoxContainer/current_research/HBoxContainer" unique_id=1528907865 instance=ExtResource("1_4skc4")]
-layout_mode = 2
-mouse_filter = 2
-soy_tonto = true
 
 [node name="Mejoras" type="HBoxContainer" parent="VBoxContainer" unique_id=442380728]
 layout_mode = 2

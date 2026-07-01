@@ -30,6 +30,7 @@ enum STATS {
 @onready var upgrade_name_local: Label = %upgrade_name
 
 func _ready() -> void:
+	
 	animated_sprite_2d.hide()
 	textures = {
 		MINERALES.RECURSO_1: load("res://assets/PNG/recurso_1.png"),
@@ -39,11 +40,11 @@ func _ready() -> void:
 	upgrade_name_local.text = upgrade_name
 	mineral_cost = textures[mineral]
 
-func play_research():
-	animated_sprite_2d.play("default")
 
 func _on_button_pressed() -> void:
+	if soy_tonto:
+		animated_sprite_2d.show()
 	if not soy_tonto:
 		nodo_padre.update(self)
-		animated_sprite_2d.show()
+		
 		
