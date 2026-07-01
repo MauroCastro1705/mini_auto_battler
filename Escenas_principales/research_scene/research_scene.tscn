@@ -33,7 +33,6 @@ offset_top = 482.0
 offset_right = 698.0
 offset_bottom = 1060.0
 theme_override_constants/separation = 30
-alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Mejoras" type="HBoxContainer" parent="VBoxContainer" unique_id=442380728]
@@ -206,10 +205,11 @@ vertical_alignment = 1
 
 [node name="research_bar" type="ProgressBar" parent="." unique_id=2110538219]
 unique_name_in_owner = true
-offset_left = 257.0
-offset_top = 364.0
-offset_right = 367.0
-offset_bottom = 375.0
+offset_left = 192.00002
+offset_top = 267.00003
+offset_right = 303.6211
+offset_bottom = 278.00003
+scale = Vector2(3.413334, 3.413334)
 theme = ExtResource("3_tol7s")
 value = 45.0
 show_percentage = false
@@ -217,10 +217,11 @@ metadata/_edit_group_ = true
 
 [node name="TextureProgressBar" parent="." unique_id=1611485947 instance=ExtResource("4_r571g")]
 unique_name_in_owner = true
-offset_left = 239.0
-offset_top = 360.0
-offset_right = 287.6667
-offset_bottom = 365.6667
+offset_left = 133.0
+offset_top = 254.0
+offset_right = 181.66669
+offset_bottom = 259.6667
+scale = Vector2(10.240002, 10.240002)
 texture_under = null
 texture_progress = null
 metadata/_edit_group_ = true
