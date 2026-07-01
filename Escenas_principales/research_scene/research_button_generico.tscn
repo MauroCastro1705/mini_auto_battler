@@ -3,3 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dlvhjldieoq11" path="res://Escenas_principales/research_scene/research button/research_button.tscn" id="1_nc41k"]
 
 [node name="ResearchButton" unique_id=1528907865 instance=ExtResource("1_nc41k")]
+anchor_right = 0.123
+anchor_bottom = 0.08800001
+offset_right = 7.439995
+offset_bottom = 57.359993
