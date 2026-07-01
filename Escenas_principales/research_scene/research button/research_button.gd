@@ -1,4 +1,5 @@
 extends Control
+@onready var animated_sprite_2d: AnimatedSprite2D = $HBoxContainer/VBoxContainer/Button/AnimatedSprite2D
 
 @export var upgrade_price:int = 0
 @export var mineral: MINERALES = MINERALES.RECURSO_1
@@ -7,10 +8,12 @@ var mineral_cost:Texture2D
 @export var upgrade_text:String = ""
 @export var upgrade_icon:Texture2D
 @export var research_time:float ##cuanto tiempo dura el research
-@export var nodo_padre:Node2D
+@export var nodo_padre:Node2D = null
 var textures: Dictionary = {}
 enum MINERALES { RECURSO_1, RECURSO_2 }
 @export var stat_to_upgrade: STATS ## que estat de global afecta
+@export var soy_tonto:bool = false
+
 enum STATS { 
 	MINE_DMG,          ## Daño de minería manual
 	CAN_AUTOMINE,      ## Habilidad para minar automáticamente
@@ -27,6 +30,7 @@ enum STATS {
 @onready var upgrade_name_local: Label = %upgrade_name
 
 func _ready() -> void:
+	animated_sprite_2d.hide()
 	textures = {
 		MINERALES.RECURSO_1: load("res://assets/PNG/recurso_1.png"),
 		MINERALES.RECURSO_2: load("res://assets/PNG/recurso_2.png"),
@@ -35,6 +39,11 @@ func _ready() -> void:
 	upgrade_name_local.text = upgrade_name
 	mineral_cost = textures[mineral]
 
+func play_research():
+	animated_sprite_2d.play("default")
 
 func _on_button_pressed() -> void:
-	nodo_padre.update(self)
+	if not soy_tonto:
+		nodo_padre.update(self)
+		animated_sprite_2d.show()
+		

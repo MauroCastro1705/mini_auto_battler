@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://qfs5arsyreyn" path="res://Escenas_principales/research_scene/research_scene.gd" id="1_es6n5"]
 [ext_resource type="Texture2D" uid="uid://revjaw4idqp1" path="res://assets/bullets/ui pixel/All.png" id="2_4go6a"]
 [ext_resource type="Theme" uid="uid://bgwv11hfx4p7d" path="res://resources/button_theme_verison2.tres" id="2_178ni"]
+[ext_resource type="Texture2D" uid="uid://bxx6nqf1nnh6d" path="res://assets/bullets/ui pixel/03.png" id="2_r571g"]
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="3_4go6a"]
 [ext_resource type="Texture2D" uid="uid://cftopa5d8tkjl" path="res://assets/icons/icons for upgrades/iconos (5).png" id="3_37vsl"]
 [ext_resource type="Texture2D" uid="uid://dl5wokcm5bvlq" path="res://assets/icons/yes.png" id="3_es6n5"]
@@ -12,6 +13,49 @@
 [ext_resource type="Texture2D" uid="uid://o20cgbcyriea" path="res://assets/PNG/recurso_1.png" id="5_m5obh"]
 [ext_resource type="FontFile" uid="uid://brio1r1ioqvln" path="res://assets/fonts/SYNNova-Regular.otf" id="9_37vsl"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_quj2d"]
+atlas = ExtResource("2_r571g")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raewk"]
+atlas = ExtResource("2_r571g")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycsv4"]
+atlas = ExtResource("2_r571g")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch0ph"]
+atlas = ExtResource("2_r571g")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb1p3"]
+atlas = ExtResource("2_r571g")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50fg2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quj2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raewk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycsv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch0ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb1p3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_qbc3g"]
 font = ExtResource("9_37vsl")
 font_size = 20
@@ -19,8 +63,9 @@ font_color = Color(0, 0.6455197, 0.23712179, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="ResearchScene" type="Node2D" unique_id=356825093]
+[node name="ResearchScene" type="Node2D" unique_id=356825093 node_paths=PackedStringArray("research_visual_node")]
 script = ExtResource("1_es6n5")
+research_visual_node = NodePath("VBoxContainer/current_research/HBoxContainer/Research-NODE")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1848455]
 offset_right = 738.0
@@ -40,17 +85,27 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 alignment = 1
 
+[node name="spiner animation" type="AnimatedSprite2D" parent="VBoxContainer/current_research" unique_id=1888838442]
+position = Vector2(185, 85)
+scale = Vector2(0.57291627, 0.5357828)
+sprite_frames = SubResource("SpriteFrames_50fg2")
+frame_progress = 0.7581938
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/current_research" unique_id=1567838887]
 layout_mode = 2
-theme_override_constants/separation = 21
+theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/current_research/HBoxContainer" unique_id=1823021018]
+[node name="res_text" type="Label" parent="VBoxContainer/current_research/HBoxContainer" unique_id=1823021018]
+custom_minimum_size = Vector2(130, 20)
 layout_mode = 2
 text = "Researching..."
+horizontal_alignment = 1
 
-[node name="ResearchButton" parent="VBoxContainer/current_research/HBoxContainer" unique_id=1528907865 instance=ExtResource("1_4skc4")]
+[node name="Research-NODE" parent="VBoxContainer/current_research/HBoxContainer" unique_id=1528907865 instance=ExtResource("1_4skc4")]
 layout_mode = 2
+mouse_filter = 2
+soy_tonto = true
 
 [node name="Mejoras" type="HBoxContainer" parent="VBoxContainer" unique_id=442380728]
 layout_mode = 2
@@ -62,6 +117,7 @@ layout_mode = 2
 upgrade_name = "Fast Mining 1"
 upgrade_text = "aumenta la velocidad de minado automatico"
 upgrade_icon = ExtResource("3_37vsl")
+research_time = 10.0
 nodo_padre = NodePath("../../..")
 how_much_to_upgrade = 5
 
@@ -221,19 +277,19 @@ vertical_alignment = 1
 
 [node name="research_bar" type="ProgressBar" parent="." unique_id=2110538219]
 unique_name_in_owner = true
-offset_left = 374.0
+offset_left = 381.0
 offset_top = 400.0
-offset_right = 484.0
+offset_right = 491.0
 offset_bottom = 411.0
 theme = ExtResource("3_tol7s")
-value = 50.0
+value = 45.0
 show_percentage = false
 
 [node name="TextureProgressBar" parent="." unique_id=1611485947 instance=ExtResource("4_r571g")]
 unique_name_in_owner = true
-offset_left = 356.0
+offset_left = 363.0
 offset_top = 396.0
-offset_right = 403.66666
+offset_right = 411.6667
 offset_bottom = 401.6667
 texture_under = null
 texture_progress = null
@@ -242,3 +298,4 @@ texture_progress = null
 unique_name_in_owner = true
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Info-box/confirmation_container/Button_yes" to="." method="_on_button_yes_pressed"]
+[connection signal="timeout" from="research_timer" to="." method="_on_research_timer_timeout"]
