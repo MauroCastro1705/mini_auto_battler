@@ -6,12 +6,18 @@ var mineral_cost:Texture2D
 @export var upgrade_name:String = ""
 @export var upgrade_text:String = ""
 @export var upgrade_icon:Texture2D
+@export var research_time:float ##cuanto tiempo dura el research
 @export var nodo_padre:Node2D
 var textures: Dictionary = {}
 enum MINERALES { RECURSO_1, RECURSO_2 }
-@export var stat_to_upgrade: STATS
-enum STATS { MINE_DMG, CAN_AUTOMINE, AUTO_MINE_DMG, AUTO_MINE_TIMER }
-
+@export var stat_to_upgrade: STATS ## que estat de global afecta
+enum STATS { 
+	MINE_DMG,          ## Daño de minería manual
+	CAN_AUTOMINE,      ## Habilidad para minar automáticamente
+	AUTO_MINE_DMG,     ## Daño de la minería automática
+	AUTO_MINE_TIMER    ## Velocidad de la minería automática
+}
+@export var how_much_to_upgrade:int ##que valor suma al stat
 #var player_mine_damage:int = 3
 #var can_auto_mine:bool = false
 #var auto_mining_damage:int = 2

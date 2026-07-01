@@ -7,8 +7,17 @@
 [ext_resource type="LabelSettings" uid="uid://cahn7yy0ri0b8" path="res://texto_logro.tres" id="3_4go6a"]
 [ext_resource type="Texture2D" uid="uid://cftopa5d8tkjl" path="res://assets/icons/icons for upgrades/iconos (5).png" id="3_37vsl"]
 [ext_resource type="Texture2D" uid="uid://dl5wokcm5bvlq" path="res://assets/icons/yes.png" id="3_es6n5"]
-[ext_resource type="Texture2D" uid="uid://cys26vr0s7jao" path="res://assets/icons/no.png" id="4_4go6a"]
+[ext_resource type="Theme" uid="uid://jr82p6y257fe" path="res://resources/barra_timer.tres" id="3_tol7s"]
+[ext_resource type="PackedScene" uid="uid://y3fe30xklkhr" path="res://ui/barra_texturada/texture_progress_bar.tscn" id="4_r571g"]
 [ext_resource type="Texture2D" uid="uid://o20cgbcyriea" path="res://assets/PNG/recurso_1.png" id="5_m5obh"]
+[ext_resource type="FontFile" uid="uid://brio1r1ioqvln" path="res://assets/fonts/SYNNova-Regular.otf" id="9_37vsl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qbc3g"]
+font = ExtResource("9_37vsl")
+font_size = 20
+font_color = Color(0, 0.6455197, 0.23712179, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="ResearchScene" type="Node2D" unique_id=356825093]
 script = ExtResource("1_es6n5")
@@ -27,18 +36,34 @@ theme_override_constants/separation = 30
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="current_research" type="BoxContainer" parent="VBoxContainer" unique_id=820566616]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/current_research" unique_id=1567838887]
+layout_mode = 2
+theme_override_constants/separation = 21
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/current_research/HBoxContainer" unique_id=1823021018]
+layout_mode = 2
+text = "Researching..."
+
+[node name="ResearchButton" parent="VBoxContainer/current_research/HBoxContainer" unique_id=1528907865 instance=ExtResource("1_4skc4")]
+layout_mode = 2
+
 [node name="Mejoras" type="HBoxContainer" parent="VBoxContainer" unique_id=442380728]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="ResearchButton" parent="VBoxContainer/Mejoras" unique_id=1528907865 node_paths=PackedStringArray("nodo_padre") instance=ExtResource("1_4skc4")]
+[node name="ResearchButton" parent="VBoxContainer/Mejoras" unique_id=1698196315 node_paths=PackedStringArray("nodo_padre") instance=ExtResource("1_4skc4")]
 layout_mode = 2
-upgrade_price = 100
 upgrade_name = "Fast Mining 1"
 upgrade_text = "aumenta la velocidad de minado automatico"
 upgrade_icon = ExtResource("3_37vsl")
 nodo_padre = NodePath("../../..")
+how_much_to_upgrade = 5
 
 [node name="ResearchButton2" parent="VBoxContainer/Mejoras" unique_id=333913248 node_paths=PackedStringArray("nodo_padre") instance=ExtResource("1_4skc4")]
 layout_mode = 2
@@ -89,16 +114,19 @@ nodo_padre = NodePath("../../..")
 layout_mode = 2
 nodo_padre = NodePath("../../..")
 
-[node name="Info-box" type="HBoxContainer" parent="VBoxContainer" unique_id=1954813310]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=244264541]
+layout_mode = 2
+
+[node name="Info-box" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=1954813310]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/Info-box" unique_id=1193089047]
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/Info-box" unique_id=1193089047]
 layout_mode = 2
 theme_override_constants/separation = 9
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/Info-box/VBoxContainer" unique_id=852985805]
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/VBoxContainer/Info-box/VBoxContainer" unique_id=852985805]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 texture = ExtResource("2_4go6a")
@@ -108,7 +136,7 @@ patch_margin_top = 2
 patch_margin_right = 3
 patch_margin_bottom = 2
 
-[node name="upgrade_text" type="Label" parent="VBoxContainer/Info-box/VBoxContainer/NinePatchRect" unique_id=1500042367]
+[node name="upgrade_text" type="Label" parent="VBoxContainer/VBoxContainer/Info-box/VBoxContainer/NinePatchRect" unique_id=1500042367]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -125,7 +153,7 @@ label_settings = ExtResource("3_4go6a")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="resources need" type="NinePatchRect" parent="VBoxContainer/Info-box/VBoxContainer/NinePatchRect" unique_id=1786070545]
+[node name="resources need" type="NinePatchRect" parent="VBoxContainer/VBoxContainer/Info-box/VBoxContainer/NinePatchRect" unique_id=1786070545]
 layout_mode = 0
 offset_left = 6.0
 offset_right = 203.0
@@ -137,7 +165,7 @@ patch_margin_top = 7
 patch_margin_right = 6
 patch_margin_bottom = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Info-box/VBoxContainer/NinePatchRect" unique_id=235162643]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/Info-box/VBoxContainer/NinePatchRect" unique_id=235162643]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 6.0
@@ -145,7 +173,7 @@ offset_right = 193.0
 offset_bottom = 34.0
 alignment = 1
 
-[node name="texture_cost" type="TextureRect" parent="VBoxContainer/Info-box/VBoxContainer/NinePatchRect/HBoxContainer" unique_id=971339447]
+[node name="texture_cost" type="TextureRect" parent="VBoxContainer/VBoxContainer/Info-box/VBoxContainer/NinePatchRect/HBoxContainer" unique_id=971339447]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -153,25 +181,25 @@ texture = ExtResource("5_m5obh")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="label_cost" type="Label" parent="VBoxContainer/Info-box/VBoxContainer/NinePatchRect/HBoxContainer" unique_id=607476615]
+[node name="label_cost" type="Label" parent="VBoxContainer/VBoxContainer/Info-box/VBoxContainer/NinePatchRect/HBoxContainer" unique_id=607476615]
 unique_name_in_owner = true
 layout_mode = 2
 text = "resources needed"
 label_settings = ExtResource("3_4go6a")
 
-[node name="confirmation_container" type="HBoxContainer" parent="VBoxContainer/Info-box" unique_id=1415055644]
+[node name="confirmation_container" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/Info-box" unique_id=1415055644]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="Button_yes" type="Button" parent="VBoxContainer/Info-box/confirmation_container" unique_id=1719971102]
+[node name="Button_yes" type="Button" parent="VBoxContainer/VBoxContainer/Info-box/confirmation_container" unique_id=1719971102]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
 theme = ExtResource("2_178ni")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Info-box/confirmation_container/Button_yes" unique_id=1649202536]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/Info-box/confirmation_container/Button_yes" unique_id=1649202536]
 modulate = Color(0.22352941, 0.6862745, 0, 1)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
@@ -183,23 +211,34 @@ texture = ExtResource("3_es6n5")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Button_no" type="Button" parent="VBoxContainer/Info-box/confirmation_container" unique_id=1716194417]
+[node name="error_msg" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=179836310]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme = ExtResource("2_178ni")
+text = "Error mensaje"
+label_settings = SubResource("LabelSettings_qbc3g")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Info-box/confirmation_container/Button_no" unique_id=930999073]
-modulate = Color(1, 0.14509805, 0.10980392, 1)
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 0
-offset_left = -1.0
-offset_top = 0.19403076
-offset_right = 52.0
-offset_bottom = 149.0
-texture = ExtResource("4_4go6a")
-expand_mode = 5
-stretch_mode = 5
+[node name="research_bar" type="ProgressBar" parent="." unique_id=2110538219]
+unique_name_in_owner = true
+offset_left = 374.0
+offset_top = 400.0
+offset_right = 484.0
+offset_bottom = 411.0
+theme = ExtResource("3_tol7s")
+value = 50.0
+show_percentage = false
 
-[connection signal="pressed" from="VBoxContainer/Info-box/confirmation_container/Button_yes" to="." method="_on_button_yes_pressed"]
-[connection signal="pressed" from="VBoxContainer/Info-box/confirmation_container/Button_no" to="." method="_on_button_no_pressed"]
+[node name="TextureProgressBar" parent="." unique_id=1611485947 instance=ExtResource("4_r571g")]
+unique_name_in_owner = true
+offset_left = 356.0
+offset_top = 396.0
+offset_right = 403.66666
+offset_bottom = 401.6667
+texture_under = null
+texture_progress = null
+
+[node name="research_timer" type="Timer" parent="." unique_id=689642968]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Info-box/confirmation_container/Button_yes" to="." method="_on_button_yes_pressed"]
