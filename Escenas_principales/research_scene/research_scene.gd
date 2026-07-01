@@ -10,14 +10,13 @@ extends Node2D
 
 @export var research_visual_node: Node
 @onready var res_text: Label = $VBoxContainer/current_research/HBoxContainer/res_text
-@onready var spiner_animation: AnimatedSprite2D = $"VBoxContainer/current_research/spiner animation"
+
 
 var reference_button
 var stat_being_research
 var research_finish: bool = false
 
 func _ready() -> void:
-	spiner_animation.hide()
 	res_text.text = "Research aviable"
 	error_msg.visible = false
 	research_bar.visible = false  # Ocultar barra inicialmente
@@ -97,8 +96,8 @@ func show_error_message(message: String, color: Color):
 
 func set_research_stat(boton_upgrade):
 	# Reiniciar estado de investigación
-	spiner_animation.show()
-	spiner_animation.play("default")
+	research_visual_node.animated_sprite_2d.show()
+	research_visual_node.animated_sprite_2d.play("default")
 	res_text.text = "Researching..."
 	research_finish = false
 	stat_being_research = boton_upgrade.stat_to_upgrade
@@ -124,7 +123,7 @@ func update_timer_bar() -> void:
 	research_bar.value = clamp(progress, 0.0, 1.0)  # Asegurar que no se pase
 
 func _on_research_timer_timeout() -> void:
-	spiner_animation.hide()
+	research_visual_node.animated_sprite_2d.hide()
 	research_finish = true
 	research_bar.visible = false  # Ocultar barra cuando termina
 	res_text.text = "Research aviable"
